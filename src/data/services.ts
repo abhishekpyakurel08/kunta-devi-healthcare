@@ -1,0 +1,68 @@
+import { Heart, Activity, Baby, Pill, ShieldCheck, UserCog, ClipboardList, Stethoscope } from "lucide-react";
+
+export const services = [
+  {
+    id: "general-opd",
+    title: "General OPD",
+    description: "Comprehensive medical checkups and primary care for all age groups.",
+    icon: Stethoscope,
+    benefits: ["Experienced GPs", "Minimal wait time", "Holistic care"],
+    category: "Primary Care",
+  },
+  {
+    id: "specialist-consultation",
+    title: "Specialist Consultation",
+    description: "Expert advice from senior specialists in Cardiology, Gynecology, and more.",
+    icon: UserCog,
+    benefits: ["Expert guidance", "Detailed diagnosis", "Personalized treatment"],
+    category: "Specialized Care",
+  },
+  {
+    id: "maternal-health",
+    title: "Maternal Health",
+    description: "Comprehensive care for expectant mothers, from prenatal to postnatal support.",
+    icon: Heart,
+    benefits: ["Pre-natal checkups", "Post-natal care", "Ultrasound tracking"],
+    category: "Maternal Care",
+  },
+  {
+    id: "vaccination",
+    title: "Vaccination",
+    description: "Safe and timely vaccinations for infants, children, and adults.",
+    icon: ShieldCheck,
+    benefits: ["WHO approved vaccines", "Trained staff", "Vaccination records"],
+    category: "Preventive Care",
+  },
+  {
+    id: "pediatric-care",
+    title: "Pediatric Care",
+    description: "Dedicated healthcare services for infants, children, and adolescents.",
+    icon: Baby,
+    benefits: ["Child-friendly environment", "Expert pediatricians", "Growth monitoring"],
+    category: "Child Care",
+  },
+  {
+    id: "minor-procedures",
+    title: "Minor Procedures",
+    description: "Quick and safe minor surgical procedures and wound care.",
+    icon: Activity,
+    benefits: ["Sterile environment", "Experienced surgeons", "Quick recovery"],
+    category: "Procedures",
+  },
+  {
+    id: "preventive-healthcare",
+    title: "Preventive Healthcare",
+    description: "Health screenings and advice to prevent chronic illnesses before they start.",
+    icon: Pill,
+    benefits: ["Early detection", "Risk assessment", "Lifestyle counseling"],
+    category: "Preventive Care",
+  },
+  {
+    id: "chronic-disease-management",
+    title: "Chronic Disease Management",
+    description: "Long-term care plans for Diabetes, Hypertension, and other chronic conditions.",
+    icon: ClipboardList,
+    benefits: ["Regular monitoring", "Medication management", "Specialized diets"],
+    category: "Specialized Care",
+  },
+];
