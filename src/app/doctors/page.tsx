@@ -2,7 +2,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { PageHeader } from "@/components/layout/page-header";
 import { Section } from "@/components/layout/section";
-import { CTABanner } from "@/components/home/StatsBanner";
+
 import { doctors } from "@/data/doctors";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -42,11 +42,20 @@ export default function DoctorsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {doctors.map((doctor) => (
               <Card key={doctor.id} className="group overflow-hidden border-border/50 hover:border-primary/50 shadow-sm hover:shadow-2xl transition-all duration-500">
-                <div className="aspect-4/5 bg-slate-100 relative overflow-hidden">
+                <div className="aspect-4/5 bg-slate-100 relative overflow-hidden group/img">
+                  <img 
+                    src={[
+                      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2070",
+                      "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=2070",
+                      "https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1974",
+                      "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1964",
+                      "https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=2070",
+                      "https://images.unsplash.com/photo-1612531388260-6303b896c2c1?q=80&w=2070"
+                    ][doctors.indexOf(doctor) % 6]} 
+                    alt={doctor.name} 
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-110"
+                  />
                   <div className="absolute inset-0 bg-linear-to-t from-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute inset-0 flex items-center justify-center text-primary/10">
-                    <User className="h-32 w-32" />
-                  </div>
                   <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                     <Badge className="w-full justify-center py-2 rounded-xl text-xs font-bold tracking-widest uppercase">
                       View Profile
@@ -87,7 +96,6 @@ export default function DoctorsPage() {
           </div>
         </Section>
 
-        <CTABanner />
       </main>
       <Footer />
     </div>

@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "../styles/globals.css";
 import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta" });
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -54,7 +54,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={cn(
         "min-h-screen bg-background font-sans antialiased",
-        inter.variable
+        jakarta.variable
       )}>
         {children}
       </body>

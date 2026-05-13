@@ -17,6 +17,7 @@ export const clinicInfo = {
   phone: "+977-1-4XXXXXX",
   whatsapp: "+977-98XXXXXXXX",
   email: "info@kuntadevihealthcare.com",
-  openingHours: "Sunday - Friday: 7:00 AM - 8:00 PM, Saturday: 8:00 AM - 2:00 PM",
+  hours: "Sunday - Friday: 7:00 AM - 7:00 PM",
   emergencyPhone: "+977-98XXXXXXXX",
+  mapLink: "https://maps.google.com",
 };

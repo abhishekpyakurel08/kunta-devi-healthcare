@@ -1,50 +1,61 @@
-import Link from "next/link";
-import { Plus } from "lucide-react";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 export function GalleryMasonry() {
   const images = [
-    { title: "Our Modern Lab", category: "Equipment", size: "col-span-2 row-span-2" },
-    { title: "Specialist Consultation", category: "Clinic", size: "col-span-1 row-span-1" },
-    { title: "Friendly Environment", category: "Clinic", size: "col-span-1 row-span-1" },
-    { title: "Expert Staff", category: "Doctors", size: "col-span-1 row-span-1" },
-    { title: "Advanced USG", category: "Equipment", size: "col-span-1 row-span-1" },
+    { src: "/gallery/1.jpg", alt: "Modern Clinic Interior", className: "col-span-1 row-span-1" },
+    { src: "/gallery/2.jpg", alt: "Dental Consultation", className: "col-span-1 row-span-1" },
+    { src: "/gallery/3.jpg", alt: "Surgeon at Work", className: "col-span-1 row-span-2" },
+    { src: "/gallery/4.jpg", alt: "Radiology Analysis", className: "col-span-1 row-span-2" },
+    { src: "/gallery/5.jpg", alt: "Blood Pressure Check", className: "col-span-1 row-span-1" },
+    { src: "/gallery/6.jpg", alt: "Doctor Consultation", className: "col-span-1 row-span-1" },
   ];
 
   return (
-    <Section
-      subtitle="Visual Tour"
-      title="Our Clinic & Facilities"
-      className="bg-slate-50"
-    >
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
+    <Section className="bg-white py-24">
+      <div className="text-center mb-16 space-y-4">
+        <span className="text-primary font-bold tracking-widest uppercase text-xs">Health Resources</span>
+        <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">Latest Health Tips & Updates</h2>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[240px]">
         {images.map((img, i) => (
-          <div 
-            key={i} 
+          <div
+            key={i}
             className={cn(
-              "group relative rounded-4xl overflow-hidden bg-slate-200 border-4 border-white shadow-sm hover:shadow-xl transition-all duration-500",
-              img.size
+              "relative rounded-4xl overflow-hidden group shadow-lg",
+              img.className
             )}
           >
-            <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/40 transition-colors duration-500"></div>
-            <div className="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-linear-to-t from-dark/80 via-dark/20 to-transparent">
-              <span className="text-white/70 text-xs font-bold uppercase tracking-widest mb-1">{img.category}</span>
-              <h4 className="text-white font-bold text-lg leading-tight">{img.title}</h4>
-            </div>
-            <div className="absolute top-4 right-4 h-10 w-10 rounded-full bg-white flex items-center justify-center scale-0 group-hover:scale-100 transition-transform duration-500 shadow-xl">
-              <Plus className="h-5 w-5 text-primary" />
+            <img 
+              src={[
+                "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053",
+                "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2070",
+                "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=2070",
+                "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070",
+                "https://images.unsplash.com/photo-1505751172177-51ad18670404?q=80&w=2070",
+                "https://images.unsplash.com/photo-1631549448353-461bb77718cc?q=80&w=2072"
+              ][i % 6]} 
+              alt={img.alt} 
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-linear-to-t from-slate-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+               <p className="text-white text-sm font-bold">{img.alt}</p>
             </div>
           </div>
         ))}
       </div>
-      <div className="mt-12 text-center">
-        <Button variant="outline" className="rounded-full px-8" asChild>
-          <Link href="/gallery">View Full Gallery</Link>
+
+      <div className="mt-16 text-center">
+        <Button variant="outline" size="pill" className="h-14 px-12 text-primary font-bold border-2" asChild>
+          <Link href="/gallery">
+            View Full Gallery <ArrowRight className="ml-2 h-5 w-5" />
+          </Link>
         </Button>
       </div>
     </Section>
   );
 }
-
-import { cn } from "@/lib/utils";

@@ -1,64 +1,104 @@
 import Link from "next/link";
-import { ArrowRight, Calendar, Clock } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Section } from "@/components/layout/section";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { doctors } from "@/data/doctors";
 
 export function DoctorsGrid() {
+  const doctors = [
+    {
+      name: "Dr. Anita Sharma",
+      specialty: "MBBS, MD, Gynecologist",
+      availability: "Available mon-fri",
+      experience: "8+ years",
+      nextAvailable: "Tomorrow",
+    },
+    {
+      name: "Dr. Anita Sharma",
+      specialty: "MBBS, MD, Gynecologist",
+      availability: "Available mon-fri",
+      experience: "8+ years",
+      nextAvailable: "Tomorrow",
+    },
+    {
+      name: "Dr. Anita Sharma",
+      specialty: "MBBS, MD, Gynecologist",
+      availability: "Available mon-fri",
+      experience: "8+ years",
+      nextAvailable: "Tomorrow",
+    },
+    {
+      name: "Dr. Anita Sharma",
+      specialty: "MBBS, MD, Gynecologist",
+      availability: "Available mon-fri",
+      experience: "8+ years",
+      nextAvailable: "Tomorrow",
+    },
+  ];
+
   return (
-    <Section
-      id="doctors"
-      subtitle="Expert Team"
-      title="Meet Our Specialized Doctors"
-      className="bg-white"
-    >
+    <Section className="bg-[#F4F9F9] py-24">
+      <div className="text-center mb-16 space-y-4">
+        <span className="text-primary font-bold tracking-widest uppercase text-xs">Meet Our Specialists</span>
+        <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">Our specialist Doctors</h2>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {doctors.slice(0, 4).map((doctor) => (
-          <Card key={doctor.id} className="group overflow-hidden border-border/50 hover:border-primary/50">
-            <div className="aspect-4/5 bg-slate-100 relative">
-              <div className="absolute inset-0 bg-linear-to-t from-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              {/* Doctor Image Placeholder */}
-              <div className="absolute inset-0 flex items-center justify-center text-primary/10">
-                <Users className="h-24 w-24" />
+        {doctors.map((doctor, i) => (
+          <div key={i} className="bg-white p-6 rounded-[2.5rem] shadow-xl shadow-slate-200/50 flex flex-col group transition-all duration-500 hover:translate-y-[-8px]">
+            {/* Image Placeholder */}
+            <div className="aspect-square bg-slate-100 rounded-4xl overflow-hidden mb-6 relative group/img">
+              <img 
+                src={[
+                  "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2070",
+                  "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=2070",
+                  "https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1974",
+                  "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1964"
+                ][i % 4]} 
+                alt={doctor.name} 
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-110"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-slate-900/20 via-transparent to-transparent"></div>
+            </div>
+
+            <div className="space-y-4 flex-1">
+              <div>
+                <span className="inline-block px-4 py-1.5 bg-emerald-50 text-emerald-600 text-[10px] font-bold rounded-full uppercase tracking-wider mb-4">
+                  {doctor.availability}
+                </span>
+                <h3 className="text-xl font-bold text-slate-900 mb-1">{doctor.name}</h3>
+                <p className="text-sm font-bold text-primary">{doctor.specialty}</p>
+              </div>
+
+              <div className="h-px bg-slate-100 w-full"></div>
+
+              <div className="space-y-2">
+                <p className="text-xs font-medium text-slate-500">
+                  <span className="font-bold text-slate-400">Experience :</span> {doctor.experience}
+                </p>
+                <p className="text-xs font-medium text-slate-500">
+                  <span className="font-bold text-slate-400">Next Available :</span> {doctor.nextAvailable}
+                </p>
+              </div>
+
+              <div className="pt-4">
+                <Button variant="outline" className="w-full rounded-xl h-12 border-primary/30 text-primary font-bold hover:bg-primary/5 transition-all group/btn" asChild>
+                  <Link href="/doctors">
+                    View Profile <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                  </Link>
+                </Button>
               </div>
             </div>
-            <CardHeader className="text-center pb-2">
-              <CardTitle className="text-xl group-hover:text-primary transition-colors">{doctor.name}</CardTitle>
-              <p className="text-primary font-bold text-xs uppercase tracking-widest">{doctor.specialization}</p>
-            </CardHeader>
-            <CardContent className="text-center space-y-4 pb-6">
-              <CardDescription className="text-sm font-medium">
-                {doctor.qualification}
-              </CardDescription>
-              <div className="flex flex-col gap-2 pt-2">
-                <div className="flex items-center justify-center gap-2 text-xs text-muted font-bold">
-                  <Calendar className="h-3 w-3 text-primary" />
-                  {doctor.days}
-                </div>
-                <div className="flex items-center justify-center gap-2 text-xs text-muted font-bold">
-                  <Clock className="h-3 w-3 text-primary" />
-                  {doctor.timing}
-                </div>
-              </div>
-            </CardContent>
-            <CardFooter className="pt-0">
-              <Button className="w-full rounded-xl group/btn" variant="outline" asChild>
-                <Link href="/appointment">
-                  Book Appointment <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                </Link>
-              </Button>
-            </CardFooter>
-          </Card>
+          </div>
         ))}
       </div>
+
       <div className="mt-16 text-center">
-        <Button size="lg" className="rounded-full px-10" asChild>
-          <Link href="/doctors">View All Doctors</Link>
+        <Button variant="outline" size="pill" className="h-14 px-12 text-primary font-bold border-2" asChild>
+          <Link href="/doctors">
+            View All Doctors <ArrowRight className="ml-2 h-5 w-5" />
+          </Link>
         </Button>
       </div>
     </Section>
   );
 }
-
-import { Users } from "lucide-react";

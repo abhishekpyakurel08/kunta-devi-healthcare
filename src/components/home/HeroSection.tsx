@@ -1,87 +1,101 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, PhoneCall } from "lucide-react";
+import { CheckCircle2, User, Users, ClipboardList } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
-import { clinicInfo } from "@/data/site-config";
 
 export function HeroSection() {
   return (
-    <section className="relative pt-20 pb-32 lg:pt-32 lg:pb-48 bg-slate-50 overflow-hidden">
-      {/* Background Decorative Elements */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-linear-to-l from-primary/5 to-transparent pointer-events-none"></div>
-      
-      <Container className="relative z-10">
+    <section className="relative pt-24 pb-20 lg:pt-32 lg:pb-32 bg-white overflow-hidden">
+      <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div className="space-y-8 text-center lg:text-left">
-            <div className="space-y-4">
-              <span className="text-primary font-bold tracking-widest uppercase text-sm">Welcome to Kunta Devi Health Care</span>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-dark tracking-tight leading-[1.1]">
+          {/* Left Content */}
+          <div className="space-y-10 animate-in fade-in slide-in-from-left duration-700">
+            <div className="space-y-6">
+              <span className="text-primary font-bold tracking-widest uppercase text-xs">
+                Welcome to Kunta Devi Health Care
+              </span>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[1.1]">
                 Your Trusted <br />
-                <span className="text-primary">Health Partner</span> <br />
+                Health Partner <br />
                 in Kathmandu
               </h1>
-              <p className="text-lg md:text-xl text-muted max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                Dedicated to providing professional, compassionate, and affordable healthcare services to our community since 2011.
+              <p className="text-lg text-slate-500 max-w-xl leading-relaxed font-medium">
+                Quality healthcare, expert doctors, modern diagnostics, and trusted medical products—all under one roof.
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="rounded-full px-10 h-14 text-lg shadow-xl shadow-primary/20" asChild>
-                <Link href="/appointment">Find a Doctor</Link>
+            <div className="flex flex-col sm:flex-row items-center gap-4">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-xl px-10 h-14 border-primary text-primary font-bold border-2" asChild>
+                <Link href="/services">Explore Service</Link>
               </Button>
-              <Button size="lg" variant="outline" className="rounded-full px-10 h-14 text-lg border-2 bg-white/50 backdrop-blur-sm" asChild>
+              <Button size="lg" className="w-full sm:w-auto rounded-xl px-10 h-14 bg-primary hover:bg-primary/90 text-white font-bold shadow-xl shadow-primary/20" asChild>
                 <Link href="/appointment">Book Appointment</Link>
               </Button>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 pt-4">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-5 w-5 text-primary" />
-                <span className="text-sm font-bold text-dark">ISO Certified</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-5 w-5 text-primary" />
-                <span className="text-sm font-bold text-dark">24/7 Support</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-5 w-5 text-primary" />
-                <span className="text-sm font-bold text-dark">Expert Doctors</span>
-              </div>
+            {/* Feature List */}
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-4 pt-4">
+              {[
+                { icon: CheckCircle2, text: "Licensed Healthcare Center" },
+                { icon: Users, text: "Experienced Specialists" },
+                { icon: ClipboardList, text: "Fast And Reliable Service" },
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-2">
+                  <item.icon className="h-5 w-5 text-primary" />
+                  <span className="text-[13px] font-bold text-slate-600">{item.text}</span>
+                </div>
+              ))}
             </div>
           </div>
 
-          <div className="relative order-first lg:order-last">
-            <div className="relative rounded-[3rem] overflow-hidden shadow-2xl shadow-primary/10 border-8 border-white bg-white">
-              <div className="aspect-[4/5] bg-slate-200 relative group">
-                <div className="absolute inset-0 bg-linear-to-t from-dark/20 to-transparent"></div>
-                <div className="absolute inset-0 flex items-center justify-center text-primary/10">
-                   <div className="text-9xl font-bold">HERO</div>
-                </div>
-                
-                {/* Floating Emergency Card */}
-                <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm p-5 rounded-3xl shadow-xl border border-white/50">
-                  <div className="flex items-center gap-4">
-                    <div className="h-12 w-12 rounded-2xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/30">
-                      <PhoneCall className="h-6 w-6" />
-                    </div>
-                    <div>
-                      <p className="text-[10px] text-muted font-bold uppercase tracking-widest">Emergency Contact</p>
-                      <p className="text-lg font-bold text-dark">{clinicInfo.emergencyPhone}</p>
-                    </div>
-                  </div>
-                </div>
+          {/* Right Image Content */}
+          <div className="relative animate-in fade-in slide-in-from-right duration-1000 delay-200">
+            {/* Background Decorative Shape */}
+            <div className="absolute inset-[-8%] bg-emerald-50/50 rounded-[4rem] -z-10"></div>
+            
+            <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border-white border-8 bg-white">
+              <div className="aspect-square bg-slate-100 relative group">
+                <img 
+                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070" 
+                  alt="Professional doctor consulting patient" 
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-slate-900/20 via-transparent to-transparent"></div>
               </div>
             </div>
             
-            {/* Additional Floating Cards */}
-            <div className="absolute -top-6 -left-6 bg-white p-5 rounded-3xl shadow-xl border border-border/50 hidden md:flex items-center gap-4 animate-bounce-subtle">
-              <div className="h-10 w-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-600">
-                <CheckCircle2 className="h-5 w-5" />
-              </div>
-              <div>
-                <p className="text-[10px] text-muted font-bold uppercase tracking-widest">Reports</p>
-                <p className="text-sm font-bold text-dark">100% Accurate</p>
-              </div>
+            {/* Floating Info Cards */}
+            {/* Top Left: 20+ Specialist Doctors */}
+            <div className="absolute -top-6 -left-10 bg-white p-4 pr-8 rounded-2xl shadow-2xl border border-slate-100 flex items-center gap-4 group hover:scale-105 transition-all duration-300">
+               <div className="h-12 w-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 border border-emerald-100/50">
+                 <Users className="h-6 w-6" />
+               </div>
+               <div>
+                 <p className="text-xl font-black text-slate-900 leading-none mb-1">20 +</p>
+                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Specialist Doctors</p>
+               </div>
+            </div>
+
+            {/* Right: 100+ Happy Patients */}
+            <div className="absolute top-1/2 -right-12 -translate-y-1/2 bg-white p-4 pr-8 rounded-2xl shadow-2xl border border-slate-100 flex items-center gap-4 group hover:scale-105 transition-all duration-300 z-20">
+               <div className="h-12 w-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 border border-emerald-100/50">
+                 <User className="h-6 w-6" />
+               </div>
+               <div>
+                 <p className="text-xl font-black text-slate-900 leading-none mb-1">100+</p>
+                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Happy Patients</p>
+               </div>
+            </div>
+
+            {/* Bottom: Same Day Lab Reports */}
+            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white p-4 pr-10 rounded-2xl shadow-2xl border border-slate-100 flex items-center gap-4 group hover:scale-105 transition-all duration-300 whitespace-nowrap">
+               <div className="h-14 w-14 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 border border-emerald-100/50">
+                 <ClipboardList className="h-8 w-8" />
+               </div>
+               <div>
+                 <p className="text-xl font-black text-slate-900 leading-none mb-1">Same Day</p>
+                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Lab Reports</p>
+               </div>
             </div>
           </div>
         </div>

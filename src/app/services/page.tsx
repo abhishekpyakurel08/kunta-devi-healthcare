@@ -2,7 +2,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { PageHeader } from "@/components/layout/page-header";
 import { Section } from "@/components/layout/section";
-import { CTABanner } from "@/components/home/StatsBanner";
+
 import { services } from "@/data/services";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -67,7 +67,6 @@ export default function ServicesPage() {
           </div>
         </Section>
 
-        <CTABanner />
       </main>
       <Footer />
     </div>

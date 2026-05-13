@@ -2,7 +2,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { PageHeader } from "@/components/layout/page-header";
 import { Section } from "@/components/layout/section";
-import { CTABanner } from "@/components/home/StatsBanner";
+
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Plus, Maximize2 } from "lucide-react";
@@ -63,7 +63,19 @@ export default function GalleryPage() {
                   item.size
                 )}
               >
-                <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/20 transition-colors duration-500"></div>
+                <img 
+                  src={[
+                    "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053",
+                    "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2070",
+                    "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=2070",
+                    "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070",
+                    "https://images.unsplash.com/photo-1505751172177-51ad18670404?q=80&w=2070",
+                    "https://images.unsplash.com/photo-1631549448353-461bb77718cc?q=80&w=2072",
+                    "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080"
+                  ][i % 7]} 
+                  alt={item.title} 
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
                 <div className="absolute inset-0 flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-linear-to-t from-dark/90 via-dark/20 to-transparent translate-y-4 group-hover:translate-y-0">
                   <span className="text-primary font-bold text-[10px] uppercase tracking-[0.2em] mb-2">{item.category}</span>
                   <h4 className="text-white font-bold text-xl leading-tight">{item.title}</h4>
@@ -76,7 +88,6 @@ export default function GalleryPage() {
           </div>
         </Section>
 
-        <CTABanner />
       </main>
       <Footer />
     </div>

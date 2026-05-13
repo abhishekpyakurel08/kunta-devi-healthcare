@@ -1,58 +1,54 @@
-import { Users, Microscope, Calendar, Award } from "lucide-react";
+import { Container } from "@/components/layout/container";
 
 export function StatsBanner() {
   const stats = [
-    { label: "Happy Patients", value: "10,000+", icon: Users },
-    { label: "Lab Tests Done", value: "50,000+", icon: Microscope },
-    { label: "Years Experience", value: "15+", icon: Calendar },
-    { label: "Expert Doctors", value: "20+", icon: Award },
+    {
+      label: "20+",
+      title: "Specialist Doctors",
+      sub: "Across 15 + disciplines",
+    },
+    {
+      label: "10+",
+      title: "Years of Service",
+      sub: "Since 2014 in Kathmandu",
+    },
+    {
+      label: "5000+",
+      title: "Patients Served",
+      sub: "And growing every month",
+    },
+    {
+      label: "24/7",
+      title: "Patients Support",
+      sub: "Always here for you",
+    },
   ];
 
   return (
-    <div className="bg-dark py-16">
-      <div className="container-custom">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((stat) => (
-            <div key={stat.label} className="text-center group">
-              <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-white/5 text-primary mb-6 group-hover:scale-110 transition-transform">
-                <stat.icon className="h-8 w-8" />
+    <section className="bg-primary py-24 relative overflow-hidden">
+      {/* Decorative overlapping circles */}
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-white/5 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl pointer-events-none"></div>
+      <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-white/5 rounded-full blur-2xl pointer-events-none"></div>
+
+      <Container className="relative z-10">
+        <div className="text-center mb-20 space-y-4">
+          <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">Why Families Trust Us</h2>
+          <p className="text-white/90 text-sm font-medium">Proven results. Real care. Every visit.</p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {stats.map((stat, i) => (
+            <div key={i} className="bg-white/10 backdrop-blur-sm border border-white/5 p-10 rounded-4xl text-left space-y-4 group hover:bg-white/15 transition-all duration-300">
+              <p className="text-5xl lg:text-6xl font-black text-white tracking-tighter">{stat.label}</p>
+              <div className="space-y-1">
+                <p className="text-xl font-bold text-white leading-tight">{stat.title}</p>
+                <p className="text-xs font-medium text-white/70">{stat.sub}</p>
               </div>
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.value}</div>
-              <div className="text-gray-400 text-sm font-medium uppercase tracking-widest">{stat.label}</div>
             </div>
           ))}
         </div>
-      </div>
-    </div>
-  );
-}
-
-export function CTABanner() {
-  return (
-    <section className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-primary -z-10"></div>
-      <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -mr-48 -mt-48 blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-dark/10 rounded-full -ml-48 -mb-48 blur-3xl"></div>
-      
-      <div className="container-custom text-center">
-        <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-8 leading-tight max-w-4xl mx-auto">
-          Take the First Step Towards a <br /> Healthier Lifestyle Today
-        </h2>
-        <p className="text-white/80 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
-          Book your health checkup or diagnostic test online and experience professional healthcare at Kunta Devi.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" variant="secondary" className="rounded-full px-12 h-16 text-lg shadow-2xl" asChild>
-            <Link href="/appointment">Book Appointment Now</Link>
-          </Button>
-          <Button size="lg" variant="outline" className="rounded-full px-12 h-16 text-lg border-white text-white hover:bg-white hover:text-primary" asChild>
-            <Link href="/contact">Contact Support</Link>
-          </Button>
-        </div>
-      </div>
+      </Container>
     </section>
   );
 }
-
-import { Button } from "@/components/ui/button";
-import Link from "next/link";

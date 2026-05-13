@@ -10,7 +10,7 @@ import { ProductsGrid } from "@/components/home/ProductsGrid";
 import { DiagnosticsPreview } from "@/components/home/DiagnosticsPreview";
 import { DoctorsGrid } from "@/components/home/DoctorsGrid";
 import { PackagesPricing } from "@/components/home/PackagesPricing";
-import { StatsBanner, CTABanner } from "@/components/home/StatsBanner";
+import { StatsBanner } from "@/components/home/StatsBanner";
 import { TestimonialsSlider } from "@/components/home/TestimonialsSlider";
 import { BlogCards } from "@/components/home/BlogCards";
 import { GalleryMasonry } from "@/components/home/GalleryMasonry";
@@ -36,7 +36,6 @@ export default function Home() {
         <BlogCards />
         <GalleryMasonry />
         <ContactSection />
-        <CTABanner />
       </main>
       <Footer />
       <FloatingActions />

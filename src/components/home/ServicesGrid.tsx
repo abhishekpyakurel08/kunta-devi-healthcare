@@ -1,78 +1,73 @@
 import Link from "next/link";
-import { Stethoscope, Beaker, Baby, Activity, Users, PlusCircle, ArrowRight } from "lucide-react";
+import { ArrowRight, Home, Beaker, Baby, Syringe, Stethoscope, Activity } from "lucide-react";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
 
 export function ServicesGrid() {
   const services = [
     {
-      icon: Stethoscope,
       title: "General OPD",
-      desc: "Comprehensive routine checkups",
-      href: "/services",
+      desc: "Expert primary care for daily health concerns and routine checkups.",
+      icon: Home,
     },
     {
-      icon: Beaker,
       title: "Lab Services",
-      desc: "ISO Certified diagnostic tests",
-      href: "/diagnostics",
+      desc: "Advanced diagnostic testing with high precision and rapid reporting.",
+      icon: Beaker,
     },
     {
-      icon: Baby,
       title: "Maternal & Child",
-      desc: "Specialized care for moms & kids",
-      href: "/services",
+      desc: "Dedicated care for expectant mothers and pediatric health.",
+      icon: Baby,
     },
     {
-      icon: Activity,
-      title: "Physiotherapy",
-      desc: "Professional physical therapy",
-      href: "/services",
+      title: "Vaccination",
+      desc: "Essential immunizations for children and adults of all ages.",
+      icon: Syringe,
     },
     {
-      icon: Users,
       title: "Specialist Consult",
-      desc: "Expert specialized doctors",
-      href: "/doctors",
+      desc: "Consultation with top specialists in Cardiology, Orthopedics, and more.",
+      icon: Stethoscope,
     },
     {
-      icon: PlusCircle,
-      title: "More Procedures",
-      desc: "Explore all medical services",
-      href: "/services",
+      title: "Minor Procedures",
+      desc: "Safe and efficient minor surgical and therapeutic procedures.",
+      icon: Activity,
     },
   ];
 
   return (
-    <Section 
-      subtitle="Our Services" 
-      title="Comprehensive Care for Every Stage of Life"
-      className="bg-slate-50"
-    >
+    <Section className="bg-white py-24">
+      <div className="text-center mb-16 space-y-4">
+        <span className="text-primary font-bold tracking-widest uppercase text-xs">Our Services</span>
+        <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">Comprehensive Care for Every Stage of Life</h2>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, i) => (
-          <div 
-            key={i} 
-            className="group bg-white p-10 rounded-5xl border border-border/50 hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-2xl hover:-translate-y-2 text-center flex flex-col items-center"
-          >
-            <div className="h-20 w-20 rounded-3xl bg-primary/10 text-primary flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-              <service.icon className="h-10 w-10" />
+          <div key={i} className="bg-white p-8 rounded-4xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-primary/20 transition-all duration-500 group flex items-start gap-6">
+            <div className="h-20 w-20 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <service.icon className="h-10 w-10 text-primary" />
             </div>
-            <h3 className="text-2xl font-bold text-dark mb-4">{service.title}</h3>
-            <p className="text-muted mb-8 leading-relaxed">{service.desc}</p>
-            <Link 
-              href={service.href} 
-              className="mt-auto inline-flex items-center text-primary font-bold hover:gap-3 transition-all"
-            >
-              Know More <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+            <div className="space-y-3">
+              <h3 className="text-2xl font-bold text-slate-800 group-hover:text-primary transition-colors">{service.title}</h3>
+              <p className="text-sm font-medium text-slate-400 leading-relaxed max-w-[240px]">
+                {service.desc}
+              </p>
+              <Link href="/services" className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all">
+                Learn More <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
         ))}
       </div>
-      
+
       <div className="mt-16 text-center">
-        <Button size="lg" variant="outline" className="rounded-full px-12 border-2" asChild>
-          <Link href="/services">View All Services</Link>
+        <Button variant="outline" size="pill" className="h-14 px-12 text-primary font-bold border-2" asChild>
+          <Link href="/services">
+            View All Services <ArrowRight className="ml-2 h-5 w-5" />
+          </Link>
         </Button>
       </div>
     </Section>

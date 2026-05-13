@@ -1,45 +1,47 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Globe, Share2, MessageSquare } from "lucide-react";
-import { clinicInfo, navLinks } from "@/data/site-config";
+import { Container } from "@/components/layout/container";
+import { clinicInfo } from "@/data/site-config";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-dark text-white pt-16 pb-8">
-      <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Brand */}
-          <div className="space-y-6">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="bg-primary p-2 rounded-xl">
-                <div className="w-6 h-6 border-4 border-white rounded-full"></div>
-              </div>
-              <span className="text-xl font-bold tracking-tight">
-                Kunta Devi <span className="text-primary">Health Care</span>
-              </span>
-            </Link>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Providing modern, professional, and trustworthy diagnostic and healthcare services in Kathmandu. Your health is our priority.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-primary transition-colors">
-                <Globe className="h-5 w-5" />
-              </a>
-              <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-primary transition-colors">
-                <Share2 className="h-5 w-5" />
-              </a>
-              <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-primary transition-colors">
-                <MessageSquare className="h-5 w-5" />
-              </a>
-            </div>
+    <footer className="bg-[#1A2332] text-white pt-20 pb-10 overflow-hidden">
+      <Container>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+          {/* Brand Column */}
+          <div className="flex flex-col justify-center">
+             <div className="mb-6">
+                {/* Logo Placeholder */}
+                <div className="h-12 w-12 bg-white/10 rounded-full flex items-center justify-center border border-white/20">
+                   <span className="text-primary font-black text-xs">LOGO</span>
+                </div>
+             </div>
+             <p className="text-sm text-slate-300 leading-relaxed max-w-[240px]">
+                Your trusted healthcare partner in the heart of Kathmandu.
+             </p>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
-            <ul className="space-y-4">
-              {navLinks.slice(1, 6).map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-gray-400 hover:text-primary transition-colors text-sm">
+          <div className="space-y-6">
+            <h3 className="text-lg font-bold text-white">Quick Links</h3>
+            <ul className="space-y-3">
+              {[
+                { name: "Home", href: "/" },
+                { name: "About Us", href: "/about" },
+                { name: "Doctors", href: "/doctors" },
+                { name: "Services", href: "/services" },
+                { name: "Products", href: "/products" },
+                { name: "Packages", href: "/packages" },
+                { name: "Blog", href: "/blog" },
+                { name: "Contact", href: "/contact" },
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    href={link.href} 
+                    className="text-slate-400 hover:text-primary transition-colors text-sm font-medium"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -47,48 +49,61 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6">Contact Us</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-primary shrink-0" />
-                <span className="text-gray-400 text-sm">{clinicInfo.address}</span>
-              </li>
-              <li className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-primary shrink-0" />
-                <span className="text-gray-400 text-sm">{clinicInfo.phone}</span>
-              </li>
-              <li className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-primary shrink-0" />
-                <span className="text-gray-400 text-sm">{clinicInfo.email}</span>
-              </li>
+          {/* Our Services */}
+          <div className="space-y-6">
+            <h3 className="text-lg font-bold text-white">Our Services</h3>
+            <ul className="space-y-3">
+              {[
+                "General OPD",
+                "Specialist Consult",
+                "Maternal Care",
+                "Vaccination",
+                "Laboratory",
+                "Minor Procedure",
+              ].map((service) => (
+                <li key={service}>
+                  <Link 
+                    href="/services" 
+                    className="text-slate-400 hover:text-primary transition-colors text-sm font-medium"
+                  >
+                    {service}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Opening Hours */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6">Opening Hours</h4>
-            <div className="space-y-4 text-sm text-gray-400">
-              <p>{clinicInfo.openingHours}</p>
-              <div className="pt-4 p-4 bg-primary/10 rounded-2xl border border-primary/20">
-                <p className="text-primary font-bold mb-1 underline">Emergency Contact:</p>
-                <p className="text-white font-semibold">{clinicInfo.emergencyPhone}</p>
-              </div>
-            </div>
+          {/* Contact Info */}
+          <div className="space-y-6">
+            <h3 className="text-lg font-bold text-white">Contact Info</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 text-white/70 shrink-0 mt-0.5" />
+                <span className="text-sm text-slate-400 font-medium">{clinicInfo.address}</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="h-5 w-5 text-white/70 shrink-0" />
+                <span className="text-sm text-slate-400 font-medium">{clinicInfo.phone}</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="h-5 w-5 text-white/70 shrink-0" />
+                <span className="text-sm text-slate-400 font-medium">{clinicInfo.email}</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Clock className="h-5 w-5 text-white/70 shrink-0 mt-0.5" />
+                <span className="text-sm text-slate-400 font-medium">{clinicInfo.hours}</span>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 mt-12 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-500 text-xs text-center md:text-left">
-            © {new Date().getFullYear()} Kunta Devi Health Care & Diagnostic Center. All rights reserved.
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-white/5 text-center">
+          <p className="text-slate-500 text-sm font-medium">
+            © {currentYear} Kunta Devi Health Care. All rights reserved.
           </p>
-          <div className="flex space-x-6">
-            <Link href="/privacy" className="text-gray-500 hover:text-white text-xs">Privacy Policy</Link>
-            <Link href="/terms" className="text-gray-500 hover:text-white text-xs">Terms & Conditions</Link>
-          </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

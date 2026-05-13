@@ -37,10 +37,19 @@ export default function BlogPage() {
               {blogPosts.map((post) => (
                 <Card key={post.id} className="group overflow-hidden border-none shadow-sm hover:shadow-2xl transition-all duration-500 rounded-5xl bg-slate-50/50">
                   <div className="grid grid-cols-1 md:grid-cols-5 gap-0 md:gap-4">
-                    <div className="md:col-span-2 aspect-video md:aspect-auto bg-slate-200 relative overflow-hidden">
-                       <div className="absolute inset-0 bg-primary/5"></div>
+                    <div className="md:col-span-2 aspect-video md:aspect-auto bg-slate-200 relative overflow-hidden group/img">
+                       <img 
+                         src={[
+                           "https://images.unsplash.com/photo-1505751172177-51ad18670404?q=80&w=2070",
+                           "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=2070",
+                           "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=2070"
+                         ][blogPosts.indexOf(post) % 3]} 
+                         alt={post.title} 
+                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-110"
+                       />
+                       <div className="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors"></div>
                        <div className="absolute top-4 left-4">
-                          <Badge className="rounded-lg py-1 px-3 uppercase tracking-widest text-[10px] font-bold shadow-lg">
+                          <Badge className="rounded-lg py-1 px-3 uppercase tracking-widest text-[10px] font-bold shadow-lg bg-white/90 backdrop-blur-sm text-primary border-none">
                             {post.category}
                           </Badge>
                        </div>

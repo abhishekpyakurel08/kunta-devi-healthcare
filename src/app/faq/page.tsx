@@ -6,7 +6,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { PageHeader } from "@/components/layout/page-header";
 import { Section } from "@/components/layout/section";
-import { CTABanner } from "@/components/home/StatsBanner";
+
 import { faqs } from "@/data/faqs";
 import { HelpCircle, ChevronRight, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";

@@ -2,59 +2,67 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
+import { Container } from "@/components/layout/container";
 
 export function AboutPreview() {
   const stats = [
-    { label: "80+", desc: "Doctors" },
-    { label: "50+", desc: "Services" },
+    { label: "10+", desc: "Years Experience" },
+    { label: "20+", desc: "Doctors" },
     { label: "5000+", desc: "Patients" },
-    { label: "100+", desc: "Health Camps" },
+    { label: "100+", desc: "Services" },
   ];
 
   return (
-    <Section className="bg-white">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-        <div className="relative">
-          <div className="relative rounded-6xl overflow-hidden shadow-2xl border-8 border-slate-50">
-            <div className="aspect-[4/5] bg-slate-100 flex items-center justify-center relative">
-              <div className="absolute inset-0 bg-linear-to-tr from-primary/10 to-transparent"></div>
-              <div className="text-primary/10 text-9xl font-bold">ABOUT</div>
+    <Section className="bg-white py-24 overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
+          {/* Left: Overlapping Images */}
+          <div className="relative">
+            <div className="relative rounded-[4rem] overflow-hidden shadow-2xl border-8 border-slate-50 w-full aspect-4/5 bg-slate-100">
+              <img 
+                src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1964" 
+                alt="Expert medical professional" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute -bottom-16 -right-16 w-3/4 aspect-square bg-slate-100 rounded-[3rem] shadow-2xl border-8 border-white z-10 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070" 
+                alt="Modern clinical laboratory" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
-          
-          {/* Decorative element like in the image */}
-          <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-primary/10 rounded-full blur-3xl -z-10"></div>
-        </div>
 
-        <div className="space-y-10">
-          <div className="space-y-6 text-center lg:text-left">
-            <span className="text-primary font-bold tracking-widest uppercase text-xs">About Our Clinic</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-dark tracking-tight leading-tight">
-              Compassionate Healthcare <br />
-              <span className="text-primary italic">for Every Family</span>
-            </h2>
-            <p className="text-lg text-muted leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Kunta Devi Health Care & Diagnostic Center is committed to providing world-class healthcare and diagnostic services in Kathmandu. We believe in high-quality care that honors human dignity.
-            </p>
-          </div>
+          {/* Right: Content */}
+          <div className="space-y-10">
+            <div className="space-y-6">
+              <span className="text-primary font-bold tracking-widest uppercase text-xs">About Us</span>
+              <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+                Compassionate Healthcare <br />
+                for Every Family
+              </h2>
+              <p className="text-slate-500 font-medium leading-relaxed max-w-xl">
+                Kunta Devi Health Care & Diagnostic Center has been committed to delivering trusted, affordable, and patient-centered healthcare services with modern facilities and experienced professionals.
+              </p>
+            </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            {stats.map((stat, i) => (
-              <div key={i} className="bg-slate-50 p-6 rounded-4xl border border-border/30 hover:border-primary/30 transition-colors group">
-                <p className="text-3xl font-extrabold text-dark group-hover:text-primary transition-colors">{stat.label}</p>
-                <p className="text-sm font-bold text-muted uppercase tracking-widest">{stat.desc}</p>
-              </div>
-            ))}
-          </div>
+            <div className="grid grid-cols-2 gap-6">
+              {stats.map((stat, i) => (
+                <div key={i} className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 border-l-4 border-l-primary flex flex-col justify-center">
+                  <p className="text-3xl font-black text-slate-900">{stat.label}</p>
+                  <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">{stat.desc}</p>
+                </div>
+              ))}
+            </div>
 
-          <div className="text-center lg:text-left">
-            <Button size="lg" className="rounded-full px-12 h-14 text-lg shadow-xl shadow-primary/10 group" asChild>
-              <Link href="/about">
-                Know More <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
+            <div className="pt-4">
+              <Button variant="outline" size="pill" className="h-14 px-12 text-primary font-bold border-2" asChild>
+                <Link href="/about">
+                  About Us <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
           </div>
-        </div>
       </div>
     </Section>
   );
