@@ -3,18 +3,12 @@ import { Footer } from "@/components/layout/footer";
 import { FloatingActions } from "@/components/layout/floating-actions";
 
 import { HeroSection } from "@/components/home/HeroSection";
-import { QuickActions } from "@/components/home/QuickActions";
-import { AboutPreview } from "@/components/home/AboutPreview";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
-import { ProductsGrid } from "@/components/home/ProductsGrid";
-import { DiagnosticsPreview } from "@/components/home/DiagnosticsPreview";
-import { DoctorsGrid } from "@/components/home/DoctorsGrid";
-import { PackagesPricing } from "@/components/home/PackagesPricing";
+import { MedicalServicesSection } from "@/components/home/MedicalServicesSection";
+import { NotSureSection } from "@/components/home/NotSureSection";
 import { StatsBanner } from "@/components/home/StatsBanner";
-import { TestimonialsSlider } from "@/components/home/TestimonialsSlider";
-import { BlogCards } from "@/components/home/BlogCards";
-import { GalleryMasonry } from "@/components/home/GalleryMasonry";
-import { ContactSection } from "@/components/home/ContactSection";
+import { FAQSection } from "@/components/home/FAQSection";
+import { CTASection } from "@/components/home/CTASection";
 
 export const dynamic = 'force-static';
 
@@ -24,18 +18,12 @@ export default function Home() {
       <Navbar />
       <main className="grow">
         <HeroSection />
-        <QuickActions />
-        <AboutPreview />
         <ServicesGrid />
-        <ProductsGrid />
-        <DiagnosticsPreview />
-        <DoctorsGrid />
-        <PackagesPricing />
+        <MedicalServicesSection />
+        <NotSureSection />
         <StatsBanner />
-        <TestimonialsSlider />
-        <BlogCards />
-        <GalleryMasonry />
-        <ContactSection />
+        <FAQSection />
+        <CTASection />
       </main>
       <Footer />
       <FloatingActions />

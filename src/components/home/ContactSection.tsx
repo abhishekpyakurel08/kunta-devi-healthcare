@@ -30,7 +30,7 @@ export function ContactSection() {
     <Section className="bg-white py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left: Map */}
-          <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-white border-8 aspect-square lg:aspect-auto lg:h-[500px]">
+          <div className="relative rounded-5xl overflow-hidden shadow-2xl border-white border-8 aspect-square lg:aspect-auto lg:h-[500px]">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.4816669941424!2d85.32832447614488!3d27.702410325732152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a0718519e5%3A0xe54e3f3050a41753!2sGhattekulo%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1715582345678!5m2!1sen!2snp"
               width="100%"

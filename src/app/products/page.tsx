@@ -1,88 +1,74 @@
+"use client";
+
+import { useState } from "react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { PageHeader } from "@/components/layout/page-header";
-import { Section } from "@/components/layout/section";
-import { products } from "@/data/products";
+import { FloatingActions } from "@/components/layout/floating-actions";
+import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, ArrowRight } from "lucide-react";
-import Link from "next/link";
+
+import { ProductsHero } from "@/components/products/ProductsHero";
+import { FeaturedProducts } from "@/components/products/FeaturedProducts";
+import { ShopByNeed } from "@/components/products/ShopByNeed";
+import { ExploreProducts } from "@/components/products/ExploreProducts";
+import { SpecialistRecs } from "@/components/products/SpecialistRecs";
+import { HealthGuides } from "@/components/products/HealthGuides";
+import { FAQSection } from "@/components/home/FAQSection";
 import { generateSEO } from "@/lib/seo";
 
-export const dynamic = 'force-static';
-
-export const metadata = generateSEO({
-  title: "Medical Products & Supplies",
-  description: "Browse our selection of high-quality medical equipment, health monitors, and essential healthcare products.",
-  path: "/products",
-});
-
 export default function ProductsPage() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [activeCategory, setActiveCategory] = useState("All");
+
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
       <main className="grow">
-        <PageHeader 
-          title="Medical Products" 
-          subtitle="Quality healthcare supplies and modern monitoring devices for your home."
-          breadcrumb="Products"
-        />
+        <ProductsHero onSearch={setSearchQuery} onCategoryChange={setActiveCategory} />
+        <FeaturedProducts />
+        <ShopByNeed onCategorySelect={setActiveCategory} />
+        <ExploreProducts searchQuery={searchQuery} activeCategory={activeCategory} />
+        <SpecialistRecs />
+        <HealthGuides />
+        <FAQSection />
 
-        <Section className="bg-white">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {products.map((product, i) => (
-              <div key={product.id} className="bg-white rounded-4xl overflow-hidden shadow-sm hover:shadow-2xl border border-slate-100 transition-all duration-500 group flex flex-col">
-                <div className="aspect-square bg-slate-100 relative overflow-hidden group/img">
-                  <img 
-                    src={[
-                      "https://images.unsplash.com/photo-1603398938378-e54eab446f8a?q=80&w=2070",
-                      "https://images.unsplash.com/photo-1615461066159-fea0960485d5?q=80&w=1914",
-                      "https://images.unsplash.com/photo-1584017945511-2362947119f6?q=80&w=1974",
-                      "https://images.unsplash.com/photo-1631549448353-461bb77718cc?q=80&w=2072"
-                    ][i % 4]} 
-                    alt={product.title} 
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-dark/20 via-transparent to-transparent"></div>
-                  <div className="absolute top-4 right-4">
-                    <div className="bg-white/90 backdrop-blur-sm text-primary font-black text-xs px-4 py-2 rounded-xl shadow-lg uppercase tracking-widest">
-                      {product.category}
-                    </div>
+        {/* Need Help Choosing CTA */}
+        <section className="py-24 bg-white">
+          <Container>
+            <div className="bg-teal-500 p-12 md:p-20 rounded-6xl text-white text-center relative overflow-hidden group">
+               {/* Decorative background blurs */}
+               <div className="absolute top-0 right-0 w-1/3 h-full bg-white/10 blur-3xl rounded-full translate-x-1/2 group-hover:scale-110 transition-transform duration-1000"></div>
+               <div className="absolute bottom-0 left-0 w-1/4 h-full bg-white/10 blur-3xl rounded-full -translate-x-1/2 group-hover:scale-110 transition-transform duration-1000"></div>
+
+               <div className="relative z-10 space-y-10">
+                  <div className="space-y-4">
+                    <span className="text-white/80 font-black tracking-[0.3em] uppercase text-xs">Product Support</span>
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+                       Need Help Choosing <br />
+                       the Right Product?
+                    </h2>
+                    <p className="text-white/80 text-lg md:text-xl font-bold max-w-2xl mx-auto leading-relaxed">
+                       Our medical experts can guide you to the right equipment for your specific health needs.
+                    </p>
                   </div>
-                </div>
-
-                <div className="p-8 flex-1 flex flex-col">
-                  <h3 className="text-xl font-black text-slate-800 mb-2 group-hover:text-primary transition-colors">
-                    {product.title}
-                  </h3>
-                  <p className="text-sm text-slate-500 font-medium leading-relaxed mb-6 flex-1">
-                    {product.description}
-                  </p>
                   
-                  <div className="pt-6 border-t border-slate-50 flex items-center justify-between gap-4">
-                    <span className="text-2xl font-black text-slate-900">{product.price}</span>
-                    <Button size="icon" className="rounded-xl h-12 w-12 bg-primary shadow-lg shadow-primary/20" asChild>
-                      <Link href="/contact">
-                        <ShoppingCart className="h-5 w-5" />
-                      </Link>
-                    </Button>
+                  <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                     <Button size="pill" className="bg-white text-teal-600 hover:bg-white/90 px-12 h-16 text-lg font-black shadow-2xl" asChild>
+                        <a href="https://wa.me/9779841000000" target="_blank" rel="noopener noreferrer">
+                           Consult Now
+                        </a>
+                     </Button>
+                     <Button size="pill" variant="outline" className="border-white/30 text-white hover:bg-white/10 px-12 h-16 text-lg font-black transition-all" asChild>
+                        <a href="tel:+977014400000">Call Pharmacy</a>
+                     </Button>
                   </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="mt-20 p-12 rounded-[3rem] bg-emerald-50 border border-emerald-100 text-center space-y-6">
-            <h3 className="text-2xl md:text-3xl font-black text-emerald-900">Need something else?</h3>
-            <p className="text-emerald-700 font-medium max-w-2xl mx-auto italic">
-              We stock a wide range of medical supplies and prescription medicines. Visit our in-house pharmacy or call us to check availability.
-            </p>
-            <Button size="lg" className="rounded-2xl px-10 h-14 bg-emerald-600 hover:bg-emerald-700 text-white font-bold" asChild>
-              <Link href="/contact">Contact Pharmacy <ArrowRight className="ml-2 h-5 w-5" /></Link>
-            </Button>
-          </div>
-        </Section>
+               </div>
+            </div>
+          </Container>
+        </section>
       </main>
       <Footer />
+      <FloatingActions />
     </div>
   );
 }

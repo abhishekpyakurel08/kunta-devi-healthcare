@@ -3,47 +3,51 @@ import { Container } from "@/components/layout/container";
 export function StatsBanner() {
   const stats = [
     {
-      label: "20+",
-      title: "Specialist Doctors",
-      sub: "Across 15 + disciplines",
+      value: "20+",
+      label: "Doctors",
+      title: "Experienced Doctors",
+      desc: "Our highly specialized medical team ensures a world-class care for your family.",
     },
     {
-      label: "10+",
-      title: "Years of Service",
-      sub: "Since 2014 in Kathmandu",
+      value: "200+",
+      label: "Items",
+      title: "Modern Equipment",
+      desc: "State-of-the-art diagnostic and medical facilities at your service for accurate diagnosis.",
     },
     {
-      label: "5000+",
-      title: "Patients Served",
-      sub: "And growing every month",
+      value: "4",
+      label: "Services",
+      title: "Affordable Packages",
+      desc: "Comprehensive health checkup packages starting from just Rs. 1500 for whole family.",
     },
     {
-      label: "24/7",
-      title: "Patients Support",
-      sub: "Always here for you",
+      value: "24h",
+      label: "Service",
+      title: "Fast Reports",
+      desc: "Same day results for major blood tests and diagnostics so you don't have to wait.",
     },
   ];
 
   return (
-    <section className="bg-primary py-24 relative overflow-hidden">
-      {/* Decorative overlapping circles */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-white/5 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl pointer-events-none"></div>
-      <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-white/5 rounded-full blur-2xl pointer-events-none"></div>
-
-      <Container className="relative z-10">
-        <div className="text-center mb-20 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">Why Families Trust Us</h2>
-          <p className="text-white/90 text-sm font-medium">Proven results. Real care. Every visit.</p>
+    <section className="py-24 bg-slate-50/30">
+      <Container>
+        <div className="text-center mb-16 space-y-3">
+          <span className="text-primary font-bold tracking-[0.2em] uppercase text-xs">The Best Choice</span>
+          <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">Why Families Choose Kunta Devi</h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, i) => (
-            <div key={i} className="bg-white/10 backdrop-blur-sm border border-white/5 p-10 rounded-4xl text-left space-y-4 group hover:bg-white/15 transition-all duration-300">
-              <p className="text-5xl lg:text-6xl font-black text-white tracking-tighter">{stat.label}</p>
-              <div className="space-y-1">
-                <p className="text-xl font-bold text-white leading-tight">{stat.title}</p>
-                <p className="text-xs font-medium text-white/70">{stat.sub}</p>
+            <div key={i} className="bg-white p-8 rounded-4xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 group">
+              <div className="space-y-1 mb-6">
+                <p className="text-4xl font-black text-primary group-hover:scale-110 transition-transform origin-left">{stat.value}</p>
+                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{stat.label}</p>
+              </div>
+              <div className="space-y-3">
+                <h3 className="text-[15px] font-black text-slate-900">{stat.title}</h3>
+                <p className="text-xs text-slate-500 leading-relaxed font-medium">
+                  {stat.desc}
+                </p>
               </div>
             </div>
           ))}

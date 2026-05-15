@@ -1,67 +1,102 @@
+import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
+import { PageHeader } from "@/components/layout/page-header";
+import { Container } from "@/components/layout/container";
+import { FloatingActions } from "@/components/layout/floating-actions";
+
+// Privacy Policy - Kunta Devi Health Care
+import { ShieldCheck, Lock, Eye, FileText, Clock } from "lucide-react";
 import { generateSEO } from "@/lib/seo";
 
 export const dynamic = "force-static";
 
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
-import { PageHeader } from "@/components/layout/page-header";
-import { Section } from "@/components/layout/section";
-
 export const metadata = generateSEO({
   title: "Privacy Policy",
-  description: "Our commitment to protecting your privacy and personal health information.",
+  description: "Our commitment to protecting your privacy and personal health information at Kunta Devi Health Care.",
   path: "/privacy",
 });
 
 export default function PrivacyPage() {
+  const sections = [
+    {
+      icon: Eye,
+      title: "1. Introduction",
+      content: "Kunta Devi Health Care & Diagnostic Center (\"we,\" \"our,\" or \"us\") is committed to protecting the privacy and security of your personal and health information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit our clinic or use our website."
+    },
+    {
+      icon: FileText,
+      title: "2. Information We Collect",
+      content: "We collect information that is necessary to provide you with healthcare services, including contact details (name, phone, email, address), medical history, diagnostic results, and information provided via our online appointment forms."
+    },
+    {
+      icon: Lock,
+      title: "3. How We Use Your Information",
+      content: "Your information is used solely for providing medical consultation, delivering diagnostic reports, scheduling appointments, improving our patient experience, and ensuring legal and regulatory compliance."
+    },
+    {
+      icon: ShieldCheck,
+      title: "4. Data Security",
+      content: "We implement industry-standard security measures to protect your data from unauthorized access. Medical records are stored securely in our encrypted systems and accessed only by authorized clinical personnel."
+    }
+  ];
+
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
       <main className="grow">
         <PageHeader 
           title="Privacy Policy" 
-          subtitle="Your privacy and data security are our top priorities."
+          subtitle="How we protect your personal health information."
           breadcrumb="Privacy"
         />
 
-        <Section className="bg-white">
-          <div className="max-w-4xl mx-auto prose prose-slate prose-lg">
-            <h2 className="text-2xl font-bold text-dark mb-6">1. Introduction</h2>
-            <p className="text-muted leading-relaxed mb-8">
-              Kunta Devi Health Care & Diagnostic Center ("we," "our," or "us") is committed to protecting the privacy and security of your personal and health information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit our clinic or use our website.
-            </p>
+        <section className="py-24 bg-white">
+          <Container>
+            <div className="max-w-4xl mx-auto space-y-16">
+              <div className="space-y-4 text-center lg:text-left">
+                <span className="text-primary font-black tracking-[0.2em] uppercase text-xs">Trust & Security</span>
+                <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">Your Privacy Matters</h2>
+                <p className="text-slate-500 font-bold leading-relaxed max-w-2xl">
+                  We believe in being transparent about how we handle your data. Our protocols are designed to meet international healthcare privacy standards.
+                </p>
+              </div>
 
-            <h2 className="text-2xl font-bold text-dark mb-6">2. Information We Collect</h2>
-            <p className="text-muted leading-relaxed mb-4">We collect information that is necessary to provide you with healthcare services, including:</p>
-            <ul className="list-disc pl-6 text-muted space-y-2 mb-8">
-              <li>Contact details (name, phone, email, address)</li>
-              <li>Medical history and diagnostic results</li>
-              <li>Insurance information (if applicable)</li>
-              <li>Information provided via our appointment forms</li>
-            </ul>
+              <div className="grid grid-cols-1 gap-10">
+                {sections.map((section, i) => (
+                  <div key={i} className="group p-10 rounded-4xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl transition-all duration-500">
+                    <div className="flex flex-col md:flex-row gap-8 items-start">
+                       <div className="h-14 w-14 rounded-2xl bg-white text-primary flex items-center justify-center shrink-0 shadow-sm group-hover:bg-primary group-hover:text-white transition-all">
+                          <section.icon className="h-7 w-7" />
+                       </div>
+                       <div className="space-y-4">
+                          <h3 className="text-2xl font-black text-slate-900">{section.title}</h3>
+                          <p className="text-slate-500 font-bold leading-relaxed">{section.content}</p>
+                       </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
 
-            <h2 className="text-2xl font-bold text-dark mb-6">3. How We Use Your Information</h2>
-            <p className="text-muted leading-relaxed mb-4">Your information is used solely for:</p>
-            <ul className="list-disc pl-6 text-muted space-y-2 mb-8">
-              <li>Providing medical consultation and diagnostic reports</li>
-              <li>Scheduling appointments and follow-ups</li>
-              <li>Improving our services and patient experience</li>
-              <li>Legal and regulatory compliance</li>
-            </ul>
-
-            <h2 className="text-2xl font-bold text-dark mb-6">4. Data Security</h2>
-            <p className="text-muted leading-relaxed mb-8">
-              We implement industry-standard security measures to protect your data from unauthorized access, loss, or disclosure. Medical records are stored securely and accessed only by authorized personnel.
-            </p>
-
-            <div className="p-8 rounded-3xl bg-slate-50 border border-border/50 mt-12">
-               <p className="text-sm font-bold text-dark mb-2 uppercase tracking-widest">Last Updated</p>
-               <p className="text-sm text-muted">May 13, 2026</p>
+              <div className="p-10 rounded-5xl bg-slate-900 text-white flex flex-col md:flex-row items-center justify-between gap-8">
+                 <div className="flex items-center gap-6">
+                    <div className="h-12 w-12 rounded-xl bg-white/10 flex items-center justify-center">
+                       <Clock className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                       <p className="text-xs font-black uppercase tracking-widest text-slate-400">Last Updated</p>
+                       <p className="font-bold">May 15, 2026</p>
+                    </div>
+                 </div>
+                 <p className="text-sm text-slate-400 font-medium max-w-md text-center md:text-left">
+                   If you have any questions regarding this policy, please contact our legal team at <span className="text-white font-bold">legal@kuntadevi.com</span>
+                 </p>
+              </div>
             </div>
-          </div>
-        </Section>
+          </Container>
+        </section>
       </main>
       <Footer />
+      <FloatingActions />
     </div>
   );
 }

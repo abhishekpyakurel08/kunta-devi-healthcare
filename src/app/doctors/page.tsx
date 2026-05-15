@@ -1,103 +1,185 @@
+"use client";
+
+import { useState } from "react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { PageHeader } from "@/components/layout/page-header";
-import { Section } from "@/components/layout/section";
+import { Container } from "@/components/layout/container";
+import { FloatingActions } from "@/components/layout/floating-actions";
 
 import { doctors } from "@/data/doctors";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, User, ArrowRight, Filter } from "lucide-react";
+import { Calendar, Clock, ArrowRight, Star, ShieldCheck, Search } from "lucide-react";
 import Link from "next/link";
 import { generateSEO } from "@/lib/seo";
 
-export const dynamic = 'force-static';
-
-export const metadata = generateSEO({
-  title: "Our Specialized Doctors",
-  description: "Meet our team of highly qualified and experienced specialist doctors at Kunta Devi Health Care.",
-  path: "/doctors",
-});
-
 export default function DoctorsPage() {
+  const [activeSpecialty, setActiveSpecialty] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const specialties = ["All", ...Array.from(new Set(doctors.map(d => d.specialization)))] as string[];
+
+  const filteredDoctors = doctors.filter(doctor => {
+    const matchesSpecialty = activeSpecialty === "All" || doctor.specialization === activeSpecialty;
+    const matchesSearch = doctor.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                          doctor.specialization.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesSpecialty && matchesSearch;
+  });
+
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
       <main className="grow">
         <PageHeader 
           title="Meet Our Specialists" 
-          subtitle="A team of dedicated professionals committed to your health and well-being."
+          subtitle="A team of dedicated professionals committed to your health and well-being with years of expertise."
           breadcrumb="Doctors"
         />
 
-        <Section className="bg-white">
-          {/* Simple Specialty Filter - Static for now */}
-          <div className="flex flex-wrap justify-center gap-3 mb-16">
-            <Button size="sm" className="rounded-full px-6" variant="default">All Specialties</Button>
-            {["General Physician", "Cardiologist", "Gynecologist", "Pediatrician", "Orthopedic"].map((spec) => (
-              <Button key={spec} size="sm" className="rounded-full px-6" variant="outline">{spec}</Button>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {doctors.map((doctor) => (
-              <Card key={doctor.id} className="group overflow-hidden border-border/50 hover:border-primary/50 shadow-sm hover:shadow-2xl transition-all duration-500">
-                <div className="aspect-4/5 bg-slate-100 relative overflow-hidden group/img">
-                  <img 
-                    src={[
-                      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2070",
-                      "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=2070",
-                      "https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1974",
-                      "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1964",
-                      "https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=2070",
-                      "https://images.unsplash.com/photo-1612531388260-6303b896c2c1?q=80&w=2070"
-                    ][doctors.indexOf(doctor) % 6]} 
-                    alt={doctor.name} 
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <Badge className="w-full justify-center py-2 rounded-xl text-xs font-bold tracking-widest uppercase">
-                      View Profile
-                    </Badge>
-                  </div>
+        <section className="py-24 bg-white">
+          <Container>
+            {/* Search and Specialty Filter */}
+            <div className="space-y-12 mb-20">
+              <div className="max-w-2xl mx-auto relative group">
+                <div className="absolute inset-y-0 left-6 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
+                  <Search className="h-6 w-6" />
                 </div>
-                <CardHeader className="text-center pb-2 pt-6">
-                  <CardTitle className="text-2xl group-hover:text-primary transition-colors">{doctor.name}</CardTitle>
-                  <p className="text-primary font-bold text-xs uppercase tracking-widest mt-1">{doctor.specialization}</p>
-                </CardHeader>
-                <CardContent className="text-center space-y-4 pb-6">
-                  <div className="flex flex-col gap-3">
-                    <p className="text-sm font-semibold text-muted leading-tight">
-                      {doctor.qualification}
-                    </p>
-                    <div className="h-px w-10 bg-primary/20 mx-auto"></div>
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-center gap-2 text-xs text-dark font-bold">
-                        <Calendar className="h-3.5 w-3.5 text-primary shrink-0" />
-                        {doctor.days}
+                <input 
+                  type="text" 
+                  placeholder="Search by doctor name or specialty..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full h-16 pl-16 pr-8 rounded-full border border-slate-100 bg-slate-50 focus:bg-white focus:outline-none focus:ring-4 focus:ring-primary/10 shadow-sm transition-all text-lg font-bold text-slate-700 placeholder:text-slate-400"
+                />
+              </div>
+
+              <div className="flex flex-wrap justify-center gap-3">
+                {specialties.map((spec) => (
+                  <button 
+                    key={spec}
+                    onClick={() => setActiveSpecialty(spec)}
+                    className={`px-8 py-3 rounded-xl font-black text-sm transition-all border ${
+                      activeSpecialty === spec 
+                      ? "bg-primary text-white border-primary shadow-lg shadow-primary/20 scale-105" 
+                      : "bg-slate-50 text-slate-600 border-slate-100 hover:bg-white hover:shadow-xl"
+                    }`}
+                  >
+                    {spec}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {filteredDoctors.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+                {filteredDoctors.map((doctor, i) => (
+                  <div key={doctor.id} className="group flex flex-col bg-white rounded-4xl overflow-hidden border border-slate-100 shadow-xl shadow-slate-200/50 hover:translate-y-[-8px] transition-all duration-500">
+                    {/* Doctor Image */}
+                    <div className="relative aspect-4/5 overflow-hidden">
+                      <img 
+                        src={[
+                          "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2070",
+                          "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=2070",
+                          "https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1974",
+                          "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1964",
+                          "https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=2070",
+                          "https://images.unsplash.com/photo-1612531388260-6303b896c2c1?q=80&w=2070"
+                        ][i % 6]} 
+                        alt={doctor.name} 
+                        className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                      />
+                      <div className="absolute inset-0 bg-linear-to-t from-slate-900/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                      
+                      {/* Badge */}
+                      <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-2xl flex items-center gap-2 border border-white/20">
+                        <Star className="h-3 w-3 text-amber-500 fill-amber-500" />
+                        <span className="text-[10px] font-black text-slate-900 uppercase tracking-widest">Top Rated</span>
                       </div>
-                      <div className="flex items-center justify-center gap-2 text-xs text-dark font-bold">
-                        <Clock className="h-3.5 w-3.5 text-primary shrink-0" />
-                        {doctor.timing}
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-10 space-y-6 flex-1 flex flex-col">
+                      <div className="space-y-1">
+                        <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">{doctor.specialization}</p>
+                        <h3 className="text-2xl font-black text-slate-900 group-hover:text-primary transition-colors">{doctor.name}</h3>
+                        <p className="text-sm font-bold text-slate-400">{doctor.qualification}</p>
+                      </div>
+
+                      <div className="space-y-4 pt-4 border-t border-slate-50 flex-1">
+                        <div className="flex items-center gap-4">
+                          <div className="h-10 w-10 rounded-xl bg-slate-50 flex items-center justify-center">
+                            <Calendar className="h-5 w-5 text-primary" />
+                          </div>
+                          <div>
+                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Available Days</p>
+                            <p className="text-sm font-black text-slate-700">{doctor.days}</p>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-4">
+                          <div className="h-10 w-10 rounded-xl bg-slate-50 flex items-center justify-center">
+                            <Clock className="h-5 w-5 text-primary" />
+                          </div>
+                          <div>
+                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Timing</p>
+                            <p className="text-sm font-black text-slate-700">{doctor.timing}</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="pt-6">
+                        <Button className="w-full h-14 rounded-2xl bg-primary hover:bg-primary/90 text-white font-black group/btn shadow-xl shadow-primary/20" asChild>
+                          <Link href="/appointment">
+                            Book Appointment <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover/btn:translate-x-2" />
+                          </Link>
+                        </Button>
                       </div>
                     </div>
                   </div>
-                </CardContent>
-                <CardFooter className="pt-0 pb-8 px-8">
-                  <Button className="w-full rounded-2xl h-12 shadow-lg shadow-primary/10 group/btn" asChild>
-                    <Link href="/appointment">
-                      Book Appointment <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-        </Section>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-24 space-y-6">
+                 <div className="h-24 w-24 rounded-full bg-slate-50 flex items-center justify-center mx-auto">
+                    <Search className="h-10 w-10 text-slate-300" />
+                 </div>
+                 <div className="space-y-2">
+                    <h3 className="text-2xl font-black text-slate-900">No Specialists Found</h3>
+                    <p className="text-slate-500 font-bold">Try adjusting your search or filter to find a doctor.</p>
+                 </div>
+                 <Button onClick={() => {setActiveSpecialty("All"); setSearchQuery("");}} variant="outline" className="rounded-full px-10 h-14">
+                    Clear All Filters
+                 </Button>
+              </div>
+            )}
+          </Container>
+        </section>
 
+        {/* Accreditation Section */}
+        <section className="py-24 bg-slate-900 text-white overflow-hidden relative">
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/10 blur-3xl rounded-full translate-x-1/2"></div>
+          <Container className="relative z-10 text-center space-y-12">
+            <div className="space-y-4">
+              <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-tight">
+                Our Medical Experts are <br />
+                <span className="text-primary italic">Fully Certified & Recognized</span>
+              </h2>
+              <p className="text-slate-400 max-w-2xl mx-auto font-medium">
+                We maintain the highest standards of medical practice. All our specialists are registered with the Nepal Medical Council and follow global healthcare protocols.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {["Ministry of Health", "Medical Council", "ISO Certified", "Global Standards"].map((text, i) => (
+                <div key={i} className="flex flex-col items-center gap-4 p-8 rounded-4xl bg-white/5 border border-white/10">
+                  <ShieldCheck className="h-10 w-10 text-primary" />
+                  <p className="text-sm font-black uppercase tracking-widest">{text}</p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
       </main>
       <Footer />
+      <FloatingActions />
     </div>
   );
 }

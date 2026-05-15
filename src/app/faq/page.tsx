@@ -1,17 +1,17 @@
-import { generateSEO } from "@/lib/seo";
-
-export const dynamic = "force-static";
-
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { PageHeader } from "@/components/layout/page-header";
-import { Section } from "@/components/layout/section";
+import { Container } from "@/components/layout/container";
+import { FloatingActions } from "@/components/layout/floating-actions";
 
 import { faqs } from "@/data/faqs";
-import { HelpCircle, ChevronRight, MessageSquare } from "lucide-react";
+import { HelpCircle, ChevronRight, MessageSquare, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { clinicInfo } from "@/data/site-config";
 import Link from "next/link";
+import { generateSEO } from "@/lib/seo";
+
+export const dynamic = "force-static";
 
 export const metadata = generateSEO({
   title: "Frequently Asked Questions",
@@ -28,50 +28,71 @@ export default function FAQPage() {
       <main className="grow">
         <PageHeader 
           title="Common Questions" 
-          subtitle="Everything you need to know about our services and processes."
+          subtitle="Everything you need to know about our medical services, appointments, and diagnostic processes."
           breadcrumb="FAQ"
         />
 
-        <Section className="bg-white">
-          <div className="max-w-4xl mx-auto space-y-6">
-            {faqs.map((faq, i) => (
-              <div 
-                key={i} 
-                className="group p-8 rounded-5xl bg-slate-50 hover:bg-white border border-transparent hover:border-primary/20 hover:shadow-2xl transition-all duration-500"
-              >
-                <div className="flex items-start gap-6">
-                  <div className="h-12 w-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                    <HelpCircle className="h-6 w-6" />
-                  </div>
-                  <div className="space-y-4 pt-1.5">
-                    <h3 className="text-xl font-bold text-dark group-hover:text-primary transition-colors">{faq.question}</h3>
-                    <p className="text-muted leading-relaxed font-medium">
-                      {faq.answer}
-                    </p>
+        <section className="py-24 bg-white">
+          <Container>
+            <div className="max-w-4xl mx-auto space-y-8">
+              {faqs.map((faq, i) => (
+                <div 
+                  key={i} 
+                  className="group p-10 rounded-4xl bg-slate-50/50 hover:bg-white border border-slate-100 hover:shadow-2xl transition-all duration-500"
+                >
+                  <div className="flex flex-col md:flex-row items-start gap-8">
+                    <div className="h-16 w-16 rounded-2xl bg-white border border-slate-100 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-500 shadow-sm">
+                      <HelpCircle className="h-8 w-8" />
+                    </div>
+                    <div className="space-y-6 flex-1">
+                      <div className="space-y-3">
+                        <span className="text-[10px] font-black text-primary uppercase tracking-[0.3em]">Question {i + 1}</span>
+                        <h3 className="text-2xl font-black text-slate-900 group-hover:text-primary transition-colors leading-tight">
+                          {faq.question}
+                        </h3>
+                      </div>
+                      <p className="text-slate-500 leading-relaxed font-bold border-l-4 border-slate-100 pl-6 py-1 italic">
+                        {faq.answer}
+                      </p>
+                      <div className="pt-2 flex items-center gap-3">
+                         <div className="h-2 w-2 rounded-full bg-emerald-500"></div>
+                         <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Verified Answer</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <div className="mt-20 p-12 md:p-16 rounded-6xl bg-dark text-white text-center space-y-8 relative overflow-hidden">
-             <div className="absolute top-0 left-0 w-64 h-64 bg-primary/10 rounded-full -ml-32 -mt-32 blur-3xl"></div>
-             <h3 className="text-3xl font-bold relative z-10">Still have questions?</h3>
-             <p className="text-gray-400 max-w-xl mx-auto relative z-10">If you couldn't find the answer to your question, feel free to contact us directly via WhatsApp or phone.</p>
-             <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
-                <Button size="lg" className="rounded-full px-10 h-14" asChild>
-                   <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                      <MessageSquare className="mr-2 h-5 w-5" /> Chat on WhatsApp
-                   </a>
-                </Button>
-                <Button size="lg" variant="outline" className="rounded-full px-10 h-14 border-white/20 text-white hover:bg-white hover:text-dark" asChild>
-                   <Link href="/contact">Contact Support</Link>
-                </Button>
-             </div>
-          </div>
-        </Section>
+            {/* CTA Section */}
+            <div className="mt-24 p-12 md:p-20 rounded-4xl bg-slate-900 text-white text-center relative overflow-hidden">
+               <div className="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full -ml-48 -mt-48 blur-3xl"></div>
+               <div className="relative z-10 space-y-10">
+                  <div className="space-y-4">
+                    <span className="text-primary font-black tracking-[0.3em] uppercase text-xs">Support Center</span>
+                    <h3 className="text-3xl md:text-5xl font-black tracking-tight">Still have questions?</h3>
+                    <p className="text-slate-400 max-w-xl mx-auto font-bold leading-relaxed">
+                      If you couldn't find the answer to your question, our medical support team is ready to assist you.
+                    </p>
+                  </div>
+                  
+                  <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                     <Button size="pill" className="bg-primary hover:bg-primary/90 text-white px-12 h-16 text-lg font-black shadow-2xl shadow-primary/20" asChild>
+                        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                           <MessageSquare className="mr-3 h-6 w-6" /> Chat on WhatsApp
+                        </a>
+                     </Button>
+                     <Button size="pill" variant="outline" className="border-white/20 text-white hover:bg-white hover:text-slate-900 px-12 h-16 text-lg font-black transition-all" asChild>
+                        <Link href="/contact">Contact Support</Link>
+                     </Button>
+                  </div>
+               </div>
+            </div>
+          </Container>
+        </section>
       </main>
       <Footer />
+      <FloatingActions />
     </div>
   );
 }

@@ -36,7 +36,7 @@ export function DoctorsGrid() {
   ];
 
   return (
-    <Section className="bg-[#F4F9F9] py-24">
+    <Section className="bg-[#F4F9F9]">
       <div className="text-center mb-16 space-y-4">
         <span className="text-primary font-bold tracking-widest uppercase text-xs">Meet Our Specialists</span>
         <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">Our specialist Doctors</h2>
@@ -44,7 +44,7 @@ export function DoctorsGrid() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {doctors.map((doctor, i) => (
-          <div key={i} className="bg-white p-6 rounded-[2.5rem] shadow-xl shadow-slate-200/50 flex flex-col group transition-all duration-500 hover:translate-y-[-8px]">
+          <div key={i} className="bg-white p-6 rounded-5xl shadow-xl shadow-slate-200/50 flex flex-col group transition-all duration-500 hover:translate-y-[-8px]">
             {/* Image Placeholder */}
             <div className="aspect-square bg-slate-100 rounded-4xl overflow-hidden mb-6 relative group/img">
               <img 

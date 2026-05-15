@@ -17,14 +17,14 @@ export function AboutPreview() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
           {/* Left: Overlapping Images */}
           <div className="relative">
-            <div className="relative rounded-[4rem] overflow-hidden shadow-2xl border-8 border-slate-50 w-full aspect-4/5 bg-slate-100">
+            <div className="relative rounded-6xl overflow-hidden shadow-2xl border-8 border-slate-50 w-full aspect-4/5 bg-slate-100">
               <img 
                 src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1964" 
                 alt="Expert medical professional" 
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute -bottom-16 -right-16 w-3/4 aspect-square bg-slate-100 rounded-[3rem] shadow-2xl border-8 border-white z-10 overflow-hidden">
+            <div className="absolute -bottom-16 -right-16 w-3/4 aspect-square bg-slate-100 rounded-5xl shadow-2xl border-8 border-white z-10 overflow-hidden">
               <img 
                 src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070" 
                 alt="Modern clinical laboratory" 

@@ -56,7 +56,9 @@ export default function RootLayout({
         "min-h-screen bg-background font-sans antialiased",
         jakarta.variable
       )}>
-        {children}
+        <div className="page-transition">
+          {children}
+        </div>
       </body>
     </html>
   );

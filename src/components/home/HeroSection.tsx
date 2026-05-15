@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   return (
-    <section className="relative pt-24 pb-20 lg:pt-32 lg:pb-32 bg-white overflow-hidden">
+    <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-white overflow-hidden">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
@@ -51,9 +51,9 @@ export function HeroSection() {
           {/* Right Image Content */}
           <div className="relative animate-in fade-in slide-in-from-right duration-1000 delay-200">
             {/* Background Decorative Shape */}
-            <div className="absolute inset-[-8%] bg-emerald-50/50 rounded-[4rem] -z-10"></div>
+            <div className="absolute inset-[-8%] bg-emerald-50/50 rounded-6xl -z-10"></div>
             
-            <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border-white border-8 bg-white">
+            <div className="relative rounded-6xl overflow-hidden shadow-2xl border-white border-8 bg-white">
               <div className="aspect-square bg-slate-100 relative group">
                 <img 
                   src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070" 
