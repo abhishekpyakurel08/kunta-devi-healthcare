@@ -61,7 +61,7 @@ export function AboutPreview() {
             </div>
 
             <div className="pt-4">
-              <Button variant="outline" size="pill" className="h-14 px-12 text-primary font-bold border-2" asChild>
+              <Button variant="outline" size="lg" className="h-14 px-12 text-primary font-bold border-2 rounded-full" asChild>
                 <Link href="/about">
                   About Us <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>

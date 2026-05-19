@@ -28,15 +28,15 @@ export function CTASection() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button
                 variant="outline"
-                size="pill"
-                className="w-full sm:w-auto h-14 px-10 border-white text-white hover:bg-white/10"
+                size="lg"
+                className="w-full sm:w-auto h-14 px-10 border-white text-white hover:bg-white/10 rounded-full"
                 asChild
               >
                 <Link href="/packages">View Packages</Link>
               </Button>
               <Button
-                size="pill"
-                className="w-full sm:w-auto h-14 px-10 bg-white text-primary hover:bg-white/90 font-bold"
+                size="lg"
+                className="w-full sm:w-auto h-14 px-10 bg-white text-primary hover:bg-white/90 font-bold rounded-full"
                 asChild
               >
                 <Link href="/appointment">Book Appointment</Link>

@@ -90,7 +90,7 @@ export function AppointmentForm() {
               >
                 <option value="">Select Service</option>
                 {services.map((s) => (
-                  <option key={s.id} value={s.title}>{s.title}</option>
+                  <option key={s.id} value={s.name}>{s.name}</option>
                 ))}
               </select>
               {errors.service && <p className="text-xs text-red-500 font-bold">{errors.service.message}</p>}
@@ -106,7 +106,7 @@ export function AppointmentForm() {
               >
                 <option value="">Select Doctor</option>
                 {doctors.map((d) => (
-                  <option key={d.id} value={d.name}>{d.name} ({d.specialization})</option>
+                  <option key={d.id} value={d.name}>{d.name} ({d.specialty})</option>
                 ))}
               </select>
               {errors.doctor && <p className="text-xs text-red-500 font-bold">{errors.doctor.message}</p>}

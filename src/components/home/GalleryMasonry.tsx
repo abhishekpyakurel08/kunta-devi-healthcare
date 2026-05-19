@@ -53,9 +53,9 @@ export function GalleryMasonry() {
       </div>
 
       <div className="mt-12 sm:mt-16 text-center">
-        <Button variant="outline" size="pill" className="w-full sm:w-auto h-14 px-10 sm:px-12 text-primary font-bold border-2 hover:bg-primary hover:text-white transition-all group" asChild>
+        <Button variant="outline" size="lg" className="w-full sm:w-auto h-14 px-10 sm:px-12 text-primary font-bold border-2 hover:bg-primary hover:text-white transition-all group rounded-full" asChild>
           <Link href="/gallery">
-            View Full Gallery <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+             View Full Gallery <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Link>
         </Button>
       </div>

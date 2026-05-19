@@ -37,19 +37,19 @@ export function Navbar() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-[0_1px_8px_rgba(0,0,0,0.08)]",
-        scrolled ? "h-[60px]" : "h-[72px]"
+        "h-[60px] md:h-[64px] lg:h-[72px]"
       )}
     >
       <Container>
         <nav className="flex items-center justify-between h-full">
           {/* Logo */}
           <Link href="/" className="flex items-center group">
-            <div className="h-14 w-14 xl:h-20 xl:w-20 relative overflow-hidden rounded-full border border-emerald-600 shadow-md group-hover:scale-105 transition-transform duration-300 bg-white shrink-0">
+            <div className="h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 relative overflow-hidden rounded-full border border-[#0A7075] shadow-md group-hover:scale-105 transition-transform duration-300 bg-white shrink-0">
               <Image
                 src="/logo.jpg"
                 alt="Kunta Devi Health Care Logo"
                 fill
-                sizes="(max-width: 1280px) 56px, 80px"
+                sizes="(max-width: 768px) 48px, (max-width: 1024px) 56px, 64px"
                 className="object-cover"
                 priority
               />
@@ -57,7 +57,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Nav Links */}
-          <div className="hidden xl:flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -74,8 +74,8 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Action Buttons */}
-          <div className="hidden xl:flex items-center gap-4">
+          {/* Action Buttons - Desktop */}
+          <div className="hidden lg:flex items-center gap-4">
             <Button variant="outline" asChild>
                <Link href={`tel:${clinicInfo.phone}`}>Call Now</Link>
             </Button>
@@ -84,9 +84,19 @@ export function Navbar() {
             </Button>
           </div>
 
+          {/* Tablet Action Buttons */}
+          <div className="hidden md:flex lg:hidden items-center gap-3">
+            <Button variant="outline" className="h-10 px-4 text-[13px]" asChild>
+               <Link href={`tel:${clinicInfo.phone}`}>Call Now</Link>
+            </Button>
+            <Button className="h-10 px-4 text-[13px]" asChild>
+               <Link href="/appointment">Book Appointment</Link>
+            </Button>
+          </div>
+
           {/* Mobile Menu Toggle */}
           <button
-            className="xl:hidden p-2 text-[#555F6D]"
+            className="lg:hidden p-2 text-[#555F6D]"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -94,32 +104,45 @@ export function Navbar() {
         </nav>
       </Container>
 
-      {/* Mobile Nav */}
+      {/* Mobile Nav - Full Screen Overlay */}
       <div
         className={cn(
-          "xl:hidden fixed inset-0 top-[60px] bg-white z-40 transition-all duration-300 transform",
+          "lg:hidden fixed inset-0 top-[60px] md:top-[64px] bg-white z-40 transition-all duration-300 transform",
           isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
         )}
       >
-        <div className="flex flex-col p-8 space-y-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(
-                "text-[16px] transition-all",
-                pathname === link.href ? "text-[#0A7075] font-semibold" : "text-[#555F6D]"
-              )}
-              onClick={() => setIsOpen(false)}
-            >
-              {link.name}
-            </Link>
-          ))}
-          <div className="pt-8 border-t border-[#E0EDED] flex flex-col gap-4">
-             <Button variant="outline" className="w-full" asChild>
+        <div className="flex flex-col h-full p-6 md:p-8 space-y-0">
+          {/* Close Button */}
+          <button
+            className="self-end p-2 text-[#555F6D] mb-4"
+            onClick={() => setIsOpen(false)}
+          >
+            <X className="h-6 w-6" />
+          </button>
+
+          {/* Nav Links */}
+          <div className="flex flex-col space-y-0 flex-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  "h-12 flex items-center px-4 text-[16px] transition-all border-b border-[#E0EDED]",
+                  pathname === link.href ? "text-[#0A7075] font-semibold" : "text-[#555F6D]"
+                )}
+                onClick={() => setIsOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Action Buttons at Bottom */}
+          <div className="pt-6 flex flex-col gap-3">
+             <Button variant="outline" className="w-full h-12" asChild>
                 <Link href={`tel:${clinicInfo.phone}`} onClick={() => setIsOpen(false)}>Call Now</Link>
              </Button>
-             <Button className="w-full" asChild>
+             <Button className="w-full h-12" asChild>
                 <Link href="/appointment" onClick={() => setIsOpen(false)}>Book Appointment</Link>
              </Button>
           </div>

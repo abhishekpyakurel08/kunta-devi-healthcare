@@ -77,12 +77,12 @@ export default function FAQPage() {
                   </div>
                   
                   <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                     <Button size="pill" className="bg-primary hover:bg-primary/90 text-white px-12 h-16 text-lg font-black shadow-2xl shadow-primary/20" asChild>
+                     <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-12 h-16 text-lg font-black shadow-2xl shadow-primary/20 rounded-full" asChild>
                         <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                            <MessageSquare className="mr-3 h-6 w-6" /> Chat on WhatsApp
                         </a>
                      </Button>
-                     <Button size="pill" variant="outline" className="border-white/20 text-white hover:bg-white hover:text-slate-900 px-12 h-16 text-lg font-black transition-all" asChild>
+                     <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white hover:text-slate-900 px-12 h-16 text-lg font-black transition-all rounded-full" asChild>
                         <Link href="/contact">Contact Support</Link>
                      </Button>
                   </div>

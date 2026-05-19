@@ -80,7 +80,7 @@ export function BlogCards() {
       </div>
 
       <div className="mt-16 text-center">
-        <Button variant="outline" size="pill" className="h-14 px-12 text-primary font-bold border-2" asChild>
+        <Button variant="outline" size="lg" className="h-14 px-12 text-primary font-bold border-2 rounded-full" asChild>
           <Link href="/blog">
             View All Articles <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
