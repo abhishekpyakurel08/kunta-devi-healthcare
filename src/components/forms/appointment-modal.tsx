@@ -191,10 +191,10 @@ export function AppointmentModal() {
                 value={formData.fullName}
                 onChange={handleInputChange}
                 placeholder="Enter your full name"
-                className={errors.fullName ? 'border-[#EF4444] bg-[#FEF2F2]' : 'border-[#E0EDED] focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-primary/20'}
+                className={errors.fullName ? 'border-error bg-[#FEF2F2]' : 'border-border focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-primary/20'}
               />
               {errors.fullName && (
-                <p className="text-[14px] text-[#EF4444]">{errors.fullName}</p>
+                <p className="text-[14px] text-error">{errors.fullName}</p>
               )}
             </div>
 
@@ -210,10 +210,10 @@ export function AppointmentModal() {
                 value={formData.phoneNumber}
                 onChange={(e) => handleChange('phoneNumber', e.target.value)}
                 placeholder="98XXXXXXXX"
-                className={errors.phoneNumber ? 'border-[#EF4444] bg-[#FEF2F2]' : 'border-[#E0EDED] focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-primary/20'}
+                className={errors.phoneNumber ? 'border-error bg-[#FEF2F2]' : 'border-border focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-primary/20'}
               />
               {errors.phoneNumber && (
-                <p className="text-[14px] text-[#EF4444]">{errors.phoneNumber}</p>
+                <p className="text-[14px] text-error">{errors.phoneNumber}</p>
               )}
             </div>
 
@@ -228,7 +228,7 @@ export function AppointmentModal() {
                 onValueChange={(value: string) => handleChange('doctorId', value)}
                 disabled={!!appointmentModal.preSelectedDoctor}
               >
-                <SelectTrigger className={errors.selection && !formData.doctorId && !formData.serviceId && !formData.packageId ? 'border-[#EF4444] bg-[#FEF2F2]' : 'border-[#E0EDED] focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-primary/20'}>
+                <SelectTrigger className={errors.selection && !formData.doctorId && !formData.serviceId && !formData.packageId ? 'border-error bg-[#FEF2F2]' : 'border-border focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-primary/20'}>
                   <SelectValue placeholder="Select a doctor" />
                 </SelectTrigger>
                 <SelectContent>
@@ -249,7 +249,7 @@ export function AppointmentModal() {
                 onValueChange={(value: string) => handleChange('serviceId', value)}
                 disabled={!!appointmentModal.preSelectedService}
               >
-                <SelectTrigger className={errors.selection && !formData.doctorId && !formData.serviceId && !formData.packageId ? 'border-[#EF4444] bg-[#FEF2F2]' : 'border-[#E0EDED] focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-primary/20'}>
+                <SelectTrigger className={errors.selection && !formData.doctorId && !formData.serviceId && !formData.packageId ? 'border-error bg-[#FEF2F2]' : 'border-border focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-primary/20'}>
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
                 <SelectContent>
@@ -273,7 +273,7 @@ export function AppointmentModal() {
                 onValueChange={(value) => handleChange('packageId', value)}
                 disabled={!!appointmentModal.preSelectedPackage}
               >
-                <SelectTrigger className={errors.selection && !formData.doctorId && !formData.serviceId && !formData.packageId ? 'border-[#EF4444] bg-[#FEF2F2]' : 'border-[#E0EDED] focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-primary/20'}>
+                <SelectTrigger className={errors.selection && !formData.doctorId && !formData.serviceId && !formData.packageId ? 'border-error bg-[#FEF2F2]' : 'border-border focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-primary/20'}>
                   <SelectValue placeholder="Select a package" />
                 </SelectTrigger>
                 <SelectContent>
@@ -285,7 +285,7 @@ export function AppointmentModal() {
                 </SelectContent>
               </Select>
               {errors.selection && (
-                <p className="text-[14px] text-[#EF4444]">{errors.selection}</p>
+                <p className="text-[14px] text-error">{errors.selection}</p>
               )}
             </div>
 
@@ -301,10 +301,10 @@ export function AppointmentModal() {
                 value={formData.preferredDate}
                 onChange={(e) => handleChange('preferredDate', e.target.value)}
                 min={new Date().toISOString().split('T')[0]}
-                className={errors.preferredDate ? 'border-[#EF4444] bg-[#FEF2F2]' : 'border-[#E0EDED] focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-primary/20'}
+                className={errors.preferredDate ? 'border-error bg-[#FEF2F2]' : 'border-border focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-primary/20'}
               />
               {errors.preferredDate && (
-                <p className="text-[14px] text-[#EF4444]">{errors.preferredDate}</p>
+                <p className="text-[14px] text-error">{errors.preferredDate}</p>
               )}
             </div>
 
@@ -318,7 +318,7 @@ export function AppointmentModal() {
                 value={formData.preferredTime}
                 onValueChange={(value) => handleChange('preferredTime', value)}
               >
-                <SelectTrigger className={errors.preferredTime ? 'border-[#EF4444] bg-[#FEF2F2]' : 'border-[#E0EDED] focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-primary/20'}>
+                <SelectTrigger className={errors.preferredTime ? 'border-error bg-[#FEF2F2]' : 'border-border focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-primary/20'}>
                   <SelectValue placeholder="Select a time slot" />
                 </SelectTrigger>
                 <SelectContent>
@@ -330,7 +330,7 @@ export function AppointmentModal() {
                 </SelectContent>
               </Select>
               {errors.preferredTime && (
-                <p className="text-[14px] text-[#EF4444]">{errors.preferredTime}</p>
+                <p className="text-[14px] text-error">{errors.preferredTime}</p>
               )}
             </div>
 
@@ -343,14 +343,14 @@ export function AppointmentModal() {
                 onChange={(e) => handleChange('notes', e.target.value)}
                 placeholder="Any additional information or special requests..."
                 rows={3}
-                className="border-[#E0EDED] focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-primary/20"
+                className="border-border focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-primary/20"
               />
             </div>
 
             {/* Submit Button */}
             <Button
               type="submit"
-              className="w-full bg-[#0A7075] hover:bg-primary-dark text-white rounded-[8px] py-[12px] px-[24px] text-[14px] font-semibold transition-all duration-[0.2s] ease hover:translate-y-[-1px]"
+              className="w-full bg-[#0A7075] hover:bg-primary-dark text-white rounded-[8px] py-[12px] px-[24px] text-[14px] font-semibold transition-all duration-200 ease hover:-translate-y-px"
               disabled={isSubmitting}
             >
               {isSubmitting ? 'Submitting...' : 'Submit Appointment Request'}

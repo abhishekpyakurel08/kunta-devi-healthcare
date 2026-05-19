@@ -355,7 +355,7 @@ export default function BlogClient() {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <h3 className="text-white font-bold text-xl mb-2">Monsoon Disease Prevention</h3>
                   <p className="text-white/80 text-sm mb-4">Protect yourself from waterborne diseases during rainy season</p>
@@ -374,7 +374,7 @@ export default function BlogClient() {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <h3 className="text-white font-bold text-xl mb-2">Winter Respiratory Protection</h3>
                   <p className="text-white/80 text-sm mb-4">Stay healthy during cold season with these essential tips</p>
