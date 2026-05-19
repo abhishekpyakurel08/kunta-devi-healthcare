@@ -14,7 +14,6 @@ import { ExploreProducts } from "@/components/products/ExploreProducts";
 import { SpecialistRecs } from "@/components/products/SpecialistRecs";
 import { HealthGuides } from "@/components/products/HealthGuides";
 import { FAQSection } from "@/components/home/FAQSection";
-import { generateSEO } from "@/lib/seo";
 
 export default function ProductsPage() {
   const [searchQuery, setSearchQuery] = useState("");

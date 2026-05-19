@@ -7,22 +7,41 @@ import { PageHeader } from "@/components/layout/page-header";
 import { Container } from "@/components/layout/container";
 import { FloatingActions } from "@/components/layout/floating-actions";
 
-import { doctors } from "@/data/doctors";
+import { api, type Doctor } from "@/lib/api";
+import { useEffect } from "react";
+import { LoadingSpinner, ErrorMessage } from "@/components/ui/fetch-states";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowRight, Star, ShieldCheck, Search } from "lucide-react";
 import Link from "next/link";
-import { generateSEO } from "@/lib/seo";
+import Image from "next/image";
 
 export default function DoctorsPage() {
   const [activeSpecialty, setActiveSpecialty] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
+  const [doctors, setDoctors] = useState<Doctor[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const specialties = ["All", ...Array.from(new Set(doctors.map(d => d.specialization)))] as string[];
+  useEffect(() => {
+    async function loadDoctors() {
+      try {
+        const response = await api.doctors.list();
+        setDoctors(response.data);
+      } catch {
+        setError("Failed to load doctors. Please try again later.");
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    loadDoctors();
+  }, []);
+
+  const specialties = ["All", ...Array.from(new Set(doctors.map(d => d.specialty)))] as string[];
 
   const filteredDoctors = doctors.filter(doctor => {
-    const matchesSpecialty = activeSpecialty === "All" || doctor.specialization === activeSpecialty;
+    const matchesSpecialty = activeSpecialty === "All" || doctor.specialty === activeSpecialty;
     const matchesSearch = doctor.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          doctor.specialization.toLowerCase().includes(searchQuery.toLowerCase());
+                          doctor.specialty.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesSpecialty && matchesSearch;
   });
 
@@ -53,40 +72,41 @@ export default function DoctorsPage() {
                 />
               </div>
 
-              <div className="flex flex-wrap justify-center gap-3">
-                {specialties.map((spec) => (
-                  <button 
-                    key={spec}
-                    onClick={() => setActiveSpecialty(spec)}
-                    className={`px-8 py-3 rounded-xl font-black text-sm transition-all border ${
-                      activeSpecialty === spec 
-                      ? "bg-primary text-white border-primary shadow-lg shadow-primary/20 scale-105" 
-                      : "bg-slate-50 text-slate-600 border-slate-100 hover:bg-white hover:shadow-xl"
-                    }`}
-                  >
-                    {spec}
-                  </button>
-                ))}
-              </div>
+              {!isLoading && !error && specialties.length > 1 && (
+                <div className="flex flex-wrap justify-center gap-3">
+                  {specialties.map((spec) => (
+                    <button 
+                      key={spec}
+                      onClick={() => setActiveSpecialty(spec)}
+                      className={`px-8 py-3 rounded-xl font-black text-sm transition-all border ${
+                        activeSpecialty === spec 
+                        ? "bg-primary text-white border-primary shadow-lg shadow-primary/20 scale-105" 
+                        : "bg-slate-50 text-slate-600 border-slate-100 hover:bg-white hover:shadow-xl"
+                      }`}
+                    >
+                      {spec}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
-            {filteredDoctors.length > 0 ? (
+            {isLoading ? (
+              <LoadingSpinner text="Loading Specialists..." />
+            ) : error ? (
+              <ErrorMessage message={error} />
+            ) : filteredDoctors.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
-                {filteredDoctors.map((doctor, i) => (
+                {filteredDoctors.map((doctor) => (
                   <div key={doctor.id} className="group flex flex-col bg-white rounded-4xl overflow-hidden border border-slate-100 shadow-xl shadow-slate-200/50 hover:translate-y-[-8px] transition-all duration-500">
                     {/* Doctor Image */}
                     <div className="relative aspect-4/5 overflow-hidden">
-                      <img 
-                        src={[
-                          "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2070",
-                          "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=2070",
-                          "https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1974",
-                          "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1964",
-                          "https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=2070",
-                          "https://images.unsplash.com/photo-1612531388260-6303b896c2c1?q=80&w=2070"
-                        ][i % 6]} 
+                      <Image 
+                        src={doctor.image || "/placeholder.jpg"} 
                         alt={doctor.name} 
-                        className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                        className="object-cover grayscale-[0.5] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
                       />
                       <div className="absolute inset-0 bg-linear-to-t from-slate-900/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
                       
@@ -100,28 +120,28 @@ export default function DoctorsPage() {
                     {/* Content */}
                     <div className="p-10 space-y-6 flex-1 flex flex-col">
                       <div className="space-y-1">
-                        <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">{doctor.specialization}</p>
-                        <h3 className="text-2xl font-black text-slate-900 group-hover:text-primary transition-colors">{doctor.name}</h3>
-                        <p className="text-sm font-bold text-slate-400">{doctor.qualification}</p>
+                        <p className="text-[10px] font-black text-[#0A7075] uppercase tracking-[0.2em]">{doctor.specialty}</p>
+                        <h3 className="text-2xl font-black text-[#0D2137] group-hover:text-[#0A7075] transition-colors">{doctor.name}</h3>
+                        <p className="text-sm font-bold text-[#8A9BAC]">{doctor.credentials}</p>
                       </div>
 
-                      <div className="space-y-4 pt-4 border-t border-slate-50 flex-1">
+                      <div className="space-y-4 pt-4 border-t border-[#E0EDED] flex-1">
                         <div className="flex items-center gap-4">
-                          <div className="h-10 w-10 rounded-xl bg-slate-50 flex items-center justify-center">
-                            <Calendar className="h-5 w-5 text-primary" />
+                          <div className="h-10 w-10 rounded-xl bg-[#F4F8F8] flex items-center justify-center">
+                            <Calendar className="h-5 w-5 text-[#0A7075]" />
                           </div>
                           <div>
-                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Available Days</p>
-                            <p className="text-sm font-black text-slate-700">{doctor.days}</p>
+                            <p className="text-[10px] font-bold text-[#8A9BAC] uppercase tracking-widest">Experience</p>
+                            <p className="text-sm font-black text-[#555F6D]">{doctor.experience} years</p>
                           </div>
                         </div>
                         <div className="flex items-center gap-4">
-                          <div className="h-10 w-10 rounded-xl bg-slate-50 flex items-center justify-center">
-                            <Clock className="h-5 w-5 text-primary" />
+                          <div className="h-10 w-10 rounded-xl bg-[#F4F8F8] flex items-center justify-center">
+                            <Clock className="h-5 w-5 text-[#0A7075]" />
                           </div>
                           <div>
-                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Timing</p>
-                            <p className="text-sm font-black text-slate-700">{doctor.timing}</p>
+                            <p className="text-[10px] font-bold text-[#8A9BAC] uppercase tracking-widest">Rating</p>
+                            <p className="text-sm font-black text-[#555F6D]">{doctor.rating} ({doctor.reviewCount} reviews)</p>
                           </div>
                         </div>
                       </div>

@@ -21,17 +21,17 @@ export function Section({
   centered = true,
 }: SectionProps) {
   return (
-    <section id={id} className={cn("section-padding", className)}>
+    <section id={id} className={cn("py-[80px] md:py-[48px] lg:py-[80px]", className)}>
       <Container className={containerClassName}>
         {(title || subtitle) && (
-          <div className={cn("mb-12 md:mb-16", centered && "text-center max-w-3xl mx-auto")}>
+          <div className={cn("mb-[24px]", centered && "text-center max-w-[600px] mx-auto")}>
             {subtitle && (
-              <span className="text-primary font-bold tracking-wider uppercase text-xs mb-3 block">
+              <span className="text-[#0A7075] font-semibold tracking-wider uppercase text-[11px] mb-3 block text-center">
                 {subtitle}
               </span>
             )}
             {title && (
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-dark tracking-tight leading-tight">
+              <h2 className="text-[36px] md:text-[28px] font-bold text-[#0D2137] tracking-tight leading-tight text-center">
                 {title}
               </h2>
             )}

@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button";
 import { Clock, Info, FlaskConical, ArrowRight, ShieldCheck, Activity } from "lucide-react";
 import Link from "next/link";
 import { generateSEO } from "@/lib/seo";
-import { cn } from "@/lib/utils";
 
 export const dynamic = 'force-static';
 
@@ -38,7 +37,7 @@ export default function DiagnosticsPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-              {diagnostics.map((test, i) => (
+              {diagnostics.map((test) => (
                 <div key={test.id} className="flex flex-col bg-white border border-slate-100 shadow-xl shadow-slate-200/40 hover:translate-y-[-8px] transition-all duration-500 group rounded-5xl overflow-hidden">
                   <div className="p-10 flex-1 flex flex-col space-y-8">
                     <div className="flex justify-between items-start">

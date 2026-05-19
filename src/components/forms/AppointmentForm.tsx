@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { doctors } from "@/data/doctors";
 import { services } from "@/data/services";
-import { Send, Calendar, User, Phone, Mail, MessageSquare, Clock } from "lucide-react";
+import { Send, Calendar, User, Phone, MessageSquare, Clock } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),

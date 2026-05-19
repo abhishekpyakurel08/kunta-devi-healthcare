@@ -6,8 +6,9 @@ import { FloatingActions } from "@/components/layout/floating-actions";
 
 import { StatsBanner } from "@/components/home/StatsBanner";
 import { FAQSection } from "@/components/home/FAQSection";
-import { Target, Eye, ShieldCheck, Heart, Lightbulb, Award, Check, TrendingUp } from "lucide-react";
+import { Target, Eye, ShieldCheck, Heart, Lightbulb, Award, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import { generateSEO } from "@/lib/seo";
 
 export const dynamic = 'force-static';
@@ -35,10 +36,12 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
               <div className="relative">
                  <div className="relative rounded-4xl overflow-hidden shadow-2xl border-8 border-slate-50">
-                    <img 
+                    <Image 
                       src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053" 
                       alt="Our Journey" 
-                      className="w-full aspect-square object-cover grayscale-[0.3] hover:grayscale-0 transition-all duration-700"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="object-cover grayscale-[0.3] hover:grayscale-0 transition-all duration-700"
                     />
                  </div>
                  {/* Floating badge */}
@@ -134,10 +137,12 @@ export default function AboutPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                  <div className="relative">
                     <div className="aspect-4/5 bg-slate-800 rounded-4xl overflow-hidden shadow-2xl border-8 border-white/5">
-                       <img 
+                       <Image 
                          src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1974" 
                          alt="Dr. Kunta Devi" 
-                         className="w-full h-full object-cover"
+                         fill
+                         sizes="(max-width: 1024px) 100vw, 50vw"
+                         className="object-cover"
                        />
                     </div>
                     <div className="absolute -bottom-10 -right-10 bg-white p-10 rounded-4xl shadow-2xl border border-slate-100 hidden md:block">
@@ -148,13 +153,13 @@ export default function AboutPage() {
                  
                  <div className="space-y-10">
                     <div className="space-y-4">
-                       <span className="text-primary font-black tracking-[0.2em] uppercase text-xs">Medical Director's Message</span>
+                       <span className="text-primary font-black tracking-[0.2em] uppercase text-xs">Medical Director&apos;s Message</span>
                        <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-tight">A Vision for <br /><span className="text-primary">Better Health</span></h2>
                     </div>
                     
                     <div className="relative">
                        <p className="text-2xl md:text-3xl font-bold leading-relaxed italic relative z-10 text-slate-300">
-                          "At Kunta Devi Health Care, our mission is simple: to provide the best possible medical care with integrity and excellence. We are committed to your health journey."
+                          &quot;At Kunta Devi Health Care, our mission is simple: to provide the best possible medical care with integrity and excellence. We are committed to your health journey.&quot;
                        </p>
                        <div className="absolute -top-16 -left-16 text-primary/10 text-[240px] font-black pointer-events-none">“</div>
                     </div>

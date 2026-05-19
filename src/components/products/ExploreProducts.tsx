@@ -1,16 +1,35 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { ShoppingCart, ArrowRight, Search } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
+import { LoadingSpinner } from "@/components/ui/fetch-states";
+import Image from "next/image";
 
 interface ExploreProductsProps {
   searchQuery: string;
   activeCategory: string;
 }
 
+interface Product {
+  title: string;
+  brand: string;
+  price: string;
+  image: string;
+  badge: string;
+  category: string;
+}
+
 export function ExploreProducts({ searchQuery, activeCategory }: ExploreProductsProps) {
-  const allProducts = [
+  const [allProducts, setAllProducts] = useState<Product[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchProducts() {
+      // Simulate network request delay
+      await new Promise(resolve => setTimeout(resolve, 800));
+      setAllProducts([
     { title: "BP Monitor", brand: "Omron", price: "4,500", image: "https://images.unsplash.com/photo-1615461066159-fea0960485d5?q=80&w=1914", badge: "Best Seller", category: "Monitoring" },
     { title: "Thermometer", brand: "Beurer", price: "1,200", image: "https://images.unsplash.com/photo-1584017945511-2362947119f6?q=80&w=1974", badge: "New Arrival", category: "Diagnostic" },
     { title: "Nebulizer", brand: "Rossmax", price: "3,800", image: "https://images.unsplash.com/photo-1603398938378-e54eab446f8a?q=80&w=2070", badge: "Discount", category: "Wellness" },
@@ -19,7 +38,11 @@ export function ExploreProducts({ searchQuery, activeCategory }: ExploreProducts
     { title: "Face Masks", brand: "3M", price: "500", image: "https://images.unsplash.com/photo-1584017945511-2362947119f6?q=80&w=1974", badge: "Bulk Sale", category: "Wellness" },
     { title: "Hand Sanitizer", brand: "Dettol", price: "250", image: "https://images.unsplash.com/photo-1615461066159-fea0960485d5?q=80&w=1914", badge: "Stock up", category: "Wellness" },
     { title: "Vitamins C", brand: "Dabur", price: "800", image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2070", badge: "Wellness", category: "Wellness" },
-  ];
+      ]);
+      setIsLoading(false);
+    }
+    fetchProducts();
+  }, []);
 
   const filteredProducts = allProducts.filter(product => {
     const matchesCategory = activeCategory === "All" || product.category === activeCategory;
@@ -36,15 +59,19 @@ export function ExploreProducts({ searchQuery, activeCategory }: ExploreProducts
           <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">Explore Our Healthcare Products</h2>
         </div>
 
-        {filteredProducts.length > 0 ? (
+        {isLoading ? (
+          <LoadingSpinner text="Loading Products..." />
+        ) : filteredProducts.length > 0 ? (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
             {filteredProducts.map((product, i) => (
               <div key={i} className="group bg-white rounded-4xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col">
                 <div className="relative aspect-square overflow-hidden bg-slate-50">
-                  <img 
+                  <Image 
                     src={product.image} 
                     alt={product.title} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute top-4 left-4 bg-primary/90 text-white px-3 py-1 rounded-lg text-[9px] font-black uppercase tracking-widest">
                     {product.badge}

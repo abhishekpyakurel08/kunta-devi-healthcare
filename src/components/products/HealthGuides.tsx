@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export function HealthGuides() {
   const guides = [
@@ -36,7 +37,7 @@ export function HealthGuides() {
           {guides.map((guide, i) => (
             <div key={i} className="group bg-white rounded-4xl overflow-hidden border border-slate-100 shadow-xl shadow-slate-200/30 hover:translate-y-[-8px] transition-all duration-500">
               <div className="relative aspect-video overflow-hidden">
-                <img src={guide.image} alt={guide.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
+                <Image src={guide.image} alt={guide.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-110 transition-transform duration-1000" />
                 <div className="absolute top-6 left-6 bg-primary text-white px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg">
                   {guide.category}
                 </div>

@@ -5,7 +5,7 @@ import { Container } from "@/components/layout/container";
 import { FloatingActions } from "@/components/layout/floating-actions";
 
 import { faqs } from "@/data/faqs";
-import { HelpCircle, ChevronRight, MessageSquare, Plus } from "lucide-react";
+import { HelpCircle, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { clinicInfo } from "@/data/site-config";
 import Link from "next/link";
@@ -72,7 +72,7 @@ export default function FAQPage() {
                     <span className="text-primary font-black tracking-[0.3em] uppercase text-xs">Support Center</span>
                     <h3 className="text-3xl md:text-5xl font-black tracking-tight">Still have questions?</h3>
                     <p className="text-slate-400 max-w-xl mx-auto font-bold leading-relaxed">
-                      If you couldn't find the answer to your question, our medical support team is ready to assist you.
+                      If you couldn&apos;t find the answer to your question, our medical support team is ready to assist you.
                     </p>
                   </div>
                   

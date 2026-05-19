@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export function BlogCards() {
   const posts = [
@@ -37,14 +38,16 @@ export function BlogCards() {
           <div key={i} className="bg-white rounded-4xl overflow-hidden shadow-xl shadow-slate-200/50 flex flex-col group transition-all duration-500 hover:translate-y-[-8px]">
             {/* Image Placeholder */}
             <div className="aspect-video bg-slate-100 relative overflow-hidden group/img">
-               <img 
+               <Image 
                  src={[
                    "https://images.unsplash.com/photo-1505751172177-51ad18670404?q=80&w=2070",
                    "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=2070",
                    "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=2070"
                  ][i % 3]} 
                  alt={post.title} 
-                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-110"
+                 fill
+                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                 className="object-cover transition-transform duration-700 group-hover/img:scale-110"
                />
                <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
             </div>

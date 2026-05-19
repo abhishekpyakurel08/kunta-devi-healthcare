@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export function ServicesGrid() {
   const services = [
@@ -47,10 +48,12 @@ export function ServicesGrid() {
             <div key={i} className="bg-white rounded-4xl overflow-hidden shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col group hover:translate-y-[-8px] transition-all duration-500">
               {/* Image with Badge */}
               <div className="relative h-60 w-full overflow-hidden">
-                <img 
+                <Image 
                   src={service.image} 
                   alt={service.title} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover group-hover:scale-110 transition-transform duration-700" 
                 />
                 <div className={`absolute top-4 left-4 ${service.color} text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full`}>
                   {service.badge}

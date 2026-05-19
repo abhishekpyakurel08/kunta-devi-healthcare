@@ -1,5 +1,5 @@
 import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
-import { Container } from "@/components/layout/container";
+
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";

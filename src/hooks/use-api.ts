@@ -31,8 +31,6 @@ function useFetch<T>(fetcher: () => Promise<T>): FetchState<T> {
 
   useEffect(() => {
     let cancelled = false;
-    setIsLoading(true);
-    setError(null);
 
     fetcher()
       .then((result) => {
@@ -56,25 +54,25 @@ function useFetch<T>(fetcher: () => Promise<T>): FetchState<T> {
 }
 
 // --------------- domain hooks ---------------
-export const useDoctors = () => useFetch<Doctor[]>(() => api.doctors.list());
+export const useDoctors = () => useFetch<Doctor[]>(() => api.doctors.list().then(r => r.data));
 export const useDoctor = (id: string) =>
   useFetch<Doctor | null>(() => api.doctors.get(id));
 
-export const useServices = () => useFetch<Service[]>(() => api.services.list());
+export const useServices = () => useFetch<Service[]>(() => api.services.list().then(r => r.data));
 export const useService = (id: string) =>
   useFetch<Service | null>(() => api.services.get(id));
 
 export const useDiagnostics = () =>
-  useFetch<Diagnostic[]>(() => api.diagnostics.list());
+  useFetch<Diagnostic[]>(() => api.diagnostics.list().then(r => r.data));
 
-export const usePackages = () => useFetch<HealthPackage[]>(() => api.packages.list());
+export const usePackages = () => useFetch<HealthPackage[]>(() => api.packages.list().then(r => r.data));
 
-export const useProducts = () => useFetch<Product[]>(() => api.products.list());
+export const useProducts = () => useFetch<Product[]>(() => api.products.list().then(r => r.data));
 export const useProduct = (id: string) =>
   useFetch<Product | null>(() => api.products.get(id));
 
-export const useBlogs = () => useFetch<BlogPost[]>(() => api.blogs.list());
+export const useBlogs = () => useFetch<BlogPost[]>(() => api.blogs.list().then(r => r.data));
 export const useBlog = (id: string) =>
   useFetch<BlogPost | null>(() => api.blogs.get(id));
 
-export const useFAQs = () => useFetch<FAQ[]>(() => api.faqs.list());
+export const useFAQs = () => useFetch<FAQ[]>(() => api.faqs.list().then(r => r.data));

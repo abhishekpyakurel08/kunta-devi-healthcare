@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Check, ChevronRight } from "lucide-react";
 import { Container } from "../layout/container";
 import { Button } from "../ui/button";
@@ -40,7 +41,7 @@ const services = [
     id: "diagnostics",
     title: "Laboratory & Diagnostic Services",
     description: "State-of-the-art laboratory services with high precision and rapid reporting to aid in accurate diagnosis and effective treatment.",
-    image: "https://images.unsplash.com/photo-1579154234431-da6781d706c1?q=80&w=1200",
+    image: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=1200",
     features: [
       "Blood tests",
       "Biochemistry",
@@ -71,31 +72,35 @@ export function MedicalServicesSection() {
   const activeService = services.find(s => s.id === activeTab) || services[0];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white overflow-hidden" id="services">
       <Container>
-        <div className="text-center mb-16 space-y-3">
-          <span className="text-primary font-bold tracking-[0.2em] uppercase text-xs">All Medical Care</span>
-          <h2 className="text-3xl md:text-4xl font-black text-slate-900">Our Complete Medical Services</h2>
+        <div className="text-center mb-12 lg:mb-16 space-y-3 lg:space-y-4">
+          <span className="text-primary font-bold tracking-[0.2em] uppercase text-[10px] sm:text-xs">All Medical Care</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">Our Complete Medical Services</h2>
+          <p className="text-sm sm:text-base text-slate-500 max-w-2xl mx-auto">Providing a comprehensive range of premium healthcare services tailored for you and your family.</p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-12">
+        <div className="grid lg:grid-cols-[320px_1fr] gap-8 lg:gap-12">
           {/* Sidebar */}
-          <div className="w-full lg:w-80 shrink-0">
-            <div className="bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm">
+          <div className="w-full relative z-10">
+            <div className="bg-white border border-slate-100 rounded-4xl overflow-hidden shadow-sm flex flex-row lg:flex-col overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-none [&::-webkit-scrollbar]:hidden">
               {services.map((service) => (
                 <button
                   key={service.id}
-                  onClick={() => setActiveTab(service.id)}
+                  onClick={(e) => {
+                    setActiveTab(service.id);
+                    e.currentTarget.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+                  }}
                   className={cn(
-                    "w-full flex items-center justify-between p-5 text-left transition-all group border-b border-slate-50 last:border-0",
+                    "min-w-[180px] sm:min-w-[220px] lg:min-w-0 lg:w-full flex items-center justify-between p-4 sm:p-5 text-left transition-all group border-r lg:border-r-0 lg:border-b border-slate-100 last:border-0 shrink-0 snap-start",
                     activeTab === service.id 
                       ? "bg-primary text-white" 
                       : "text-slate-600 hover:bg-slate-50"
                   )}
                 >
-                  <span className="font-bold text-[15px]">{service.title}</span>
+                  <span className="font-bold text-[13px] sm:text-[15px]">{service.title}</span>
                   <ChevronRight className={cn(
-                    "h-4 w-4 transition-transform",
+                    "h-4 w-4 transition-transform hidden sm:block",
                     activeTab === service.id ? "translate-x-1" : "text-slate-300 group-hover:translate-x-1"
                   )} />
                 </button>
@@ -104,49 +109,51 @@ export function MedicalServicesSection() {
           </div>
 
           {/* Content */}
-          <div className="flex-1 bg-white rounded-4xl border border-slate-100 shadow-2xl shadow-slate-200/50 overflow-hidden flex flex-col md:flex-row">
-            <div className="w-full md:w-2/5 relative h-64 md:h-auto">
-              <img 
+          <div className="bg-white rounded-4xl lg:rounded-5xl border border-slate-100 shadow-xl shadow-slate-200/50 overflow-hidden flex flex-col md:flex-row relative z-10 min-h-[400px]">
+            <div className="w-full md:w-2/5 relative h-64 sm:h-72 md:h-auto shrink-0">
+              <Image 
                 src={activeService.image} 
                 alt={activeService.title} 
-                className="absolute inset-0 w-full h-full object-cover" 
+                fill
+                sizes="(max-width: 768px) 100vw, 40vw"
+                className="object-cover" 
               />
-              <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent"></div>
-              <div className="absolute bottom-6 left-6 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full">
+              <div className="absolute inset-0 bg-linear-to-t from-black/40 via-black/10 to-transparent"></div>
+              <div className="absolute bottom-6 left-6 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full backdrop-blur-sm">
                 Learn More
               </div>
             </div>
 
-            <div className="p-8 md:p-12 flex-1 space-y-8">
-              <div className="space-y-4">
-                <h3 className="text-2xl md:text-3xl font-black text-slate-900 leading-tight">
+            <div className="p-6 sm:p-8 lg:p-12 flex-1 flex flex-col justify-center space-y-6 lg:space-y-8">
+              <div className="space-y-3 lg:space-y-4">
+                <h3 className="text-2xl sm:text-3xl font-black text-slate-900 leading-tight">
                   {activeService.title}
                 </h3>
-                <p className="text-slate-500 leading-relaxed max-w-2xl">
+                <p className="text-sm sm:text-base text-slate-500 leading-relaxed">
                   {activeService.description}
                 </p>
               </div>
 
-              <div className="space-y-4">
-                <p className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em]">Service Features</p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
+              <div className="space-y-3 lg:space-y-4">
+                <p className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em]">Service Features</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
                   {activeService.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-3 text-sm font-bold text-slate-600">
-                      <div className="h-5 w-5 rounded-full bg-emerald-50 flex items-center justify-center shrink-0">
+                    <div key={idx} className="flex items-start gap-3 text-[13px] sm:text-sm font-bold text-slate-600">
+                      <div className="h-5 w-5 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 mt-0.5">
                         <Check className="h-3 w-3 text-emerald-600" />
                       </div>
-                      {feature}
+                      <span className="leading-tight pt-0.5">{feature}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
-                <Button className="w-full sm:w-auto h-12 rounded-xl bg-primary hover:bg-primary/90 text-white font-bold px-8">
-                  Book Appointment
+              <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 pt-2 sm:pt-4">
+                <Button className="w-full sm:w-auto h-12 rounded-xl bg-primary hover:bg-primary/90 text-white font-bold px-6 sm:px-8 transition-transform hover:scale-[1.02]" asChild>
+                   <Link href="/appointment">Book Appointment</Link>
                 </Button>
-                <Button variant="outline" className="w-full sm:w-auto h-12 rounded-xl border-slate-200 text-slate-700 font-bold px-8">
-                  Get a Free Consultation
+                <Button variant="outline" className="w-full sm:w-auto h-12 rounded-xl border-slate-200 text-slate-700 font-bold px-6 sm:px-8 hover:bg-slate-50 transition-transform hover:scale-[1.02]" asChild>
+                   <Link href="/contact">Get a Free Consultation</Link>
                 </Button>
               </div>
             </div>

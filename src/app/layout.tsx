@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "../styles/globals.css";
 import { cn } from "@/lib/utils";
+import { AppProvider } from "@/contexts/app-context";
 
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta" });
 
@@ -56,9 +57,11 @@ export default function RootLayout({
         "min-h-screen bg-background font-sans antialiased",
         jakarta.variable
       )}>
-        <div className="page-transition">
-          {children}
-        </div>
+        <AppProvider>
+          <div className="page-transition">
+            {children}
+          </div>
+        </AppProvider>
       </body>
     </html>
   );

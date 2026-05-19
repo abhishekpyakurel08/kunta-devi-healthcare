@@ -1,6 +1,7 @@
 import { Star, MessageSquare } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export function SpecialistRecs() {
   const recommendations = [
@@ -42,7 +43,7 @@ export function SpecialistRecs() {
           {recommendations.map((rec, i) => (
             <div key={i} className="group flex flex-col md:flex-row items-center bg-slate-50 rounded-5xl p-8 md:p-10 border border-slate-100 hover:bg-white hover:shadow-2xl transition-all duration-500 gap-8 md:gap-12">
                <div className="w-32 h-32 md:w-48 md:h-48 rounded-3xl overflow-hidden shrink-0 border-4 border-white shadow-xl">
-                  <img src={rec.image} alt={rec.name} className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" />
+                  <Image src={rec.image} alt={rec.name} fill sizes="(max-width: 768px) 128px, 192px" className="object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" />
                </div>
                
                <div className="flex-1 space-y-6 text-center md:text-left">
@@ -59,7 +60,7 @@ export function SpecialistRecs() {
                   </div>
                   
                   <p className="text-lg font-bold text-slate-500 leading-relaxed italic">
-                    "{rec.text}"
+                    &quot;{rec.text}&quot;
                   </p>
                   
                   <div className="pt-4 flex flex-wrap items-center justify-center md:justify-start gap-4">

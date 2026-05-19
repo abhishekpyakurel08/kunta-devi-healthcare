@@ -1,4 +1,4 @@
-import { Search, ChevronDown, Stethoscope } from "lucide-react";
+import { Search, ChevronDown } from "lucide-react";
 import { Container } from "@/components/layout/container";
 
 export function ServicesHero() {

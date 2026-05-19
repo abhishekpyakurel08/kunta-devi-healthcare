@@ -10,7 +10,7 @@ import { FloatingActions } from "@/components/layout/floating-actions";
 import { Button } from "@/components/ui/button";
 import { Maximize2, Star, Image as ImageIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { generateSEO } from "@/lib/seo";
+import Image from "next/image";
 
 export default function GalleryPage() {
   const categories = ["All", "Clinic", "Equipment", "Doctors", "Health Camps", "Community Events"];
@@ -77,7 +77,7 @@ export default function GalleryPage() {
                       item.size
                     )}
                   >
-                    <img 
+                    <Image 
                       src={[
                         "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053",
                         "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2070",
@@ -90,7 +90,9 @@ export default function GalleryPage() {
                         "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070"
                       ][i % 9]} 
                       alt={item.title} 
-                      className="absolute inset-0 w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                      className="object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"
                     />
                     
                     {/* Overlay */}

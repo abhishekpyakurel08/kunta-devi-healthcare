@@ -1,6 +1,7 @@
-import { ShoppingCart, Star, Check, ArrowRight } from "lucide-react";
+import { ShoppingCart, Check } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export function FeaturedProducts() {
   const products = [
@@ -46,10 +47,12 @@ export function FeaturedProducts() {
             <div key={i} className="group bg-white rounded-4xl overflow-hidden border border-slate-100 shadow-xl shadow-slate-200/50 hover:translate-y-[-8px] transition-all duration-500">
               {/* Product Image */}
               <div className="relative aspect-4/3 overflow-hidden">
-                <img 
+                <Image 
                   src={product.image} 
                   alt={product.title} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover group-hover:scale-110 transition-all duration-1000"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-slate-900/40 via-transparent to-transparent"></div>
                 

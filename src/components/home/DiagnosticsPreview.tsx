@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Clock, FlaskConical } from "lucide-react";
 import { Section } from "@/components/layout/section";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { diagnostics } from "@/data/diagnostics";
 
 export function DiagnosticsPreview() {

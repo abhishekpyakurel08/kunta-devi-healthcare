@@ -1,29 +1,106 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0EA5A4;
-  --color-primary-foreground: #FFFFFF;
-  --color-dark: #0F172A;
-  --color-background: #F8FAFC;
-  --color-foreground: #0F172A;
-  --color-border: #DCE3EA;
-  --color-muted: #64748B;
-  --color-muted-foreground: #94A3B8;
-  
-  --radius-3xl: 1.5rem;
-  --radius-4xl: 2rem;
-  --radius-5xl: 2.5rem;
-  --radius-6xl: 3rem;
-  --radius-2xl: 1rem;
-  --radius-xl: 0.75rem;
-  --radius-lg: 0.5rem;
-  
-  --font-sans: var(--font-jakarta), "Inter", sans-serif;
+  /* Color System */
+  --color-primary: #0A7075;
+  --color-primary-dark: #065F63;
+  --color-primary-light: #E6F4F4;
+  --color-secondary: #0D2137;
+  --color-secondary-soft: #1A3A52;
+  --color-white: #FFFFFF;
+  --color-bg: #F4F8F8;
+  --color-bg-card: #FFFFFF;
+  --color-border: #E0EDED;
+  --color-text-body: #555F6D;
+  --color-text-muted: #8A9BAC;
+  --color-gold: #F5A623;
+  --color-success: #22C55E;
+  --color-error: #EF4444;
+  --color-warning: #F59E0B;
+  --color-banner: #0A7075;
+  --color-banner-text: #FFFFFF;
+
+  /* Spacing System */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* Typography System */
+  --font-primary: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Heading Scale */
+  --text-h1: 48px;
+  --text-h2: 36px;
+  --text-h3: 24px;
+  --text-h4: 18px;
+
+  /* Body Scale */
+  --text-body-lg: 16px;
+  --text-body-sm: 14px;
+  --text-caption: 12px;
+  --text-label: 11px;
+  --text-btn: 14px;
+
+  /* Line Height */
+  --leading-tight: 1.2;
+  --leading-normal: 1.6;
+  --leading-loose: 1.8;
+
+  /* Section Padding */
+  --section-padding-y-desktop: 80px;
+  --section-padding-y-tablet: 48px;
+  --section-padding-y-mobile: 40px;
+
+  /* Container */
+  --container-max: 1200px;
+  --container-padding: 24px;
+
+  /* Card */
+  --card-padding: 24px;
+  --card-padding-sm: 16px;
+
+  /* Grid Gaps */
+  --gap-cards: 24px;
+  --gap-sm: 16px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --transition-slow: 0.4s ease;
+
+  /* Breakpoints */
+  --bp-desktop: 1200px;
+  --bp-tablet: 768px;
+  --bp-mobile: 480px;
+
+  /* Border Radius */
+  --radius-button: 8px;
+  --radius-card: 12px;
+  --radius-badge: 100px;
+  --radius-input: 8px;
+
+  /* Font Sans (fallback) */
+  --font-sans: var(--font-body);
 }
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: var(--color-border);
+  }
+  
+  html {
+    scroll-behavior: smooth;
   }
   
   /* Custom Premium Scrollbar */
@@ -47,7 +124,8 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--color-bg);
+    color: var(--color-text-body);
     font-feature-settings: "rlig" 1, "calt" 1;
     font-family: var(--font-sans);
     font-weight: 400;
@@ -95,3 +173,42 @@
   z-index: 100;
   transition: width 0.3s ease;
 }
+
+/* Scroll Reveal Animations */
+.reveal {
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+.reveal-up {
+  transform: translateY(40px);
+}
+
+.reveal-down {
+  transform: translateY(-40px);
+}
+
+.reveal-left {
+  transform: translateX(-40px);
+}
+
+.reveal-right {
+  transform: translateX(40px);
+}
+
+.reveal-scale {
+  transform: scale(0.95);
+}
+
+/* Stagger Delays */
+.stagger-1 { transition-delay: 100ms; }
+.stagger-2 { transition-delay: 200ms; }
+.stagger-3 { transition-delay: 300ms; }
+.stagger-4 { transition-delay: 400ms; }
+.stagger-5 { transition-delay: 500ms; }

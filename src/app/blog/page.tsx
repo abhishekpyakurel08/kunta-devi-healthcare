@@ -2,13 +2,13 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { PageHeader } from "@/components/layout/page-header";
 import { Section } from "@/components/layout/section";
-import { BlogCards } from "@/components/home/BlogCards";
 import { blogPosts } from "@/data/blog";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
+import { Card, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, User, ArrowRight, Search, Tag } from "lucide-react";
+import { Calendar, User, ArrowRight, Tag } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { generateSEO } from "@/lib/seo";
 
 export const dynamic = 'force-static';
@@ -38,14 +38,12 @@ export default function BlogPage() {
                 <Card key={post.id} className="group overflow-hidden border-none shadow-sm hover:shadow-2xl transition-all duration-500 rounded-5xl bg-slate-50/50">
                   <div className="grid grid-cols-1 md:grid-cols-5 gap-0 md:gap-4">
                     <div className="md:col-span-2 aspect-video md:aspect-auto bg-slate-200 relative overflow-hidden group/img">
-                       <img 
-                         src={[
-                           "https://images.unsplash.com/photo-1505751172177-51ad18670404?q=80&w=2070",
-                           "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=2070",
-                           "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=2070"
-                         ][blogPosts.indexOf(post) % 3]} 
+                       <Image 
+                         src={post.image} 
                          alt={post.title} 
-                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-110"
+                         fill
+                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                         className="object-cover transition-transform duration-700 group-hover/img:scale-110"
                        />
                        <div className="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors"></div>
                        <div className="absolute top-4 left-4">

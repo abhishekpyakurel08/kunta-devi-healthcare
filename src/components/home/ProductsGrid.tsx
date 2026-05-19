@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export function ProductsGrid() {
   const products = [
@@ -38,7 +39,7 @@ export function ProductsGrid() {
           <div key={i} className="bg-white rounded-4xl overflow-hidden shadow-xl shadow-slate-200/50 flex flex-col group transition-all duration-500 hover:translate-y-[-8px]">
             {/* Image Placeholder */}
             <div className="aspect-4/3 bg-slate-100 relative overflow-hidden group/img">
-              <img 
+              <Image 
                 src={[
                   "https://images.unsplash.com/photo-1603398938378-e54eab446f8a?q=80&w=2070",
                   "https://images.unsplash.com/photo-1615461066159-fea0960485d5?q=80&w=1914",
@@ -46,7 +47,9 @@ export function ProductsGrid() {
                   "https://images.unsplash.com/photo-1631549448353-461bb77718cc?q=80&w=2072"
                 ][i % 4]} 
                 alt={product.name} 
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-110"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                className="object-cover transition-transform duration-700 group-hover/img:scale-110"
               />
               <div className="absolute inset-0 bg-linear-to-t from-slate-900/10 via-transparent to-transparent"></div>
             </div>

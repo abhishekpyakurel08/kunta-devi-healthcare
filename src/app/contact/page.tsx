@@ -5,7 +5,7 @@ import { Container } from "@/components/layout/container";
 import { FloatingActions } from "@/components/layout/floating-actions";
 
 import { Button } from "@/components/ui/button";
-import { MapPin, Phone, Mail, Clock, Send, MessageSquare, Car, Info, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, MessageSquare, Car, Info, ArrowRight } from "lucide-react";
 import { clinicInfo } from "@/data/site-config";
 import Link from "next/link";
 import { generateSEO } from "@/lib/seo";
@@ -112,7 +112,7 @@ export default function ContactPage() {
   );
 }
 
-function ContactCard({ icon: Icon, title, lines, action }: { icon: any, title: string, lines: string[], action: { label: string, href: string } }) {
+function ContactCard({ icon: Icon, title, lines, action }: { icon: React.ElementType, title: string, lines: string[], action: { label: string, href: string } }) {
   return (
     <div className="p-10 rounded-4xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-2xl transition-all duration-500 group flex flex-col gap-8">
       <div className="h-16 w-16 rounded-2xl bg-white border border-slate-100 flex items-center justify-center text-primary shadow-sm group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500">
@@ -137,7 +137,7 @@ function ContactCard({ icon: Icon, title, lines, action }: { icon: any, title: s
   );
 }
 
-function InfoItem({ icon: Icon, title, text }: { icon: any, title: string, text: string }) {
+function InfoItem({ icon: Icon, title, text }: { icon: React.ElementType, title: string, text: string }) {
   return (
     <div className="flex items-center gap-5 p-8 rounded-3xl bg-slate-50 border border-slate-100">
       <div className="h-12 w-12 rounded-xl bg-white flex items-center justify-center text-primary shadow-sm shrink-0">

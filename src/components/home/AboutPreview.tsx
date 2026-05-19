@@ -2,7 +2,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
-import { Container } from "@/components/layout/container";
+
+import Image from "next/image";
 
 export function AboutPreview() {
   const stats = [
@@ -18,17 +19,21 @@ export function AboutPreview() {
           {/* Left: Overlapping Images */}
           <div className="relative">
             <div className="relative rounded-6xl overflow-hidden shadow-2xl border-8 border-slate-50 w-full aspect-4/5 bg-slate-100">
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1964" 
                 alt="Expert medical professional" 
-                className="w-full h-full object-cover"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
               />
             </div>
             <div className="absolute -bottom-16 -right-16 w-3/4 aspect-square bg-slate-100 rounded-5xl shadow-2xl border-8 border-white z-10 overflow-hidden">
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070" 
                 alt="Modern clinical laboratory" 
-                className="w-full h-full object-cover"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
               />
             </div>
           </div>
