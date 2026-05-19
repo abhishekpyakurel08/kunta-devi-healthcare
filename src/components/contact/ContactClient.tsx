@@ -70,14 +70,14 @@ export default function ContactClient() {
 
       <div className="grow pt-8">
         {/* Hero Section */}
-        <section className="bg-gradient-to-b from-[#f0fafa] to-white pt-16 pb-20 md:pt-20 md:pb-24">
+        <section className="bg-linear-to-b from-[#f0fafa] to-white pt-16 pb-20 md:pt-20 md:pb-24">
           <Container>
             <div className="text-center max-w-4xl mx-auto space-y-6">
               <span className="text-[#0A7075] font-bold tracking-[0.2em] uppercase text-xs md:text-sm">CONTACT US</span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D2137] tracking-tight leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary tracking-tight leading-tight">
                 We're Here When Your Family Needs Care
               </h1>
-              <p className="text-[#555F6D] text-base md:text-lg max-w-2xl mx-auto">
+              <p className="text-text-body text-base md:text-lg max-w-2xl mx-auto">
                 Reach out to us using any of the quick contact channels or visit our modern clinic located at Ghatekulo.
               </p>
             </div>
@@ -90,30 +90,30 @@ export default function ContactClient() {
             <Container>
               <div className="text-center mb-12 space-y-3">
                 <span className="text-[#0A7075] font-bold tracking-[0.2em] uppercase text-xs">QUICK CONTACT</span>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0D2137]">Reach Us Your Way</h2>
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary">Reach Us Your Way</h2>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {/* Call Reception */}
-                <div className="bg-white border border-[#E0EDED] rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all">
+                <div className="bg-white border border-border rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all">
                   <div className="h-12 w-12 rounded-full bg-[#f0fafa] flex items-center justify-center mb-4">
                     <Phone className="h-6 w-6 text-[#0A7075]" />
                   </div>
-                  <h3 className="font-bold text-[#0D2137] mb-2">Call Reception</h3>
-                  <p className="text-[#555F6D] text-sm mb-4">Speak with our front desk team</p>
+                  <h3 className="font-bold text-secondary mb-2">Call Reception</h3>
+                  <p className="text-text-body text-sm mb-4">Speak with our front desk team</p>
                   <p className="text-[#0A7075] font-semibold mb-4">{clinicInfo.phone}</p>
-                  <Button className="w-full bg-[#0A7075] hover:bg-[#065F63]" asChild>
+                  <Button className="w-full bg-[#0A7075] hover:bg-primary-dark" asChild>
                     <Link href={`tel:${clinicInfo.phone}`}>Call Now</Link>
                   </Button>
                 </div>
 
                 {/* WhatsApp Support */}
-                <div className="bg-white border border-[#E0EDED] rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all">
+                <div className="bg-white border border-border rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all">
                   <div className="h-12 w-12 rounded-full bg-[#f0fafa] flex items-center justify-center mb-4">
                     <MessageCircle className="h-6 w-6 text-[#2A9D8F]" />
                   </div>
-                  <h3 className="font-bold text-[#0D2137] mb-2">WhatsApp Support</h3>
-                  <p className="text-[#555F6D] text-sm mb-4">Message us for quick response</p>
+                  <h3 className="font-bold text-secondary mb-2">WhatsApp Support</h3>
+                  <p className="text-text-body text-sm mb-4">Message us for quick response</p>
                   <p className="text-[#2A9D8F] font-semibold mb-4">{clinicInfo.whatsapp}</p>
                   <Button className="w-full bg-[#2A9D8F] hover:bg-[#238b7e]" asChild>
                     <Link href={`https://wa.me/${clinicInfo.whatsapp.replace(/[^0-9]/g, "")}`} target="_blank">Chat Now</Link>
@@ -121,7 +121,7 @@ export default function ContactClient() {
                 </div>
 
                 {/* Book Appointment - Highlighted */}
-                <div className="bg-[#0D2137] rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all relative overflow-hidden">
+                <div className="bg-secondary rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all relative overflow-hidden">
                   <div className="absolute top-3 right-3 bg-[#2A9D8F] text-white text-xs px-3 py-1 rounded-full font-semibold">
                     Available 24/7
                   </div>
@@ -130,7 +130,7 @@ export default function ContactClient() {
                   </div>
                   <h3 className="font-bold text-white mb-2">Book Appointment</h3>
                   <p className="text-white/80 text-sm mb-4">Schedule your consultation</p>
-                  <Button className="w-full bg-white text-[#0D2137] hover:bg-gray-100" asChild>
+                  <Button className="w-full bg-white text-secondary hover:bg-gray-100" asChild>
                     <Link href="/appointment">Book Now</Link>
                   </Button>
                 </div>
@@ -174,7 +174,7 @@ export default function ContactClient() {
                 {/* Contact Info */}
                 <div className="space-y-6">
                   <span className="text-[#0A7075] font-bold tracking-[0.2em] uppercase text-xs">HEALTH RESOURCES</span>
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0D2137]">Visit Us Today</h2>
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary">Visit Us Today</h2>
 
                   <div className="space-y-6">
                     <div className="flex items-start gap-4">
@@ -182,8 +182,8 @@ export default function ContactClient() {
                         <MapPin className="h-5 w-5 text-[#0A7075]" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-[#0D2137] mb-1">Address</h4>
-                        <p className="text-[#555F6D]">Ghatekulo, Kathmandu, Nepal</p>
+                        <h4 className="font-bold text-secondary mb-1">Address</h4>
+                        <p className="text-text-body">Ghatekulo, Kathmandu, Nepal</p>
                       </div>
                     </div>
 
@@ -192,8 +192,8 @@ export default function ContactClient() {
                         <Phone className="h-5 w-5 text-[#0A7075]" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-[#0D2137] mb-1">Phone</h4>
-                        <p className="text-[#555F6D]">+977-01-XXXXXXX</p>
+                        <h4 className="font-bold text-secondary mb-1">Phone</h4>
+                        <p className="text-text-body">+977-01-XXXXXXX</p>
                       </div>
                     </div>
 
@@ -202,8 +202,8 @@ export default function ContactClient() {
                         <Mail className="h-5 w-5 text-[#0A7075]" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-[#0D2137] mb-1">Email</h4>
-                        <p className="text-[#555F6D]">info@kuntadevi.com</p>
+                        <h4 className="font-bold text-secondary mb-1">Email</h4>
+                        <p className="text-text-body">info@kuntadevi.com</p>
                       </div>
                     </div>
 
@@ -212,8 +212,8 @@ export default function ContactClient() {
                         <Clock className="h-5 w-5 text-[#0A7075]" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-[#0D2137] mb-1">Hours</h4>
-                        <p className="text-[#555F6D]">Sunday – Friday: 7:00 AM – 7:00 PM</p>
+                        <h4 className="font-bold text-secondary mb-1">Hours</h4>
+                        <p className="text-text-body">Sunday – Friday: 7:00 AM – 7:00 PM</p>
                       </div>
                     </div>
                   </div>
@@ -224,7 +224,7 @@ export default function ContactClient() {
                         Get Direction <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
-                    <Button className="flex-1 bg-[#0A7075] hover:bg-[#065F63]" asChild>
+                    <Button className="flex-1 bg-[#0A7075] hover:bg-primary-dark" asChild>
                       <Link href="/appointment">Book Appointment</Link>
                     </Button>
                   </div>
@@ -240,7 +240,7 @@ export default function ContactClient() {
             <Container>
               <div className="text-center mb-12 space-y-3">
                 <span className="text-[#0A7075] font-bold tracking-[0.2em] uppercase text-xs">DEPARTMENT HOURS</span>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0D2137]">Plan Your Visit</h2>
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary">Plan Your Visit</h2>
               </div>
 
               <div className="grid md:grid-cols-3 gap-6">
@@ -251,7 +251,7 @@ export default function ContactClient() {
                       "rounded-2xl p-6 shadow-lg transition-all",
                       dept.isEmergency
                         ? "bg-red-50 border-2 border-red-200"
-                        : "bg-[#f0fafa] border border-[#E0EDED]"
+                        : "bg-[#f0fafa] border border-border"
                     )}
                   >
                     <div className="flex items-center justify-between mb-4">
@@ -269,14 +269,14 @@ export default function ContactClient() {
                         {dept.badge}
                       </span>
                     </div>
-                    <h3 className={cn("font-bold mb-2", dept.isEmergency ? "text-red-700" : "text-[#0D2137]")}>
+                    <h3 className={cn("font-bold mb-2", dept.isEmergency ? "text-red-700" : "text-secondary")}>
                       {dept.name}
                     </h3>
-                    <p className={cn("text-sm mb-2", dept.isEmergency ? "text-red-600" : "text-[#555F6D]")}>
+                    <p className={cn("text-sm mb-2", dept.isEmergency ? "text-red-600" : "text-text-body")}>
                       {dept.hours}
                     </p>
                     {dept.note && (
-                      <p className="text-xs text-[#555F6D] mb-4">{dept.note}</p>
+                      <p className="text-xs text-text-body mb-4">{dept.note}</p>
                     )}
                     {dept.isEmergency ? (
                       <Button className="w-full bg-red-600 hover:bg-red-700 text-white" asChild>
@@ -300,13 +300,13 @@ export default function ContactClient() {
             <Container>
               <div className="text-center mb-12 space-y-3">
                 <span className="text-[#0A7075] font-bold tracking-[0.2em] uppercase text-xs">DEPARTMENT CONTACTS</span>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0D2137]">Reach the Right Team</h2>
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary">Reach the Right Team</h2>
               </div>
 
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="w-full">
-                    <thead className="bg-[#0D2137] text-white">
+                    <thead className="bg-secondary text-white">
                       <tr>
                         <th className="px-6 py-4 text-left font-semibold">Department</th>
                         <th className="px-6 py-4 text-left font-semibold">Phone Number</th>
@@ -319,14 +319,14 @@ export default function ContactClient() {
                         <tr
                           key={i}
                           className={cn(
-                            "border-b border-[#E0EDED]",
+                            "border-b border-border",
                             contact.isEmergency ? "bg-red-50" : ""
                           )}
                         >
-                          <td className={cn("px-6 py-4 font-semibold", contact.isEmergency ? "text-red-700" : "text-[#0D2137]")}>
+                          <td className={cn("px-6 py-4 font-semibold", contact.isEmergency ? "text-red-700" : "text-secondary")}>
                             {contact.department}
                           </td>
-                          <td className="px-6 py-4 text-[#555F6D]">{contact.phone}</td>
+                          <td className="px-6 py-4 text-text-body">{contact.phone}</td>
                           <td className="px-6 py-4">
                             <Button variant="outline" size="sm" className="h-8 text-xs" asChild>
                               <Link href={`https://wa.me/${contact.whatsapp.replace(/[^0-9]/g, "")}`} target="_blank">
@@ -335,7 +335,7 @@ export default function ContactClient() {
                               </Link>
                             </Button>
                           </td>
-                          <td className={cn("px-6 py-4 text-sm", contact.isEmergency ? "text-red-600 font-semibold" : "text-[#555F6D]")}>
+                          <td className={cn("px-6 py-4 text-sm", contact.isEmergency ? "text-red-600 font-semibold" : "text-text-body")}>
                             {contact.availability}
                           </td>
                         </tr>
@@ -363,7 +363,7 @@ export default function ContactClient() {
                 </div>
 
                 <div className="space-y-6">
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0D2137]">Getting Here Made Easy</h2>
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary">Getting Here Made Easy</h2>
 
                   <div className="space-y-4">
                     {[
@@ -377,12 +377,12 @@ export default function ContactClient() {
                         <div className="h-6 w-6 rounded-full bg-[#2A9D8F] flex items-center justify-center shrink-0">
                           <Check className="h-4 w-4 text-white" />
                         </div>
-                        <p className="text-[#555F6D]">{item}</p>
+                        <p className="text-text-body">{item}</p>
                       </div>
                     ))}
                   </div>
 
-                  <Button className="bg-[#0D2137] hover:bg-[#0a1828]" asChild>
+                  <Button className="bg-secondary hover:bg-secondary/90 text-white" asChild>
                     <Link href="https://maps.google.com" target="_blank">
                       <Navigation className="mr-2 h-4 w-4" />
                       View Directions
@@ -400,7 +400,7 @@ export default function ContactClient() {
             <Container>
               <div className="text-center mb-12 space-y-3">
                 <span className="text-[#0A7075] font-bold tracking-[0.2em] uppercase text-xs">FAQ</span>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0D2137]">Common Questions About Our Clinic</h2>
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary">Common Questions About Our Clinic</h2>
               </div>
 
               <div className="max-w-3xl mx-auto space-y-4">
@@ -413,7 +413,7 @@ export default function ContactClient() {
                       onClick={() => setOpenFaq(openFaq === i ? null : i)}
                       className="w-full px-6 py-5 flex items-center justify-between text-left"
                     >
-                      <span className="font-semibold text-[#0D2137]">{faq.question}</span>
+                      <span className="font-semibold text-secondary">{faq.question}</span>
                       {openFaq === i ? (
                         <ChevronUp className="h-5 w-5 text-[#0A7075]" />
                       ) : (
@@ -422,7 +422,7 @@ export default function ContactClient() {
                     </button>
                     {openFaq === i && (
                       <div className="px-6 pb-5 pt-0">
-                        <p className="text-[#555F6D]">{faq.answer}</p>
+                        <p className="text-text-body">{faq.answer}</p>
                       </div>
                     )}
                   </div>
@@ -462,7 +462,7 @@ export default function ContactClient() {
 
         {/* Main CTA Banner */}
         <ScrollReveal>
-          <section className="py-16 md:py-24 bg-gradient-to-r from-[#0A7075] to-[#2A9D8F]">
+          <section className="py-16 md:py-24 bg-linear-to-r from-[#0A7075] to-[#2A9D8F]">
             <Container>
               <div className="text-center max-w-3xl mx-auto space-y-6">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">Experience Trusted Healthcare in Person</h2>

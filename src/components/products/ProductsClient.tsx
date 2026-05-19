@@ -201,7 +201,7 @@ export default function ProductsClient() {
     <div className="bg-[#FAFDFD]">
       
       {/* 1. Hero Section */}
-      <section className="relative py-16 md:py-24 bg-gradient-to-b from-[#F2FBFB] to-[#FAFDFD] overflow-hidden border-b border-slate-100">
+      <section className="relative py-16 md:py-24 bg-linear-to-b from-[#F2FBFB] to-[#FAFDFD] overflow-hidden border-b border-slate-100">
         <div className="absolute top-0 right-0 w-[450px] h-[450px] bg-[#0A7075]/5 rounded-full blur-3xl pointer-events-none -mr-48 -mt-48"></div>
         
         <Container className="relative z-10 text-center">
@@ -302,7 +302,7 @@ export default function ProductsClient() {
               {/* Find Products button */}
               <Button 
                 onClick={() => handleReserve("Selected Filters search")}
-                className="md:col-span-2 w-full h-12 bg-[#0A7075] hover:bg-[#065F63] rounded-xl text-xs font-extrabold uppercase tracking-wider"
+                className="md:col-span-2 w-full h-12 bg-[#0A7075] hover:bg-primary-dark rounded-xl text-xs font-extrabold uppercase tracking-wider"
               >
                 Find Products
               </Button>
@@ -348,7 +348,7 @@ export default function ProductsClient() {
                 <span className="absolute top-4 left-4 bg-orange-500 text-white text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
                   Best Seller
                 </span>
-                <span className="absolute bottom-4 right-4 bg-emerald-50 text-emerald-700 border border-emerald-100 text-[9px] font-extrabold px-3 py-1 rounded-full flex items-center gap-1 shadow-sm bg-white">
+                <span className="absolute bottom-4 right-4 bg-emerald-50 text-emerald-700 border border-emerald-100 text-[9px] font-extrabold px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
                   <ShieldCheck className="h-3 w-3" /> Verified Genuine Product
                 </span>
               </div>
@@ -368,7 +368,7 @@ export default function ProductsClient() {
                   <Button variant="outline" className="flex-1 h-11 border-slate-200 text-slate-700 text-xs font-bold rounded-xl" onClick={() => handleReserve("Glucometer Starter Kit Details")}>
                     View Details
                   </Button>
-                  <Button className="flex-1 h-11 bg-[#0A7075] hover:bg-[#065F63] text-white text-xs font-bold rounded-xl" onClick={() => handleReserve("Glucometer Starter Kit")}>
+                  <Button className="flex-1 h-11 bg-[#0A7075] hover:bg-primary-dark text-white text-xs font-bold rounded-xl" onClick={() => handleReserve("Glucometer Starter Kit")}>
                     Reserve Now
                   </Button>
                 </div>
@@ -388,7 +388,7 @@ export default function ProductsClient() {
                 <span className="absolute top-4 left-4 bg-[#0A7075] text-white text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
                   Buy Now
                 </span>
-                <span className="absolute bottom-4 right-4 bg-emerald-50 text-emerald-700 border border-emerald-100 text-[9px] font-extrabold px-3 py-1 rounded-full flex items-center gap-1 shadow-sm bg-white">
+                <span className="absolute bottom-4 right-4 bg-emerald-50 text-emerald-700 border border-emerald-100 text-[9px] font-extrabold px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
                   <ShieldCheck className="h-3 w-3" /> Verified Standard Product
                 </span>
               </div>
@@ -408,7 +408,7 @@ export default function ProductsClient() {
                   <Button variant="outline" className="flex-1 h-11 border-slate-200 text-slate-700 text-xs font-bold rounded-xl" onClick={() => handleReserve("Digital Blood Pressure Monitor Details")}>
                     View Details
                   </Button>
-                  <Button className="flex-1 h-11 bg-[#0A7075] hover:bg-[#065F63] text-white text-xs font-bold rounded-xl" onClick={() => handleReserve("Digital Blood Pressure Monitor")}>
+                  <Button className="flex-1 h-11 bg-[#0A7075] hover:bg-primary-dark text-white text-xs font-bold rounded-xl" onClick={() => handleReserve("Digital Blood Pressure Monitor")}>
                     Reserve Now
                   </Button>
                 </div>
@@ -428,7 +428,7 @@ export default function ProductsClient() {
                 <span className="absolute top-4 left-4 bg-amber-500 text-white text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
                   5 Stars
                 </span>
-                <span className="absolute bottom-4 right-4 bg-emerald-50 text-emerald-700 border border-emerald-100 text-[9px] font-extrabold px-3 py-1 rounded-full flex items-center gap-1 shadow-sm bg-white">
+                <span className="absolute bottom-4 right-4 bg-emerald-50 text-emerald-700 border border-emerald-100 text-[9px] font-extrabold px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
                   <ShieldCheck className="h-3 w-3" /> Verified Genuine Product
                 </span>
               </div>
@@ -448,7 +448,7 @@ export default function ProductsClient() {
                   <Button variant="outline" className="flex-1 h-11 border-slate-200 text-slate-700 text-xs font-bold rounded-xl" onClick={() => handleReserve("Nebulizer Machine Details")}>
                     View Details
                   </Button>
-                  <Button className="flex-1 h-11 bg-[#0A7075] hover:bg-[#065F63] text-white text-xs font-bold rounded-xl" onClick={() => handleReserve("Nebulizer Machine")}>
+                  <Button className="flex-1 h-11 bg-[#0A7075] hover:bg-primary-dark text-white text-xs font-bold rounded-xl" onClick={() => handleReserve("Nebulizer Machine")}>
                     Reserve Now
                   </Button>
                 </div>
@@ -536,7 +536,7 @@ export default function ProductsClient() {
                   <Button variant="outline" className="flex-1 h-9 rounded-lg border-slate-200 text-slate-600 font-bold text-[10px] px-1" onClick={() => handleReserve(`${prod.name} Details`)}>
                     View Details
                   </Button>
-                  <Button className="flex-1 h-9 rounded-lg bg-[#0A7075] hover:bg-[#065F63] text-white font-bold text-[10px] px-1" onClick={() => handleReserve(prod.name)}>
+                  <Button className="flex-1 h-9 rounded-lg bg-[#0A7075] hover:bg-primary-dark text-white font-bold text-[10px] px-1" onClick={() => handleReserve(prod.name)}>
                     Reserve
                   </Button>
                 </div>
@@ -611,7 +611,7 @@ export default function ProductsClient() {
                     <span className="text-[10px] font-extrabold text-slate-500 ml-1">({rec.rating})</span>
                   </div>
                   
-                  <Button className="h-10 bg-[#0A7075] hover:bg-[#065F63] text-white text-xs font-bold rounded-xl px-5" onClick={() => handleReserve(rec.prodName)}>
+                  <Button className="h-10 bg-[#0A7075] hover:bg-primary-dark text-white text-xs font-bold rounded-xl px-5" onClick={() => handleReserve(rec.prodName)}>
                     Reserve Product
                   </Button>
                 </div>
@@ -649,7 +649,7 @@ export default function ProductsClient() {
                       sizes="(max-width: 768px) 100vw, 30vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <span className="absolute top-4 left-4 bg-teal-50 text-[#0A7075] border border-teal-100 text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-sm bg-white">
+                    <span className="absolute top-4 left-4 bg-teal-50 text-[#0A7075] border border-teal-100 text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-sm">
                       {guide.cat}
                     </span>
                   </div>

@@ -109,9 +109,9 @@ export default function AppointmentClient() {
   return (
     <div className="bg-[#FAFDFD]">
       {/* 1. Hero Section */}
-      <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-b from-[#F2FBFB] to-[#FAFDFD] border-b border-slate-100">
+      <section className="relative py-16 md:py-24 overflow-hidden bg-linear-to-b from-[#F2FBFB] to-[#FAFDFD] border-b border-slate-100">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#0A7075]/5 rounded-full blur-3xl -mr-48 -mt-48"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#0D2137]/5 rounded-full blur-3xl -ml-48 -mb-48"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl -ml-48 -mb-48"></div>
 
         <Container className="relative z-10 text-center">
           <div className="max-w-4xl mx-auto flex flex-col items-center gap-5">
@@ -131,7 +131,7 @@ export default function AppointmentClient() {
               Book a consultation, request a service, ask a question, or speak with our healthcare team — all in one place.
             </p>
 
-            <div className="h-1.5 w-24 bg-gradient-to-r from-[#0A7075] to-[#0D2137] rounded-full mt-4"></div>
+            <div className="h-1.5 w-24 bg-linear-to-r from-[#0A7075] to-secondary rounded-full mt-4"></div>
           </div>
         </Container>
       </section>
@@ -142,7 +142,7 @@ export default function AppointmentClient() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
             {/* Left Column — Why Patients Choose Kunta Devi */}
-            <div className="lg:col-span-5 bg-[#0D2137] text-white p-8 md:p-12 rounded-4xl shadow-2xl relative overflow-hidden flex flex-col justify-between h-full group">
+            <div className="lg:col-span-5 bg-secondary text-white p-8 md:p-12 rounded-4xl shadow-2xl relative overflow-hidden flex flex-col justify-between h-full group">
               <div className="absolute top-0 right-0 w-48 h-48 bg-[#0A7075]/20 rounded-full blur-2xl -mr-16 -mt-16"></div>
               
               <div className="space-y-8 relative z-10">
@@ -222,7 +222,7 @@ export default function AppointmentClient() {
                   </p>
                   <Button 
                     onClick={() => setIsSubmitted(false)}
-                    className="mt-4 bg-[#0A7075] hover:bg-[#065F63] rounded-xl px-8 py-4 h-auto font-bold"
+                    className="mt-4 bg-[#0A7075] hover:bg-primary-dark rounded-xl px-8 py-4 h-auto font-bold"
                   >
                     Submit Another Booking
                   </Button>
@@ -417,7 +417,7 @@ export default function AppointmentClient() {
                             type="checkbox"
                             className="h-4 w-4 rounded border-slate-300 text-[#0A7075] focus:ring-[#0A7075] mt-0.5 cursor-pointer shrink-0"
                           />
-                          <span className="text-[11px] font-semibold leading-normal">
+                          <span className="text-label font-semibold leading-normal">
                             I agree to be contacted by Kunta Devi Health Care representatives for appointment details, clinic information, and health services confirmation. *
                           </span>
                         </label>
@@ -431,7 +431,7 @@ export default function AppointmentClient() {
                       <Button 
                         type="submit" 
                         disabled={isSubmitting}
-                        className="w-full h-14 rounded-xl bg-[#0A7075] hover:bg-[#065F63] text-white font-extrabold text-sm shadow-xl shadow-[#0A7075]/15 mt-4 transition-all duration-300 flex items-center justify-center gap-2"
+                        className="w-full h-14 rounded-xl bg-[#0A7075] hover:bg-primary-dark text-white font-extrabold text-sm shadow-xl shadow-[#0A7075]/15 mt-4 transition-all duration-300 flex items-center justify-center gap-2"
                       >
                         {isSubmitting ? "Processing..." : (
                           <>
@@ -489,7 +489,7 @@ export default function AppointmentClient() {
                 <h3 className="font-extrabold text-slate-900 text-sm mb-1.5">Call Reception</h3>
                 <p className="text-xs text-slate-500 font-semibold mb-6">Speak to our team directly</p>
               </div>
-              <Button variant="link" className="p-0 text-[#0A7075] hover:text-[#065F63] font-extrabold flex items-center gap-1.5 justify-start text-xs h-auto w-auto" asChild>
+              <Button variant="link" className="p-0 text-[#0A7075] hover:text-primary-dark font-extrabold flex items-center gap-1.5 justify-start text-xs h-auto w-auto" asChild>
                 <a href={`tel:${PHONE_RECEPTION}`}>
                   Call Now <ArrowRight className="h-4.5 w-4.5" />
                 </a>
@@ -497,7 +497,7 @@ export default function AppointmentClient() {
             </div>
 
             {/* Card 3: Corporate Inquiry (highlighted) */}
-            <div className="bg-[#0D2137] text-white p-8 rounded-3xl flex flex-col justify-between group hover:shadow-2xl hover:-translate-y-1 transition-all duration-500">
+            <div className="bg-secondary text-white p-8 rounded-3xl flex flex-col justify-between group hover:shadow-2xl hover:-translate-y-1 transition-all duration-500">
               <div>
                 <div className="h-10 w-10 rounded-xl bg-white/10 text-teal-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <UserCheck className="h-5 w-5" />
@@ -640,7 +640,7 @@ export default function AppointmentClient() {
             </div>
 
             {/* Benefit 3 */}
-            <div className="bg-[#0D2137] text-white p-8 rounded-3xl transition-all duration-300 hover:-translate-y-1 shadow-[0_10px_30px_rgba(13,33,55,0.15)]">
+            <div className="bg-secondary text-white p-8 rounded-3xl transition-all duration-300 hover:-translate-y-1 shadow-[0_10px_30px_rgba(13,33,55,0.15)]">
               <h4 className="font-extrabold text-teal-400 text-xs uppercase tracking-wider mb-2">Flexible Scheduling</h4>
               <p className="text-2xl font-black mb-4">12-Hour Slots</p>
               <p className="text-xs text-white/80 font-bold leading-relaxed">
@@ -759,7 +759,7 @@ export default function AppointmentClient() {
               <iframe
                 title="Kunta Devi Health Care Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.4567!2d85.3289!3d27.7012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a2e379471f%3A0x63ebef4cf7e7216a!2sGhattekulo%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1700000000000!5m2!1sen!2snp"
-                className="w-full h-full border-none absolute inset-0 grayscale-[10%] contrast-[110%] transition-all duration-700 group-hover:grayscale-0"
+                className="w-full h-full border-none absolute inset-0 grayscale-10 contrast-110 transition-all duration-700 group-hover:grayscale-0"
                 allowFullScreen={true}
                 loading="lazy"
               ></iframe>
@@ -831,12 +831,12 @@ export default function AppointmentClient() {
               </div>
 
               <div className="flex flex-wrap gap-4 pt-4 border-t border-slate-100">
-                <Button variant="outline" className="h-12 px-6 rounded-xl border-[#0A7075] text-[#0A7075] hover:bg-[#E6F4F4]" asChild>
+                <Button variant="outline" className="h-12 px-6 rounded-xl border-[#0A7075] text-[#0A7075] hover:bg-primary-light" asChild>
                   <a href="https://maps.google.com/?q=Ghattekulo,Kathmandu,Nepal" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                     Get Direction <ArrowRight className="h-4 w-4" />
                   </a>
                 </Button>
-                <Button className="h-12 px-6 rounded-xl bg-[#0A7075] hover:bg-[#065F63]" asChild>
+                <Button className="h-12 px-6 rounded-xl bg-[#0A7075] hover:bg-primary-dark" asChild>
                   <Link href="/appointment">Book Appointment</Link>
                 </Button>
               </div>
@@ -848,7 +848,7 @@ export default function AppointmentClient() {
       {/* 9. Footer CTA Banner */}
       <section className="py-12 bg-white pb-20">
         <Container>
-          <div className="bg-gradient-to-r from-[#0A7075] to-[#0D2137] rounded-3xl p-10 md:p-16 text-white text-center relative overflow-hidden group shadow-xl">
+          <div className="bg-linear-to-r from-[#0A7075] to-secondary rounded-3xl p-10 md:p-16 text-white text-center relative overflow-hidden group shadow-xl">
             <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-2xl -ml-32 -mt-32"></div>
             <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-2xl -mr-32 -mb-32"></div>
 

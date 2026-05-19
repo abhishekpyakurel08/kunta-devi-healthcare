@@ -125,14 +125,14 @@ export default function BlogClient() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-[#f0fafa] to-white pt-16 pb-20 md:pt-20 md:pb-24">
+      <section className="bg-linear-to-b from-[#f0fafa] to-white pt-16 pb-20 md:pt-20 md:pb-24">
         <Container>
           <div className="text-center max-w-4xl mx-auto space-y-6">
             <span className="text-[#0A7075] font-bold tracking-[0.2em] uppercase text-xs md:text-sm">HEALTH NEWS & TIPS</span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D2137] tracking-tight leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary tracking-tight leading-tight">
               Trusted Health Advice for You and Your Family
             </h1>
-            <p className="text-[#555F6D] text-base md:text-lg max-w-2xl mx-auto">
+            <p className="text-text-body text-base md:text-lg max-w-2xl mx-auto">
               Expert health tips, seasonal alerts, prevention guides, and doctor insights to help you make informed healthcare decisions.
             </p>
           </div>
@@ -141,43 +141,43 @@ export default function BlogClient() {
 
       {/* Search + Filter Bar */}
       <ScrollReveal>
-        <section className="py-8 bg-white border-b border-[#E0EDED]">
+        <section className="py-8 bg-white border-b border-border">
           <Container>
             <div className="flex flex-col lg:flex-row gap-4 items-center">
               <div className="flex-1 w-full">
                 <div className="relative">
-                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-[#555F6D]" />
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-text-body" />
                   <input
                     type="text"
                     placeholder="Search symptoms, articles, health topics..."
-                    className="w-full h-12 pl-12 pr-4 rounded-xl border border-[#E0EDED] focus:outline-none focus:border-[#0A7075] transition-colors"
+                    className="w-full h-12 pl-12 pr-4 rounded-xl border border-border focus:outline-none focus:border-[#0A7075] transition-colors"
                   />
                 </div>
               </div>
               <div className="flex flex-wrap gap-3 w-full lg:w-auto">
-                <select className="h-12 px-4 rounded-xl border border-[#E0EDED] bg-white focus:outline-none focus:border-[#0A7075] text-[#555F6D]">
+                <select className="h-12 px-4 rounded-xl border border-border bg-white focus:outline-none focus:border-[#0A7075] text-text-body">
                   <option>All Categories</option>
                   <option>Heart Health</option>
                   <option>Diabetes</option>
                   <option>Child Care</option>
                   <option>Women Health</option>
                 </select>
-                <select className="h-12 px-4 rounded-xl border border-[#E0EDED] bg-white focus:outline-none focus:border-[#0A7075] text-[#555F6D]">
+                <select className="h-12 px-4 rounded-xl border border-border bg-white focus:outline-none focus:border-[#0A7075] text-text-body">
                   <option>All Tags</option>
                   <option>Prevention</option>
                   <option>Treatment</option>
                   <option>Nutrition</option>
                 </select>
-                <select className="h-12 px-4 rounded-xl border border-[#E0EDED] bg-white focus:outline-none focus:border-[#0A7075] text-[#555F6D]">
+                <select className="h-12 px-4 rounded-xl border border-border bg-white focus:outline-none focus:border-[#0A7075] text-text-body">
                   <option>Latest</option>
                   <option>Popular</option>
                   <option>Most Read</option>
                 </select>
-                <select className="h-12 px-4 rounded-xl border border-[#E0EDED] bg-white focus:outline-none focus:border-[#0A7075] text-[#555F6D]">
+                <select className="h-12 px-4 rounded-xl border border-border bg-white focus:outline-none focus:border-[#0A7075] text-text-body">
                   <option>English</option>
                   <option>Nepali</option>
                 </select>
-                <Button className="bg-[#0A7075] hover:bg-[#065F63] h-12 px-6">
+                <Button className="bg-[#0A7075] hover:bg-primary-dark h-12 px-6">
                   Find Articles
                 </Button>
               </div>
@@ -202,12 +202,12 @@ export default function BlogClient() {
                 </div>
                 <div className="p-8 md:p-12 flex flex-col justify-center">
                   <span className="text-[#0A7075] font-bold tracking-[0.2em] uppercase text-xs mb-4">SEASONAL HEALTH</span>
-                  <h2 className="text-2xl md:text-3xl font-bold text-[#0D2137] mb-4">
+                  <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-4">
                     How to Protect Your Family During Dengue Season in Nepal
                   </h2>
-                  <div className="flex items-center gap-4 text-sm text-[#555F6D] mb-4">
+                  <div className="flex items-center gap-4 text-sm text-text-body mb-4">
                     <span className="flex items-center gap-2">
-                      <User className="h-4 w-4" />
+                       <User className="h-4 w-4" />
                       Dr. Sita Sharma, Cardiologist
                     </span>
                     <span className="flex items-center gap-2">
@@ -219,7 +219,7 @@ export default function BlogClient() {
                       May 2025
                     </span>
                   </div>
-                  <p className="text-[#555F6D] mb-6">
+                  <p className="text-text-body mb-6">
                     With monsoon season approaching, dengue cases are on the rise across Nepal. Learn essential prevention strategies, recognize symptoms early, and protect your family from this mosquito-borne disease.
                   </p>
                   <div className="flex flex-wrap gap-2 mb-6">
@@ -228,7 +228,7 @@ export default function BlogClient() {
                     <span className="px-3 py-1 bg-[#0A7075]/10 text-[#0A7075] rounded-full text-sm font-semibold">Family Tips</span>
                   </div>
                   <div className="flex items-center gap-4">
-                    <Button className="bg-[#0A7075] hover:bg-[#065F63]" asChild>
+                    <Button className="bg-[#0A7075] hover:bg-primary-dark" asChild>
                       <Link href="#">
                         Read Full Article <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
@@ -247,8 +247,8 @@ export default function BlogClient() {
           <Container>
             <div className="text-center mb-12 space-y-3">
               <span className="text-[#0A7075] font-bold tracking-[0.2em] uppercase text-xs">HEALTH TOPICS</span>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0D2137]">Popular Health Topics</h2>
-              <p className="text-[#555F6D]">Browse by health concern</p>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary">Popular Health Topics</h2>
+              <p className="text-text-body">Browse by health concern</p>
             </div>
 
             <div className="grid md:grid-cols-4 gap-6">
@@ -261,8 +261,8 @@ export default function BlogClient() {
                   <div className="h-12 w-12 rounded-full bg-[#0A7075]/10 flex items-center justify-center mb-4 group-hover:bg-[#0A7075] transition-colors">
                     <topic.icon className="h-6 w-6 text-[#0A7075] group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="font-bold text-[#0D2137] mb-2">{topic.title}</h3>
-                  <p className="text-sm text-[#555F6D] mb-4">{topic.count} Articles</p>
+                  <h3 className="font-bold text-secondary mb-2">{topic.title}</h3>
+                  <p className="text-sm text-text-body mb-4">{topic.count} Articles</p>
                   <span className="text-[#0A7075] text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
                     Explore <ArrowRight className="h-4 w-4" />
                   </span>
@@ -279,8 +279,8 @@ export default function BlogClient() {
           <Container>
             <div className="text-center mb-12 space-y-3">
               <span className="text-[#0A7075] font-bold tracking-[0.2em] uppercase text-xs">LATEST ARTICLES</span>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0D2137]">Latest Health Articles</h2>
-              <p className="text-[#555F6D]">Doctor-authored, reviewed, and trusted health information</p>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary">Latest Health Articles</h2>
+              <p className="text-text-body">Doctor-authored, reviewed, and trusted health information</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -306,9 +306,9 @@ export default function BlogClient() {
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="font-bold text-[#0D2137] mb-3 line-clamp-2">{article.title}</h3>
-                    <p className="text-[#555F6D] text-sm mb-4 line-clamp-2">{article.excerpt}</p>
-                    <div className="flex items-center justify-between text-sm text-[#555F6D] mb-4">
+                    <h3 className="font-bold text-secondary mb-3 line-clamp-2">{article.title}</h3>
+                    <p className="text-text-body text-sm mb-4 line-clamp-2">{article.excerpt}</p>
+                    <div className="flex items-center justify-between text-sm text-text-body mb-4">
                       <span className="flex items-center gap-2">
                         <User className="h-4 w-4" />
                         {article.author}
@@ -343,8 +343,8 @@ export default function BlogClient() {
           <Container>
             <div className="text-center mb-12 space-y-3">
               <span className="text-[#0A7075] font-bold tracking-[0.2em] uppercase text-xs">SEASONAL ALERTS</span>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0D2137]">Seasonal Health Alerts</h2>
-              <p className="text-[#555F6D]">Timely warnings and prevention guides for Nepal's seasonal health risks</p>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary">Seasonal Health Alerts</h2>
+              <p className="text-text-body">Timely warnings and prevention guides for Nepal's seasonal health risks</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -359,7 +359,7 @@ export default function BlogClient() {
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <h3 className="text-white font-bold text-xl mb-2">Monsoon Disease Prevention</h3>
                   <p className="text-white/80 text-sm mb-4">Protect yourself from waterborne diseases during rainy season</p>
-                  <Button className="bg-[#0A7075] hover:bg-[#065F63]" asChild>
+                  <Button className="bg-[#0A7075] hover:bg-primary-dark" asChild>
                     <Link href="#">
                       Read Prevention Guide <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
@@ -378,7 +378,7 @@ export default function BlogClient() {
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <h3 className="text-white font-bold text-xl mb-2">Winter Respiratory Protection</h3>
                   <p className="text-white/80 text-sm mb-4">Stay healthy during cold season with these essential tips</p>
-                  <Button className="bg-[#0A7075] hover:bg-[#065F63]" asChild>
+                  <Button className="bg-[#0A7075] hover:bg-primary-dark" asChild>
                     <Link href="#">
                       Read Prevention Guide <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
@@ -396,7 +396,7 @@ export default function BlogClient() {
           <Container>
             <div className="text-center mb-12 space-y-3">
               <span className="text-[#0A7075] font-bold tracking-[0.2em] uppercase text-xs">DOCTOR INSIGHTS</span>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0D2137]">Our Specialist Insights</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary">Our Specialist Insights</h2>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
@@ -412,11 +412,11 @@ export default function BlogClient() {
                       />
                     </div>
                     <div>
-                      <h4 className="font-bold text-[#0D2137]">{insight.name}</h4>
-                      <p className="text-sm text-[#555F6D]">{insight.specialty}</p>
+                      <h4 className="font-bold text-secondary">{insight.name}</h4>
+                      <p className="text-sm text-text-body">{insight.specialty}</p>
                     </div>
                   </div>
-                  <p className="text-[#555F6D] italic">"{insight.quote}"</p>
+                  <p className="text-text-body italic">"{insight.quote}"</p>
                 </div>
               ))}
             </div>
@@ -429,24 +429,24 @@ export default function BlogClient() {
         <section className="py-16 md:py-24 bg-[#f0fafa]">
           <Container>
             <div className="max-w-3xl mx-auto text-center space-y-6">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0D2137]">Never Miss a Health Update</h2>
-              <p className="text-[#555F6D]">Subscribe to our newsletter for weekly health tips and clinic updates.</p>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary">Never Miss a Health Update</h2>
+              <p className="text-text-body">Subscribe to our newsletter for weekly health tips and clinic updates.</p>
               
               <div className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
                 <input
                   type="email"
                   placeholder="Enter your email address"
-                  className="flex-1 h-12 px-4 rounded-xl border border-[#E0EDED] focus:outline-none focus:border-[#0A7075]"
+                  className="flex-1 h-12 px-4 rounded-xl border border-border focus:outline-none focus:border-[#0A7075]"
                 />
-                <Button className="bg-[#0A7075] hover:bg-[#065F63] h-12 px-6">
+                <Button className="bg-[#0A7075] hover:bg-primary-dark h-12 px-6">
                   Subscribe
                 </Button>
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="flex-1 h-px bg-[#E0EDED]" />
-                <span className="text-[#555F6D] text-sm">OR</span>
-                <div className="flex-1 h-px bg-[#E0EDED]" />
+                <div className="flex-1 h-px bg-border" />
+                <span className="text-text-body text-sm">OR</span>
+                <div className="flex-1 h-px bg-border" />
               </div>
 
               <Button className="bg-[#2A9D8F] hover:bg-[#238b7e] h-12 px-6" asChild>
@@ -466,7 +466,7 @@ export default function BlogClient() {
           <Container>
             <div className="text-center mb-12 space-y-3">
               <span className="text-[#0A7075] font-bold tracking-[0.2em] uppercase text-xs">FAQ</span>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0D2137]">Common Questions About Health And News</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary">Common Questions About Health And News</h2>
             </div>
 
             <div className="max-w-3xl mx-auto space-y-4">
@@ -479,7 +479,7 @@ export default function BlogClient() {
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
                     className="w-full px-6 py-5 flex items-center justify-between text-left"
                   >
-                    <span className="font-semibold text-[#0D2137]">{faq.question}</span>
+                    <span className="font-semibold text-secondary">{faq.question}</span>
                     {openFaq === i ? (
                       <ChevronUp className="h-5 w-5 text-[#0A7075]" />
                     ) : (
@@ -488,7 +488,7 @@ export default function BlogClient() {
                   </button>
                   {openFaq === i && (
                     <div className="px-6 pb-5 pt-0">
-                      <p className="text-[#555F6D]">{faq.answer}</p>
+                      <p className="text-text-body">{faq.answer}</p>
                     </div>
                   )}
                 </div>
@@ -500,7 +500,7 @@ export default function BlogClient() {
 
       {/* Footer CTA Banner */}
       <ScrollReveal>
-        <section className="py-16 md:py-24 bg-gradient-to-r from-[#0D2137] to-[#0A7075]">
+        <section className="py-16 md:py-24 bg-linear-to-r from-secondary to-[#0A7075]">
           <Container>
             <div className="text-center max-w-3xl mx-auto space-y-6">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">Still Have Health Questions?</h2>
@@ -508,10 +508,10 @@ export default function BlogClient() {
                 Our doctors are here to help. Book a consultation or reach out via WhatsApp for personalized health advice.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-white text-[#0D2137] hover:bg-gray-100 h-12 px-8" asChild>
+                <Button className="bg-white text-secondary hover:bg-gray-100 h-12 px-8" asChild>
                   <Link href="/appointment">Book Consultation</Link>
                 </Button>
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-[#0D2137] h-12 px-8" asChild>
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-secondary h-12 px-8" asChild>
                   <Link href="#">
                     <MessageCircle className="mr-2 h-4 w-4" />
                     WhatsApp Us

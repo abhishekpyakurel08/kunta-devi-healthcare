@@ -162,7 +162,7 @@ export function AppointmentModal() {
     <Dialog open={appointmentModal.isOpen} onOpenChange={closeAppointmentModal}>
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-[36px] font-bold text-[#0D2137]">
+          <DialogTitle className="text-[36px] font-bold text-secondary">
             Book an Appointment
           </DialogTitle>
         </DialogHeader>
@@ -174,14 +174,14 @@ export function AppointmentModal() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h3 className="text-[24px] font-semibold text-[#0D2137] mb-2">Appointment Request Sent!</h3>
-            <p className="text-[16px] text-[#555F6D]">We'll contact you shortly to confirm your appointment.</p>
+            <h3 className="text-[24px] font-semibold text-secondary mb-2">Appointment Request Sent!</h3>
+            <p className="text-[16px] text-text-body">We'll contact you shortly to confirm your appointment.</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6 mt-4">
             {/* Full Name */}
             <div className="space-y-2">
-              <Label htmlFor="fullName" className="flex items-center gap-2 text-[14px] text-[#555F6D]">
+              <Label htmlFor="fullName" className="flex items-center gap-2 text-[14px] text-text-body">
                 <User className="w-5 h-5 text-[#0A7075]" />
                 Full Name *
               </Label>
@@ -191,7 +191,7 @@ export function AppointmentModal() {
                 value={formData.fullName}
                 onChange={handleInputChange}
                 placeholder="Enter your full name"
-                className={errors.fullName ? 'border-[#EF4444] bg-[#FEF2F2]' : 'border-[#E0EDED] focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-[rgba(10,112,117,0.2)]'}
+                className={errors.fullName ? 'border-[#EF4444] bg-[#FEF2F2]' : 'border-[#E0EDED] focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-primary/20'}
               />
               {errors.fullName && (
                 <p className="text-[14px] text-[#EF4444]">{errors.fullName}</p>
@@ -200,7 +200,7 @@ export function AppointmentModal() {
 
             {/* Phone Number */}
             <div className="space-y-2">
-              <Label htmlFor="phoneNumber" className="flex items-center gap-2 text-[14px] text-[#555F6D]">
+              <Label htmlFor="phoneNumber" className="flex items-center gap-2 text-[14px] text-text-body">
                 <Phone className="w-5 h-5 text-[#0A7075]" />
                 Phone Number *
               </Label>
@@ -210,7 +210,7 @@ export function AppointmentModal() {
                 value={formData.phoneNumber}
                 onChange={(e) => handleChange('phoneNumber', e.target.value)}
                 placeholder="98XXXXXXXX"
-                className={errors.phoneNumber ? 'border-[#EF4444] bg-[#FEF2F2]' : 'border-[#E0EDED] focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-[rgba(10,112,117,0.2)]'}
+                className={errors.phoneNumber ? 'border-[#EF4444] bg-[#FEF2F2]' : 'border-[#E0EDED] focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-primary/20'}
               />
               {errors.phoneNumber && (
                 <p className="text-[14px] text-[#EF4444]">{errors.phoneNumber}</p>
@@ -219,7 +219,7 @@ export function AppointmentModal() {
 
             {/* Doctor Selection */}
             <div className="space-y-2">
-              <Label htmlFor="doctorId" className="flex items-center gap-2 text-[14px] text-[#555F6D]">
+              <Label htmlFor="doctorId" className="flex items-center gap-2 text-[14px] text-text-body">
                 <Stethoscope className="w-5 h-5 text-[#0A7075]" />
                 Select Doctor (Optional)
               </Label>
@@ -228,7 +228,7 @@ export function AppointmentModal() {
                 onValueChange={(value: string) => handleChange('doctorId', value)}
                 disabled={!!appointmentModal.preSelectedDoctor}
               >
-                <SelectTrigger className={errors.selection && !formData.doctorId && !formData.serviceId && !formData.packageId ? 'border-[#EF4444] bg-[#FEF2F2]' : 'border-[#E0EDED] focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-[rgba(10,112,117,0.2)]'}>
+                <SelectTrigger className={errors.selection && !formData.doctorId && !formData.serviceId && !formData.packageId ? 'border-[#EF4444] bg-[#FEF2F2]' : 'border-[#E0EDED] focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-primary/20'}>
                   <SelectValue placeholder="Select a doctor" />
                 </SelectTrigger>
                 <SelectContent>
@@ -243,13 +243,13 @@ export function AppointmentModal() {
 
             {/* Service Selection */}
             <div className="space-y-2">
-              <Label htmlFor="serviceId" className="text-[14px] text-[#555F6D]">Select Service (Optional)</Label>
+              <Label htmlFor="serviceId" className="text-[14px] text-text-body">Select Service (Optional)</Label>
               <Select
                 value={formData.serviceId}
                 onValueChange={(value: string) => handleChange('serviceId', value)}
                 disabled={!!appointmentModal.preSelectedService}
               >
-                <SelectTrigger className={errors.selection && !formData.doctorId && !formData.serviceId && !formData.packageId ? 'border-[#EF4444] bg-[#FEF2F2]' : 'border-[#E0EDED] focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-[rgba(10,112,117,0.2)]'}>
+                <SelectTrigger className={errors.selection && !formData.doctorId && !formData.serviceId && !formData.packageId ? 'border-[#EF4444] bg-[#FEF2F2]' : 'border-[#E0EDED] focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-primary/20'}>
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
                 <SelectContent>
@@ -264,7 +264,7 @@ export function AppointmentModal() {
 
             {/* Package Selection */}
             <div className="space-y-2">
-              <Label htmlFor="packageId" className="flex items-center gap-2 text-[14px] text-[#555F6D]">
+              <Label htmlFor="packageId" className="flex items-center gap-2 text-[14px] text-text-body">
                 <Package className="w-5 h-5 text-[#0A7075]" />
                 Select Package (Optional)
               </Label>
@@ -273,7 +273,7 @@ export function AppointmentModal() {
                 onValueChange={(value) => handleChange('packageId', value)}
                 disabled={!!appointmentModal.preSelectedPackage}
               >
-                <SelectTrigger className={errors.selection && !formData.doctorId && !formData.serviceId && !formData.packageId ? 'border-[#EF4444] bg-[#FEF2F2]' : 'border-[#E0EDED] focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-[rgba(10,112,117,0.2)]'}>
+                <SelectTrigger className={errors.selection && !formData.doctorId && !formData.serviceId && !formData.packageId ? 'border-[#EF4444] bg-[#FEF2F2]' : 'border-[#E0EDED] focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-primary/20'}>
                   <SelectValue placeholder="Select a package" />
                 </SelectTrigger>
                 <SelectContent>
@@ -291,7 +291,7 @@ export function AppointmentModal() {
 
             {/* Preferred Date */}
             <div className="space-y-2">
-              <Label htmlFor="preferredDate" className="flex items-center gap-2 text-[14px] text-[#555F6D]">
+              <Label htmlFor="preferredDate" className="flex items-center gap-2 text-[14px] text-text-body">
                 <Calendar className="w-5 h-5 text-[#0A7075]" />
                 Preferred Date *
               </Label>
@@ -301,7 +301,7 @@ export function AppointmentModal() {
                 value={formData.preferredDate}
                 onChange={(e) => handleChange('preferredDate', e.target.value)}
                 min={new Date().toISOString().split('T')[0]}
-                className={errors.preferredDate ? 'border-[#EF4444] bg-[#FEF2F2]' : 'border-[#E0EDED] focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-[rgba(10,112,117,0.2)]'}
+                className={errors.preferredDate ? 'border-[#EF4444] bg-[#FEF2F2]' : 'border-[#E0EDED] focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-primary/20'}
               />
               {errors.preferredDate && (
                 <p className="text-[14px] text-[#EF4444]">{errors.preferredDate}</p>
@@ -310,7 +310,7 @@ export function AppointmentModal() {
 
             {/* Preferred Time */}
             <div className="space-y-2">
-              <Label htmlFor="preferredTime" className="flex items-center gap-2 text-[14px] text-[#555F6D]">
+              <Label htmlFor="preferredTime" className="flex items-center gap-2 text-[14px] text-text-body">
                 <Clock className="w-5 h-5 text-[#0A7075]" />
                 Preferred Time *
               </Label>
@@ -318,7 +318,7 @@ export function AppointmentModal() {
                 value={formData.preferredTime}
                 onValueChange={(value) => handleChange('preferredTime', value)}
               >
-                <SelectTrigger className={errors.preferredTime ? 'border-[#EF4444] bg-[#FEF2F2]' : 'border-[#E0EDED] focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-[rgba(10,112,117,0.2)]'}>
+                <SelectTrigger className={errors.preferredTime ? 'border-[#EF4444] bg-[#FEF2F2]' : 'border-[#E0EDED] focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-primary/20'}>
                   <SelectValue placeholder="Select a time slot" />
                 </SelectTrigger>
                 <SelectContent>
@@ -336,21 +336,21 @@ export function AppointmentModal() {
 
             {/* Notes */}
             <div className="space-y-2">
-              <Label htmlFor="notes" className="text-[14px] text-[#555F6D]">Notes (Optional)</Label>
+              <Label htmlFor="notes" className="text-[14px] text-text-body">Notes (Optional)</Label>
               <Textarea
                 id="notes"
                 value={formData.notes}
                 onChange={(e) => handleChange('notes', e.target.value)}
                 placeholder="Any additional information or special requests..."
                 rows={3}
-                className="border-[#E0EDED] focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-[rgba(10,112,117,0.2)]"
+                className="border-[#E0EDED] focus:border-[#0A7075] focus:outline-none focus:ring-2 focus:ring-primary/20"
               />
             </div>
 
             {/* Submit Button */}
             <Button
               type="submit"
-              className="w-full bg-[#0A7075] hover:bg-[#065F63] text-white rounded-[8px] py-[12px] px-[24px] text-[14px] font-semibold transition-all duration-[0.2s] ease hover:translate-y-[-1px]"
+              className="w-full bg-[#0A7075] hover:bg-primary-dark text-white rounded-[8px] py-[12px] px-[24px] text-[14px] font-semibold transition-all duration-[0.2s] ease hover:translate-y-[-1px]"
               disabled={isSubmitting}
             >
               {isSubmitting ? 'Submitting...' : 'Submit Appointment Request'}

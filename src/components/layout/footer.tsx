@@ -1,59 +1,45 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/layout/container";
-import { clinicInfo } from "@/data/site-config";
-import { MapPin, Phone, Mail, Clock, ChevronDown, ChevronUp } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
-  const [openSection, setOpenSection] = useState<string | null>(null);
-
-  const toggleSection = (section: string) => {
-    setOpenSection(openSection === section ? null : section);
-  };
-
   return (
-    <footer className="bg-[#0D2137] text-white pt-[40px] md:pt-[48px] lg:pt-[64px] xl:pt-[80px] pb-[40px] md:pb-[48px] lg:pb-[64px] overflow-hidden">
-      <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[24px] md:gap-[32px] lg:gap-[24px] mb-[32px] md:mb-[40px] lg:mb-[48px]">
-          {/* Brand Column */}
-          <div className="flex flex-col md:col-span-2 lg:col-span-1 items-center md:items-start text-center md:text-left">
-             <div className="mb-4">
-                <Link href="/" className="flex items-center group">
-                   <div className="h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 relative overflow-hidden rounded-full border border-[#0A7075] shadow-lg bg-white shrink-0">
-                      <Image
-                         src="/logo.jpg"
-                         alt="Kunta Devi Health Care Logo"
-                         fill
-                         sizes="(max-width: 768px) 48px, (max-width: 1024px) 56px, 64px"
-                         className="object-cover"
-                      />
-                   </div>
-                </Link>
-             </div>
-             <p className="text-[14px] md:text-[14px] lg:text-[14px] text-[rgba(255,255,255,0.7)] leading-relaxed max-w-[280px]">
-                Your trusted healthcare partner in the heart of Kathmandu, providing state-of-the-art diagnostic and clinical services.
-             </p>
+    <footer className="bg-[#162130] text-[#9ab0bf] py-[60px] relative overflow-hidden border-t border-slate-800">
+      
+      {/* Background radial soft light */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#2A9D8F]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <Container className="relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 lg:gap-8 pb-12">
+          
+          {/* COLUMN 1: Brand */}
+          <div className="space-y-6 flex flex-col items-start">
+            <Link href="/" className="flex items-center group">
+              <div className="h-20 w-20 relative overflow-hidden rounded-full border-2 border-white bg-white shadow-xl transition-transform duration-500 group-hover:scale-105">
+                <Image
+                  src="/logo.jpg"
+                  alt="Kunta Devi Health Care Logo"
+                  fill
+                  sizes="80px"
+                  className="object-cover"
+                />
+              </div>
+            </Link>
+            
+            <p className="text-sm text-[#9ab0bf] leading-relaxed max-w-xs font-semibold">
+              Your trusted healthcare partner in the heart of Kathmandu.
+            </p>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-4 md:space-y-6">
-            <button
-              onClick={() => toggleSection('quick-links')}
-              className="flex items-center justify-between w-full lg:hidden"
-            >
-              <h3 className="text-[16px] md:text-[18px] font-semibold text-white border-b-2 border-[#0A7075] pb-2">Quick Links</h3>
-              {openSection === 'quick-links' ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
-            </button>
-            <h3 className="hidden lg:block text-[18px] font-semibold text-white border-b-2 border-[#0A7075] pb-2">Quick Links</h3>
-            <ul className={cn(
-              "space-y-3 lg:block",
-              openSection !== 'quick-links' && 'lg:hidden hidden'
-            )}>
+          {/* COLUMN 2: Quick Links */}
+          <div className="space-y-5">
+            <h3 className="text-white font-semibold text-base tracking-wide uppercase">
+              Quick Links
+            </h3>
+            <ul className="grid grid-cols-1 gap-3 text-sm font-semibold">
               {[
                 { name: "Home", href: "/" },
                 { name: "About Us", href: "/about" },
@@ -67,7 +53,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link 
                     href={link.href} 
-                    className="text-[rgba(255,255,255,0.7)] hover:text-[#0A7075] transition-colors text-[14px]"
+                    className="hover:text-[#2A9D8F] hover:underline hover:underline-offset-4 transition-all duration-300"
                   >
                     {link.name}
                   </Link>
@@ -76,20 +62,12 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Our Services */}
-          <div className="space-y-4 md:space-y-6">
-            <button
-              onClick={() => toggleSection('services')}
-              className="flex items-center justify-between w-full lg:hidden"
-            >
-              <h3 className="text-[16px] md:text-[18px] font-semibold text-white border-b-2 border-[#0A7075] pb-2">Our Services</h3>
-              {openSection === 'services' ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
-            </button>
-            <h3 className="hidden lg:block text-[18px] font-semibold text-white border-b-2 border-[#0A7075] pb-2">Our Services</h3>
-            <ul className={cn(
-              "space-y-3 lg:block",
-              openSection !== 'services' && 'lg:hidden hidden'
-            )}>
+          {/* COLUMN 3: Our Services */}
+          <div className="space-y-5">
+            <h3 className="text-white font-semibold text-base tracking-wide uppercase">
+              Our Services
+            </h3>
+            <ul className="grid grid-cols-1 gap-3 text-sm font-semibold">
               {[
                 "General OPD",
                 "Specialist Consult",
@@ -101,7 +79,7 @@ export function Footer() {
                 <li key={service}>
                   <Link 
                     href="/services" 
-                    className="text-[rgba(255,255,255,0.7)] hover:text-[#0A7075] transition-colors text-[14px]"
+                    className="hover:text-[#2A9D8F] transition-all duration-300"
                   >
                     {service}
                   </Link>
@@ -110,36 +88,40 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info - Always Visible on Mobile */}
-          <div className="space-y-4 md:space-y-6">
-            <h3 className="text-[16px] md:text-[18px] font-semibold text-white border-b-2 border-[#0A7075] pb-2">Contact Info</h3>
-            <ul className="space-y-4">
+          {/* COLUMN 4: Contact Info */}
+          <div className="space-y-5">
+            <h3 className="text-white font-semibold text-base tracking-wide uppercase">
+              Contact Info
+            </h3>
+            <ul className="space-y-4 text-sm font-semibold">
               <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-white/70 shrink-0 mt-0.5" />
-                <span className="text-[14px] text-[rgba(255,255,255,0.7)]">{clinicInfo.address}</span>
+                <MapPin className="h-5 w-5 text-[#2A9D8F] shrink-0 mt-0.5" />
+                <span>Ghattekulo, KTM</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-white/70 shrink-0" />
-                <span className="text-[14px] text-[rgba(255,255,255,0.7)]">{clinicInfo.phone}</span>
+                <Phone className="h-5 w-5 text-[#2A9D8F] shrink-0" />
+                <span>01-4412345</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-white/70 shrink-0" />
-                <span className="text-[14px] text-[rgba(255,255,255,0.7)]">{clinicInfo.email}</span>
+                <Mail className="h-5 w-5 text-[#2A9D8F] shrink-0" />
+                <span className="break-all">info@kuntadevi.com</span>
               </li>
               <li className="flex items-start gap-3">
-                <Clock className="h-5 w-5 text-white/70 shrink-0 mt-0.5" />
-                <span className="text-[14px] text-[rgba(255,255,255,0.7)]">{clinicInfo.hours}</span>
+                <Clock className="h-5 w-5 text-[#2A9D8F] shrink-0 mt-0.5" />
+                <span>Sunday – Friday: 7:00 AM – 7:00 PM</span>
               </li>
             </ul>
           </div>
+
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-6 md:pt-8 border-t border-white/10 text-center">
-          <p className="text-[rgba(255,255,255,0.7)] text-[11px] md:text-[12px]">
-            © {currentYear} Kunta Devi Health Care. All rights reserved.
+        {/* BOTTOM BAR */}
+        <div className="pt-8 border-t border-slate-800 text-center">
+          <p className="text-label font-semibold text-slate-500 tracking-wider">
+            © 2026 Kunta Devi Health Care. All rights reserved.
           </p>
         </div>
+
       </Container>
     </footer>
   );

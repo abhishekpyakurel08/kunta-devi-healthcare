@@ -145,7 +145,7 @@ export default function PackagesClient() {
     <div className="bg-[#FAFDFD]">
       
       {/* 1. Hero Section */}
-      <section className="relative py-16 md:py-24 bg-gradient-to-b from-[#F2FBFB] to-[#FAFDFD] overflow-hidden border-b border-slate-100">
+      <section className="relative py-16 md:py-24 bg-linear-to-b from-[#F2FBFB] to-[#FAFDFD] overflow-hidden border-b border-slate-100">
         <div className="absolute top-0 right-0 w-[450px] h-[450px] bg-[#0A7075]/5 rounded-full blur-3xl pointer-events-none -mr-48 -mt-48"></div>
         
         <Container className="relative z-10 text-center">
@@ -254,7 +254,7 @@ export default function PackagesClient() {
               {/* Submit Button */}
               <Button 
                 onClick={handleFilterFind}
-                className="w-full h-12 bg-[#0A7075] hover:bg-[#065F63] rounded-xl text-xs font-extrabold uppercase tracking-wider"
+                className="w-full h-12 bg-[#0A7075] hover:bg-primary-dark rounded-xl text-xs font-extrabold uppercase tracking-wider"
               >
                 Find Package
               </Button>
@@ -307,7 +307,7 @@ export default function PackagesClient() {
                     "BMI Assessment",
                     "Doctor Consultation"
                   ].map((feat, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-[11px] font-bold text-slate-600">
+                    <li key={idx} className="flex items-start gap-2.5 text-label font-bold text-slate-600">
                       <Check className="h-3.5 w-3.5 text-teal-600 stroke-[3px] shrink-0 mt-0.5" />
                       <span>{feat}</span>
                     </li>
@@ -341,7 +341,7 @@ export default function PackagesClient() {
                     "ECG Test panel",
                     "Doctor Consultation"
                   ].map((feat, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-[11px] font-bold text-slate-600">
+                    <li key={idx} className="flex items-start gap-2.5 text-label font-bold text-slate-600">
                       <Check className="h-3.5 w-3.5 text-teal-600 stroke-[3px] shrink-0 mt-0.5" />
                       <span>{feat}</span>
                     </li>
@@ -356,7 +356,7 @@ export default function PackagesClient() {
 
             {/* Card 3: MOST RECOMMENDED (Teal highlighted) */}
             <div className="bg-[#0A7075] text-white rounded-3xl p-6 shadow-xl shadow-[#0A7075]/15 flex flex-col justify-between relative overflow-hidden ring-4 ring-[#0A7075]/10 transform lg:-translate-y-2">
-              <div className="absolute top-0 right-0 bg-[#0D2137] text-teal-300 text-[9px] font-black uppercase tracking-widest px-4 py-1.5 rounded-bl-2xl">
+              <div className="absolute top-0 right-0 bg-secondary text-teal-300 text-[9px] font-black uppercase tracking-widest px-4 py-1.5 rounded-bl-2xl">
                 Most Recommended
               </div>
               
@@ -378,7 +378,7 @@ export default function PackagesClient() {
                     "Comprehensive Eye Check",
                     "Free Follow-up consultation"
                   ].map((feat, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-[11px] font-bold text-teal-100">
+                    <li key={idx} className="flex items-start gap-2.5 text-label font-bold text-teal-100">
                       <Check className="h-3.5 w-3.5 text-teal-300 stroke-[3px] shrink-0 mt-0.5" />
                       <span>{feat}</span>
                     </li>
@@ -411,7 +411,7 @@ export default function PackagesClient() {
                     "Priority panel processing",
                     "Dedicated account manager"
                   ].map((feat, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-[11px] font-bold text-slate-300">
+                    <li key={idx} className="flex items-start gap-2.5 text-label font-bold text-slate-300">
                       <Check className="h-3.5 w-3.5 text-teal-400 stroke-[3px] shrink-0 mt-0.5" />
                       <span>{feat}</span>
                     </li>
@@ -419,7 +419,7 @@ export default function PackagesClient() {
                 </ul>
               </div>
 
-              <Button className="w-full h-11 rounded-xl bg-[#0A7075] hover:bg-[#065F63] text-white font-extrabold text-xs mt-8 transition-colors border-none" asChild>
+              <Button className="w-full h-11 rounded-xl bg-[#0A7075] hover:bg-primary-dark text-white font-extrabold text-xs mt-8 transition-colors border-none" asChild>
                 <Link href="/contact">Contact Us</Link>
               </Button>
             </div>
@@ -609,7 +609,7 @@ export default function PackagesClient() {
                   <p className="text-[10px] font-black uppercase text-slate-400 tracking-wider">Trusted Partner Companies</p>
                 </div>
                 <div className="flex flex-wrap gap-4">
-                  <Button className="h-12 px-6 rounded-xl bg-[#0A7075] hover:bg-[#065F63] text-white border-none font-bold text-xs" asChild>
+                  <Button className="h-12 px-6 rounded-xl bg-[#0A7075] hover:bg-primary-dark text-white border-none font-bold text-xs" asChild>
                     <Link href="/contact">Request Proposal</Link>
                   </Button>
                   <Button className="h-12 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white border-none font-bold text-xs flex items-center gap-2" asChild>
@@ -787,7 +787,7 @@ export default function PackagesClient() {
       {/* 10. Footer CTA Banner */}
       <section className="py-12 bg-white pb-20">
         <Container>
-          <div className="bg-gradient-to-r from-[#0A7075] to-[#0D2137] rounded-3xl p-10 md:p-16 text-white text-center relative overflow-hidden group shadow-xl">
+          <div className="bg-linear-to-r from-[#0A7075] to-secondary rounded-3xl p-10 md:p-16 text-white text-center relative overflow-hidden group shadow-xl">
             <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-2xl -ml-32 -mt-32"></div>
             <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-2xl -mr-32 -mb-32"></div>
 
