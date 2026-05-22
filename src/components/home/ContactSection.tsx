@@ -32,7 +32,7 @@ export function ContactSection() {
           {/* Left: Map */}
           <div className="relative rounded-5xl overflow-hidden shadow-2xl border-white border-8 aspect-square lg:aspect-auto lg:h-[500px]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.4816669941424!2d85.32832447614488!3d27.702410325732152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a0718519e5%3A0xe54e3f3050a41753!2sGhattekulo%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1715582345678!5m2!1sen!2snp"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.5097847726656!2d85.32570197486383!3d27.701542276185954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a6c69780e9%3A0x91899f6bea372bcc!2sKunta%20Devi%20Health%20Care%20%26%20Diagnostic%20Centre%20Pvt.%20Ltd.!5e0!3m2!1sen!2snp!4v1779280240950!5m2!1sen!2snp"
               width="100%"
               height="100%"
               style={{ border: 0 }}

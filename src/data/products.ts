@@ -12,7 +12,7 @@ export const products = [
     badge: "Best Seller",
     popularityScore: 98,
     featured: true,
-    image: "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?q=80&w=600",
+    image: "/products/glucometer-kit.png",
     description: "Complete glucometer kit with test strips, lancets, and carrying case. Easy-to-use digital display for accurate blood sugar monitoring at home."
   },
   {
@@ -60,7 +60,7 @@ export const products = [
     badge: null,
     popularityScore: 82,
     featured: false,
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=600",
+    image: "/products/nebulizer-machine.png",
     description: "Efficient compressor nebulizer for asthma and respiratory conditions. Quiet operation with complete accessory kit."
   },
   {
@@ -158,5 +158,21 @@ export const products = [
     featured: false,
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=600",
     description: "Lightweight foldable wheelchair with comfortable seating and easy maneuverability. Ideal for indoor and outdoor use."
+  },
+  {
+    id: "multivitamin-pack",
+    name: "Premium Multivitamin Pack",
+    brand: "Kunta Devi",
+    category: "Wellness",
+    purpose: "Therapy",
+    price: 1500,
+    currency: "NPR",
+    inStock: true,
+    verified: true,
+    badge: "Premium",
+    popularityScore: 90,
+    featured: true,
+    image: "/products/multivitamin-pack.png",
+    description: "Daily multivitamin pack containing essential vitamins, minerals, and antioxidants to boost your immune system and overall energy."
   }
 ];

@@ -34,9 +34,9 @@ import { clinicInfo } from "@/data/site-config";
 import { cn } from "@/lib/utils";
 
 // Kathmandu Quick Numbers
-const PHONE_RECEPTION = "+977-01-4412345";
-const PHONE_WHATSAPP = "+977-9801234567";
-const PHONE_EMERGENCY = "+977-9812345678";
+const PHONE_RECEPTION = "+977-01-4770912";
+const PHONE_WHATSAPP = "+9779851027120";
+const PHONE_EMERGENCY = "+9779851027120";
 
 // Schema for detailed consultation booking
 const bookingSchema = z.object({
@@ -758,7 +758,7 @@ export default function AppointmentClient() {
             <div className="lg:col-span-6 flex flex-col h-full min-h-[400px] rounded-3xl overflow-hidden border border-slate-100 shadow-[0_8px_30px_rgba(0,0,0,0.02)] bg-slate-50 relative group">
               <iframe
                 title="Kunta Devi Health Care Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.4567!2d85.3289!3d27.7012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a2e379471f%3A0x63ebef4cf7e7216a!2sGhattekulo%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1700000000000!5m2!1sen!2snp"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.5097847726656!2d85.32570197486383!3d27.701542276185954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a6c69780e9%3A0x91899f6bea372bcc!2sKunta%20Devi%20Health%20Care%20%26%20Diagnostic%20Centre%20Pvt.%20Ltd.!5e0!3m2!1sen!2snp!4v1779280240950!5m2!1sen!2snp"
                 className="w-full h-full border-none absolute inset-0 grayscale-10 contrast-110 transition-all duration-700 group-hover:grayscale-0"
                 allowFullScreen={true}
                 loading="lazy"

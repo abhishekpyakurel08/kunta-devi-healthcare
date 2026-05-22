@@ -13,11 +13,11 @@ export const navLinks = [
 
 export const clinicInfo = {
   name: "Kunta Devi Health Care & Diagnostic Center",
-  address: "Chakrapath, Kathmandu, Nepal",
-  phone: "+977-1-4XXXXXX",
-  whatsapp: "+977-98XXXXXXXX",
+  address: "Ghattekulo, Kathmandu, Nepal",
+  phone: "01-4770912 / 4770913",
+  whatsapp: "+9779851027120",
   email: "info@kuntadevihealthcare.com",
   hours: "Sunday - Friday: 7:00 AM - 7:00 PM",
-  emergencyPhone: "+977-98XXXXXXXX",
-  mapLink: "https://maps.google.com",
+  emergencyPhone: "+9779851027120",
+  mapLink: "https://maps.google.com/?q=Kunta+Devi+Health+Care+%26+Diagnostic+Centre+Pvt.+Ltd.",
 };

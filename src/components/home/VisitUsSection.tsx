@@ -12,7 +12,7 @@ export function VisitUsSection() {
           {/* Map embed */}
           <div className="rounded-3xl overflow-hidden shadow-xl border border-slate-100 aspect-[4/3] w-full relative bg-slate-100">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.5943939497694!2d85.32073!3d27.74072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb190d2b9f7fd7%3A0x6d9f15ab6a78e6e!2sChakrapath%2C%20Kathmandu!5e0!3m2!1sen!2snp!4v1715900000000"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.5097847726656!2d85.32570197486383!3d27.701542276185954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a6c69780e9%3A0x91899f6bea372bcc!2sKunta%20Devi%20Health%20Care%20%26%20Diagnostic%20Centre%20Pvt.%20Ltd.!5e0!3m2!1sen!2snp!4v1779280240950!5m2!1sen!2snp"
               width="100%"
               height="100%"
               style={{ border: 0, position: "absolute", inset: 0 }}
@@ -33,7 +33,7 @@ export function VisitUsSection() {
                 Visit Us Today
               </h2>
               <p className="text-slate-500 text-sm mt-3 leading-relaxed">
-                We are conveniently located at Chakrapath, Kathmandu — easily accessible from all major areas of the city. Walk-ins and appointments both welcome.
+                We are conveniently located at Ghattekulo, Kathmandu — easily accessible from all major areas of the city. Walk-ins and appointments both welcome.
               </p>
             </div>
 

@@ -10,7 +10,7 @@ export function FeaturedProducts() {
       brand: "Accu-Chek Instant",
       price: "3,200",
       badge: "Popular",
-      image: "https://images.unsplash.com/photo-1603398938378-e54eab446f8a?q=80&w=2070",
+      image: "/products/glucometer-kit.png",
       tag: "Best Seller",
       features: ["Easy to use", "Accurate results", "50 Strips included"]
     },
@@ -28,7 +28,7 @@ export function FeaturedProducts() {
       brand: "Philips Essence",
       price: "5,800",
       badge: "Medical Grade",
-      image: "https://images.unsplash.com/photo-1584017945511-2362947119f6?q=80&w=1974",
+      image: "/products/nebulizer-machine.png",
       tag: "Hospital Grade",
       features: ["Fine particles", "Compact design", "Low noise"]
     }

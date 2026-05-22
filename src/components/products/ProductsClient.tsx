@@ -70,23 +70,23 @@ export default function ProductsClient() {
       brand: "AccuCheck",
       price: "NPR 3,200",
       badge: "Top Rated",
-      img: "https://images.unsplash.com/photo-1603398938378-e54eab446dde?q=80&w=600"
+      img: "/products/glucometer-kit.png"
     },
     {
       id: "neb-1",
       name: "Silent Nebulizer Machine",
       brand: "Rossmax",
-      price: "NPR 3,200",
+      price: "NPR 5,500",
       badge: null,
-      img: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=600"
+      img: "/products/nebulizer-machine.png"
     },
     {
-      id: "ox-1",
-      name: "Digital Pulse Oximeter",
-      brand: "Choice",
-      price: "NPR 1,800",
-      badge: "New",
-      img: "https://images.unsplash.com/photo-1603398938378-e54eab446dde?q=80&w=600"
+      id: "vit-1",
+      name: "Premium Multivitamin Pack",
+      brand: "Kunta Devi",
+      price: "NPR 1,500",
+      badge: "Premium",
+      img: "/products/multivitamin-pack.png"
     },
     // Repeated for 8 total items
     {
@@ -103,15 +103,15 @@ export default function ProductsClient() {
       brand: "AccuCheck",
       price: "NPR 3,200",
       badge: "Top Rated",
-      img: "https://images.unsplash.com/photo-1603398938378-e54eab446dde?q=80&w=600"
+      img: "/products/glucometer-kit.png"
     },
     {
       id: "neb-2",
       name: "Portable Nebulizer",
       brand: "Rossmax",
-      price: "NPR 3,200",
+      price: "NPR 5,500",
       badge: null,
-      img: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=600"
+      img: "/products/nebulizer-machine.png"
     },
     {
       id: "ox-2",
@@ -156,21 +156,21 @@ export default function ProductsClient() {
       cat: "Cardiology tip",
       excerpt: "Learn the proper sitting posture, cuff placement, and resting timings before logging your daily blood pressure checks.",
       readTime: "5 min read",
-      img: "https://images.unsplash.com/photo-1505751172177-51ad18670404?q=80&w=400"
+      img: "/blog/bp-monitor-guide.png"
     },
     {
       title: "When Should You Monitor Blood Sugar?",
       cat: "Nutrition tip",
       excerpt: "Understanding post-meal and fasting blood sugar cycles is critical. Discover optimal times to perform glucometer checks.",
       readTime: "4 min read",
-      img: "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=400"
+      img: "/products/glucometer-kit.png"
     },
     {
       title: "Choosing the Right Nebulizer for Home Use",
       cat: "Respiratory tip",
       excerpt: "Ultrasonic or compressor? Read our detailed respiratory comparison to select the perfect nebulizer model.",
       readTime: "6 min read",
-      img: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=400"
+      img: "/products/nebulizer-machine.png"
     }
   ];
 
@@ -339,7 +339,7 @@ export default function ProductsClient() {
             <div className="bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-lg shadow-slate-200/40 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
               <div className="relative aspect-video bg-slate-100 flex items-center justify-center">
                 <Image 
-                  src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?q=80&w=600"
+                  src="/products/glucometer-kit.png"
                   alt="Glucometer kit product"
                   fill
                   sizes="(max-width: 1024px) 100vw, 30vw"
@@ -419,7 +419,7 @@ export default function ProductsClient() {
             <div className="bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-lg shadow-slate-200/40 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
               <div className="relative aspect-video bg-slate-100 flex items-center justify-center">
                 <Image 
-                  src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?q=80&w=600"
+                  src="/products/nebulizer-machine.png"
                   alt="Nebulizer machine product"
                   fill
                   sizes="(max-width: 1024px) 100vw, 30vw"
@@ -437,7 +437,7 @@ export default function ProductsClient() {
                 <div className="space-y-2">
                   <div className="flex justify-between items-start">
                     <h3 className="font-extrabold text-slate-900 text-base md:text-lg">Nebulizer Machine</h3>
-                    <p className="text-base font-black text-[#0A7075]">NPR 4,500</p>
+                    <p className="text-base font-black text-[#0A7075]">NPR 5,500</p>
                   </div>
                   <p className="text-xs text-slate-500 font-semibold leading-relaxed">
                     Compact nebulizer for effective delivery of respiratory medication. Silent motor, lightweight, ideal for home use.

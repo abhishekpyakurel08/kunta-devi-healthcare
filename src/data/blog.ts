@@ -56,7 +56,7 @@ export const blogPosts = [
     author: "Dr. Sita Sharma",
     publishedAt: "2026-04-10",
     readTime: "4 min",
-    image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=800",
+    image: "/blog/bp-monitor-guide.png",
     excerpt: "Learn the proper technique for accurate blood pressure monitoring at home."
   },
   {

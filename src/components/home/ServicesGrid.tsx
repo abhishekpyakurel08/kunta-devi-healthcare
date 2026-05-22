@@ -28,7 +28,7 @@ export function ServicesGrid() {
       title: "Specialist Consultation",
       category: "Specialist Consult",
       desc: "Expertise across disciplines for surgical and chronic illness management focused on patient-centered outcomes.",
-      image: "https://images.unsplash.com/photo-1559839734-2b71f1e59816?q=80&w=800",
+      image: "/services/specialist-consultation.png",
       badge: "Specialty",
       features: ["Check up sessions", "Safe and reliable", "Formulation", "Advanced equipment"],
       color: "bg-emerald-500",

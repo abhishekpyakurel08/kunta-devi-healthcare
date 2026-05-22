@@ -32,12 +32,12 @@ export function ExploreProducts({ searchQuery, activeCategory }: ExploreProducts
       setAllProducts([
     { title: "BP Monitor", brand: "Omron", price: "4,500", image: "https://images.unsplash.com/photo-1615461066159-fea0960485d5?q=80&w=1914", badge: "Best Seller", category: "Monitoring" },
     { title: "Thermometer", brand: "Beurer", price: "1,200", image: "https://images.unsplash.com/photo-1584017945511-2362947119f6?q=80&w=1974", badge: "New Arrival", category: "Diagnostic" },
-    { title: "Nebulizer", brand: "Rossmax", price: "3,800", image: "https://images.unsplash.com/photo-1603398938378-e54eab446f8a?q=80&w=2070", badge: "Discount", category: "Wellness" },
+    { title: "Nebulizer", brand: "Rossmax", price: "5,500", image: "/products/nebulizer-machine.png", badge: "Discount", category: "Wellness" },
     { title: "Pulse Oximeter", brand: "Dr. Trust", price: "1,500", image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2070", badge: "Popular", category: "Monitoring" },
-    { title: "Glucometer", brand: "Accu-Chek", price: "3,200", image: "https://images.unsplash.com/photo-1603398938378-e54eab446f8a?q=80&w=2070", badge: "Essential", category: "Monitoring" },
+    { title: "Glucometer", brand: "Accu-Chek", price: "3,200", image: "/products/glucometer-kit.png", badge: "Essential", category: "Monitoring" },
     { title: "Face Masks", brand: "3M", price: "500", image: "https://images.unsplash.com/photo-1584017945511-2362947119f6?q=80&w=1974", badge: "Bulk Sale", category: "Wellness" },
     { title: "Hand Sanitizer", brand: "Dettol", price: "250", image: "https://images.unsplash.com/photo-1615461066159-fea0960485d5?q=80&w=1914", badge: "Stock up", category: "Wellness" },
-    { title: "Vitamins C", brand: "Dabur", price: "800", image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2070", badge: "Wellness", category: "Wellness" },
+    { title: "Multivitamin Pack", brand: "Kunta Devi", price: "1,500", image: "/products/multivitamin-pack.png", badge: "Wellness", category: "Wellness" },
       ]);
       setIsLoading(false);
     }

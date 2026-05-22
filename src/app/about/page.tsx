@@ -35,13 +35,13 @@ export default function AboutPage() {
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
               <div className="relative">
-                 <div className="relative rounded-4xl overflow-hidden shadow-2xl border-8 border-slate-50">
+                 <div className="relative aspect-[4/3] rounded-4xl overflow-hidden shadow-2xl border-8 border-slate-50 bg-gradient-to-br from-slate-50 to-teal-50 flex items-center justify-center">
                     <Image 
-                      src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053" 
-                      alt="Our Journey" 
+                      src="/logo.jpg" 
+                      alt="Our Journey – Kunta Devi Health Care" 
                       fill
                       sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="object-cover grayscale-[0.3] hover:grayscale-0 transition-all duration-700"
+                      className="object-contain p-8 hover:scale-105 transition-all duration-700"
                     />
                  </div>
                  {/* Floating badge */}

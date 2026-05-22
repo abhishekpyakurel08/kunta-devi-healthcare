@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="100" fill="#E8F0F7"/>
+  <!-- Body / coat -->
+  <ellipse cx="100" cy="175" rx="60" ry="50" fill="#FFFFFF"/>
+  <ellipse cx="100" cy="155" rx="48" ry="42" fill="#D6E4F0"/>
+  <!-- Stethoscope hint -->
+  <path d="M82 148 Q80 158 88 162 Q96 166 100 160 Q104 166 112 162 Q120 158 118 148" stroke="#7BA7C4" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="100" cy="162" r="5" fill="#7BA7C4"/>
+  <!-- Head -->
+  <circle cx="100" cy="85" r="36" fill="#F5DEB3"/>
+  <!-- Hair -->
+  <path d="M64 80 Q65 48 100 46 Q135 48 136 80 Q130 60 100 62 Q70 60 64 80Z" fill="#4A3728"/>
+  <!-- Eyes -->
+  <ellipse cx="88" cy="84" rx="4" ry="4.5" fill="#3D2B1F"/>
+  <ellipse cx="112" cy="84" rx="4" ry="4.5" fill="#3D2B1F"/>
+  <!-- Nose -->
+  <path d="M97 90 Q100 96 103 90" stroke="#C4956A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <!-- Mouth -->
+  <path d="M90 102 Q100 110 110 102" stroke="#B07850" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Collar -->
+  <path d="M78 138 L100 148 L122 138" stroke="#B0C8DC" stroke-width="2" fill="none"/>
+</svg>

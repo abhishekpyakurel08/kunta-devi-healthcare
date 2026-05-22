@@ -14,7 +14,7 @@ const steps = [
   {
     num: "3",
     title: "Visit Our Clinic",
-    desc: "Arrive at our Chakrapath center. Our staff will guide you through every step of the process.",
+    desc: "Arrive at our Ghattekulo center. Our staff will guide you through every step of the process.",
   },
   {
     num: "4",

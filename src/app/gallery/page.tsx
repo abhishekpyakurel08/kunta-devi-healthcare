@@ -22,8 +22,8 @@ export default function GalleryPage() {
     { src: "https://images.unsplash.com/photo-1579684385127-1ef15d508118", alt: "Doctor with Patient", category: "Doctors", span: "col-span-1 row-span-1" },
     { src: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b", alt: "Lab Equipment", category: "Equipments", span: "col-span-1 row-span-2" },
     { src: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5", alt: "Pharmacy Shelves", category: "Products", span: "col-span-1 row-span-1" },
-    { src: "https://images.unsplash.com/photo-1505751172177-51ad18670404", alt: "Medical Procedure", category: "Behind The Scenes", span: "col-span-2 row-span-1" },
-    { src: "https://images.unsplash.com/photo-1631549448353-461bb77718cc", alt: "Health Camp", category: "Health Camps", span: "col-span-1 row-span-1" },
+    { src: "/services/medical-procedure.png", alt: "Medical Procedure", category: "Behind The Scenes", span: "col-span-2 row-span-1" },
+    { src: "/services/health-camp-thankot.png", alt: "Health Camp", category: "Health Camps", span: "col-span-1 row-span-1" },
     { src: "https://images.unsplash.com/photo-1551076805-e1869033e561", alt: "Consultation Room", category: "Facility", span: "col-span-1 row-span-1" },
     { src: "https://images.unsplash.com/photo-1576091160550-2173dba999ef", alt: "Medical Team", category: "Doctors", span: "col-span-1 row-span-1" },
   ];
@@ -33,7 +33,7 @@ export default function GalleryPage() {
     { title: "Ultrasound System", desc: "High-resolution imaging for precise medical diagnosis", image: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b" },
     { title: "Laboratory Equipment", desc: "State-of-the-art analyzers for comprehensive testing", image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118" },
     { title: "BP Monitoring Station", desc: "Automated blood pressure tracking with digital reporting", image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d" },
-    { title: "Digital Reporting System", desc: "Instant electronic medical records and reports", image: "https://images.unsplash.com/photo-1505751172177-51ad18670404" },
+    { title: "Digital Reporting System", desc: "Instant electronic medical records and reports", image: "/services/digital-reporting-system.png" },
     { title: "Product Storage Unit", desc: "Climate-controlled storage for medical products", image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5" },
   ];
 
@@ -46,9 +46,9 @@ export default function GalleryPage() {
   ];
 
   const community = [
-    { title: "Health Camp – Thankot", date: "March 2025", image: "https://images.unsplash.com/photo-1631549448353-461bb77718cc" },
+    { title: "Health Camp – Thankot", date: "March 2025", image: "/services/health-camp-thankot.png" },
     { title: "School Awareness Program", date: "February 2025", image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef" },
-    { title: "Community Screening Drive", date: "January 2025", image: "https://images.unsplash.com/photo-1505751172177-51ad18670404" },
+    { title: "Community Screening Drive", date: "January 2025", image: "/services/community-screening-drive.png" },
     { title: "Senior Citizen Support", date: "December 2024", image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118" },
   ];
 

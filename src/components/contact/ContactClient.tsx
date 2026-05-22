@@ -50,12 +50,12 @@ export default function ContactClient() {
   ];
 
   const departmentContacts = [
-    { department: "Reception", phone: "+977-01-4412345", whatsapp: "+977-9801234567", availability: "Sun-Fri 7AM-7PM" },
-    { department: "Appointment Desk", phone: "+977-01-4412345", whatsapp: "+977-9801234567", availability: "Sun-Fri 7AM-6PM" },
-    { department: "Diagnostics/Lab", phone: "+977-01-4412345", whatsapp: "+977-9801234567", availability: "Sun-Fri 7AM-5PM" },
-    { department: "Products Counter", phone: "+977-01-4412345", whatsapp: "+977-9801234567", availability: "Sun-Fri 8AM-7PM" },
-    { department: "Corporate Wellness", phone: "+977-01-4412345", whatsapp: "+977-9801234567", availability: "Sun-Fri 9AM-5PM" },
-    { department: "Emergency Desk", phone: "+977-9801234567", whatsapp: "+977-9801234567", availability: "24/7 Available", isEmergency: true },
+    { department: "Reception", phone: "+977-01-4770912", whatsapp: "+9779851027120", availability: "Sun-Fri 7AM-7PM" },
+    { department: "Appointment Desk", phone: "+977-01-4770912", whatsapp: "+9779851027120", availability: "Sun-Fri 7AM-6PM" },
+    { department: "Diagnostics/Lab", phone: "+977-01-4770913", whatsapp: "+9779851027120", availability: "Sun-Fri 7AM-5PM" },
+    { department: "Products Counter", phone: "+977-01-4770913", whatsapp: "+9779851027120", availability: "Sun-Fri 8AM-7PM" },
+    { department: "Corporate Wellness", phone: "+977-01-4770912", whatsapp: "+9779851027120", availability: "Sun-Fri 9AM-5PM" },
+    { department: "Emergency Desk", phone: "+9779851027120", whatsapp: "+9779851027120", availability: "24/7 Available", isEmergency: true },
   ];
 
   return (
@@ -160,7 +160,7 @@ export default function ContactClient() {
                 {/* Map */}
                 <div className="rounded-2xl overflow-hidden shadow-xl h-[400px] lg:h-auto">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.1234567890123!2d85.31234567890123!3d27.71234567890123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDQyJzQ0LjQiTiA4NcKwMTgnNDQuNCJF!5e0!3m2!1sen!2snp!4v1234567890123"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.5097847726656!2d85.32570197486383!3d27.701542276185954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a6c69780e9%3A0x91899f6bea372bcc!2sKunta%20Devi%20Health%20Care%20%26%20Diagnostic%20Centre%20Pvt.%20Ltd.!5e0!3m2!1sen!2snp!4v1779280240950!5m2!1sen!2snp"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}

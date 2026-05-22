@@ -8,23 +8,27 @@ export function ProductsGrid() {
   const products = [
     {
       name: "Glucometer Kit",
-      price: "NPR xyz",
+      price: "NPR 3,200",
       meta: "Clinically approved · In stock",
+      image: "/products/glucometer-kit.png",
     },
     {
       name: "Digital BP Monitor",
-      price: "NPR xyz",
+      price: "NPR 4,500",
       meta: "Clinically approved · In stock",
+      image: "https://images.unsplash.com/photo-1615461066159-fea0960485d5?q=80&w=1914",
     },
     {
       name: "Nebulizer Machine",
-      price: "NPR xyz",
+      price: "NPR 5,500",
       meta: "Clinically approved · In stock",
+      image: "/products/nebulizer-machine.png",
     },
     {
       name: "Multivitamin Pack",
-      price: "NPR xyz",
+      price: "NPR 1,500",
       meta: "Clinically approved · In stock",
+      image: "/products/multivitamin-pack.png",
     },
   ];
 
@@ -37,15 +41,10 @@ export function ProductsGrid() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {products.map((product, i) => (
           <div key={i} className="bg-white rounded-4xl overflow-hidden shadow-xl shadow-slate-200/50 flex flex-col group transition-all duration-500 hover:translate-y-[-8px]">
-            {/* Image Placeholder */}
+            {/* Image */}
             <div className="aspect-4/3 bg-slate-100 relative overflow-hidden group/img">
               <Image 
-                src={[
-                  "https://images.unsplash.com/photo-1603398938378-e54eab446f8a?q=80&w=2070",
-                  "https://images.unsplash.com/photo-1615461066159-fea0960485d5?q=80&w=1914",
-                  "https://images.unsplash.com/photo-1584017945511-2362947119f6?q=80&w=1974",
-                  "https://images.unsplash.com/photo-1631549448353-461bb77718cc?q=80&w=2072"
-                ][i % 4]} 
+                src={product.image} 
                 alt={product.name} 
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
