@@ -28,7 +28,7 @@ export function QuickActions() {
     },
     {
       title: "Emergency Contact",
-      desc: "01-XXXXXXX · Available 24/7",
+      desc: "+9779860167326 · Available 24/7",
       icon: Siren,
       href: "tel:+97701XXXXXXX",
       color: "red",
