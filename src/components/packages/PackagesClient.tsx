@@ -57,24 +57,28 @@ export default function PackagesClient() {
     "Kidney Function Tests",
     "Lipid Profile",
     "ECG",
+    "USG (Video X-Ray)",
+    "Physician Chek-up",
     "Chest X-Ray",
     "Thyroid (TSH)",
     "Doctor Consultation",
     "Diet Consultation"
   ];
 
-  // Table grid mappings: [Basic, Standard, Comprehensive, Corporate]
+  // Table grid mappings: [Basic, General, Standard, Comprehensive, Corporate]
   const comparisonData: Record<string, (boolean | string)[]> = {
-    "CBC Blood Count":      [true, true, true, "Custom"],
-    "Blood Sugar Fasting":  [true, true, true, "Custom"],
-    "Liver Function Tests":  [false, true, true, "Custom"],
-    "Kidney Function Tests": [false, true, true, "Custom"],
-    "Lipid Profile":        [false, true, true, "Custom"],
-    "ECG":                  [false, true, true, "Custom"],
-    "Chest X-Ray":          [false, false, true, "Custom"],
-    "Thyroid (TSH)":        [false, true, true, "Custom"],
-    "Doctor Consultation":  [true, true, true, "Custom"],
-    "Diet Consultation":    [false, false, true, "Custom"],
+    "CBC Blood Count":      [true, true, true, true, "Custom"],
+    "Blood Sugar Fasting":  [true, true, true, true, "Custom"],
+    "Liver Function Tests":  [false, true, true, true, "Custom"],
+    "Kidney Function Tests": [false, true, true, true, "Custom"],
+    "Lipid Profile":        [false, true, true, true, "Custom"],
+    "ECG":                  [false,true,  true, true, "Custom"],
+     "USG (Video X-Ray)" : [false, true, true, true, "Custom"],
+    "Physician Chek-up" : [false, true, true, true, "Custom"] ,
+    "Chest X-Ray":          [false,  true,true, true, "Custom"],
+    "Thyroid (TSH)":        [false, false, true, true, "Custom"],
+    "Doctor Consultation":  [true, true, true, true, "Custom"],
+    "Diet Consultation":    [false, false, false, true, "Custom"],
   };
 
   const healthNeeds = [
@@ -285,7 +289,7 @@ export default function PackagesClient() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 items-stretch">
             
             {/* Card 1: Basic */}
             <div className="bg-white border border-slate-100 rounded-3xl p-6 shadow-[0_10px_30px_rgba(0,0,0,0.02)] flex flex-col justify-between group hover:border-[#0A7075]/20 hover:shadow-xl transition-all duration-300">
@@ -320,6 +324,39 @@ export default function PackagesClient() {
               </Button>
             </div>
 
+             {/* Card 2: General */}
+            <div className="bg-white border border-slate-100 rounded-3xl p-6 shadow-[0_10px_30px_rgba(0,0,0,0.02)] flex flex-col justify-between group hover:border-[#0A7075]/20 hover:shadow-xl transition-all duration-300">
+              <div className="space-y-6">
+                <div>
+                  <span className="text-[10px] font-black uppercase text-slate-400 tracking-wider">Essential</span>
+                  <h3 className="text-lg font-black text-slate-900 mt-1">General Health Check</h3>
+                  <p className="text-2xl font-black text-[#0A7075] mt-2">NPR 4,500</p>
+                </div>
+
+                <div className="h-px bg-slate-100"></div>
+
+                <ul className="space-y-3">
+                  {[
+                    "All Basic Tests Included",
+                    "Stool Routine",
+                    "Chest X-Ray",
+                    "USG (Video X-Ray)",
+                    "Physician Check Up",
+                    "Doctor Consultation"
+                  ].map((feat, idx) => (
+                    <li key={idx} className="flex items-start gap-2.5 text-label font-bold text-slate-600">
+                      <Check className="h-3.5 w-3.5 text-teal-600 stroke-[3px] shrink-0 mt-0.5" />
+                      <span>{feat}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <Button variant="outline" className="w-full h-11 rounded-xl border-[#0A7075] text-[#0A7075] hover:bg-[#0A7075] hover:text-white font-extrabold text-xs mt-8 transition-colors" asChild>
+                <Link href="/appointment">Book Package</Link>
+              </Button>
+            </div>
+
             {/* Card 2: Standard */}
             <div className="bg-white border border-slate-100 rounded-3xl p-6 shadow-[0_10px_30px_rgba(0,0,0,0.02)] flex flex-col justify-between group hover:border-[#0A7075]/20 hover:shadow-xl transition-all duration-300">
               <div className="space-y-6">
@@ -333,7 +370,7 @@ export default function PackagesClient() {
 
                 <ul className="space-y-3">
                   {[
-                    "All Basic Tests Included",
+                    "All General Tests Included",
                     "Lipid Profile",
                     "Liver Function (LFT)",
                     "Kidney Function (KFT)",
@@ -447,6 +484,7 @@ export default function PackagesClient() {
                 <tr className="bg-slate-900 text-white text-xs font-black uppercase tracking-wider">
                   <th className="text-left py-6 px-6">Health Feature</th>
                   <th className="text-center py-6 px-4">Basic<br /><span className="text-slate-400 font-bold text-[10px]">NPR 2,500</span></th>
+                  <th className="text-center py-6 px-4">General<br /><span className="text-slate-400 font-bold text-[10px]">NPR 4,500</span></th>
                   <th className="text-center py-6 px-4">Standard<br /><span className="text-slate-400 font-bold text-[10px]">NPR 5,000</span></th>
                   <th className="text-center py-6 px-4 bg-[#0A7075] text-white relative">
                     Comprehensive<br />
@@ -471,7 +509,7 @@ export default function PackagesClient() {
                         )}
                       </td>
 
-                      {/* Standard */}
+                        {/* General */}
                       <td className="py-4.5 px-4 text-center">
                         {values[1] === true ? (
                           <Check className="h-4.5 w-4.5 text-emerald-600 stroke-[3px] mx-auto" />
@@ -480,9 +518,18 @@ export default function PackagesClient() {
                         )}
                       </td>
 
+                      {/* Standard */}
+                      <td className="py-4.5 px-4 text-center">
+                        {values[2] === true ? (
+                          <Check className="h-4.5 w-4.5 text-emerald-600 stroke-[3px] mx-auto" />
+                        ) : (
+                          <span className="text-slate-300">—</span>
+                        )}
+                      </td>
+
                       {/* Comprehensive Highlighted Column */}
                       <td className="py-4.5 px-4 text-center bg-[#0A7075]/5 relative font-black text-slate-900 border-x border-[#0A7075]/10">
-                        {values[2] === true ? (
+                        {values[3] === true ? (
                           <Check className="h-5 w-5 text-[#0A7075] stroke-[3px] mx-auto" />
                         ) : (
                           <span className="text-slate-300">—</span>
@@ -491,7 +538,7 @@ export default function PackagesClient() {
 
                       {/* Corporate */}
                       <td className="py-4.5 px-4 text-center text-[10px] text-teal-600 uppercase tracking-widest">
-                        {values[3]}
+                        {values[4]}
                       </td>
 
                     </tr>

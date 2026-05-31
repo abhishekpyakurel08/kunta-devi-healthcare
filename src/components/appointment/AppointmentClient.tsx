@@ -36,7 +36,7 @@ import { cn } from "@/lib/utils";
 // Kathmandu Quick Numbers
 const PHONE_RECEPTION = "+977-01-4770912";
 const PHONE_WHATSAPP = "+9779851027120";
-const PHONE_EMERGENCY = "+9779851027120";
+const PHONE_EMERGENCY = "+9779860167326 ";
 
 // Schema for detailed consultation booking
 const bookingSchema = z.object({

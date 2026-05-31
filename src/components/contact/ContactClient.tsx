@@ -55,7 +55,7 @@ export default function ContactClient() {
     { department: "Diagnostics/Lab", phone: "+977-01-4770913", whatsapp: "+9779851027120", availability: "Sun-Fri 7AM-5PM" },
     { department: "Products Counter", phone: "+977-01-4770913", whatsapp: "+9779851027120", availability: "Sun-Fri 8AM-7PM" },
     { department: "Corporate Wellness", phone: "+977-01-4770912", whatsapp: "+9779851027120", availability: "Sun-Fri 9AM-5PM" },
-    { department: "Emergency Desk", phone: "+9779851027120", whatsapp: "+9779851027120", availability: "24/7 Available", isEmergency: true },
+    { department: "Emergency Desk", phone: "+9779860167326 ", whatsapp: "+9779860167326 ", availability: "24/7 Available", isEmergency: true },
   ];
 
   return (
