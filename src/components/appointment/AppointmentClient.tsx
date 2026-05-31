@@ -127,7 +127,7 @@ export default function AppointmentClient() {
               </span>
             </h1>
 
-            <p className="text-base md:text-lg text-slate-500 font-medium leading-relaxed max-w-2xl mx-auto mt-2">
+            <p className="text-base md:text-lg text-slakte-500 font-medium leading-relaxed max-w-2xl mx-auto mt-2">
               Book a consultation, request a service, ask a question, or speak with our healthcare team — all in one place.
             </p>
 
