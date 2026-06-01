@@ -800,7 +800,7 @@ export default function AppointmentClient() {
                   <div>
                     <h4 className="font-extrabold text-slate-900 text-sm mb-0.5">Phone</h4>
                     <p className="text-xs font-bold text-slate-500 leading-normal">
-                      +977-01-4412345
+                      +977-01-4770912
                     </p>
                   </div>
                 </div>
@@ -812,7 +812,7 @@ export default function AppointmentClient() {
                   <div>
                     <h4 className="font-extrabold text-slate-900 text-sm mb-0.5">Email</h4>
                     <p className="text-xs font-bold text-slate-500 leading-normal">
-                      info@kuntadevi.com
+                     kuntadevihc@gmail.com
                     </p>
                   </div>
                 </div>

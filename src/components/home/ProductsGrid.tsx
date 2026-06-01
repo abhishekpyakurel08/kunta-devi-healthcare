@@ -61,8 +61,6 @@ export function ProductsGrid() {
                 </p>
               </div>
 
-              <p className="text-2xl font-black text-primary">{product.price}</p>
-
               <div className="pt-4">
                 <Button variant="outline" className="w-full rounded-xl h-12 border-primary/30 text-primary font-bold hover:bg-primary/5 transition-all group/btn" asChild>
                   <Link href="/products">

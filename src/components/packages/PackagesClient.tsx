@@ -323,8 +323,7 @@ export default function PackagesClient() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 items-stretch">
-            {/* Card 1: Basic */}
+          <div className="grid grid-cols-1 gap-6 justify-items-center ">
             <div className="bg-white border border-slate-100 rounded-3xl p-6 shadow-[0_10px_30px_rgba(0,0,0,0.02)] flex flex-col justify-between group hover:border-[#0A7075]/20 hover:shadow-xl transition-all duration-300">
               <div className="space-y-6">
                 <div>
@@ -334,13 +333,9 @@ export default function PackagesClient() {
                   <h3 className="text-lg font-black text-slate-900 mt-1">
                     Basic Health Check
                   </h3>
-                  <p className="text-2xl font-black text-[#0A7075] mt-2">
-                    NPR 2,500
-                  </p>
                 </div>
 
                 <div className="h-px bg-slate-100"></div>
-
                 <ul className="space-y-3">
                   {[
                     "CBC Blood Count",
@@ -360,7 +355,6 @@ export default function PackagesClient() {
                   ))}
                 </ul>
               </div>
-
               <Button
                 variant="outline"
                 className="w-full h-11 rounded-xl border-[#0A7075] text-[#0A7075] hover:bg-[#0A7075] hover:text-white font-extrabold text-xs mt-8 transition-colors"
@@ -368,194 +362,7 @@ export default function PackagesClient() {
               >
                 <Link href="/appointment">Book Package</Link>
               </Button>
-            </div>
-
-            {/* Card 2: General */}
-            <div className="bg-white border border-slate-100 rounded-3xl p-6 shadow-[0_10px_30px_rgba(0,0,0,0.02)] flex flex-col justify-between group hover:border-[#0A7075]/20 hover:shadow-xl transition-all duration-300">
-              <div className="space-y-6">
-                <div>
-                  <span className="text-[10px] font-black uppercase text-slate-400 tracking-wider">
-                    Essential
-                  </span>
-                  <h3 className="text-lg font-black text-slate-900 mt-1">
-                    General Health Check
-                  </h3>
-                  <p className="text-2xl font-black text-[#0A7075] mt-2">
-                    NPR 4,500
-                  </p>
-                </div>
-
-                <div className="h-px bg-slate-100"></div>
-
-                <ul className="space-y-3">
-                  {[
-                    "All Basic Tests Included",
-                    "Stool Routine",
-                    "Chest X-Ray",
-                    "USG (Video X-Ray)",
-                    "Physician Check Up",
-                    "Doctor Consultation",
-                  ].map((feat, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-start gap-2.5 text-label font-bold text-slate-600"
-                    >
-                      <Check className="h-3.5 w-3.5 text-teal-600 stroke-[3px] shrink-0 mt-0.5" />
-                      <span>{feat}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <Button
-                variant="outline"
-                className="w-full h-11 rounded-xl border-[#0A7075] text-[#0A7075] hover:bg-[#0A7075] hover:text-white font-extrabold text-xs mt-8 transition-colors"
-                asChild
-              >
-                <Link href="/appointment">Book Package</Link>
-              </Button>
-            </div>
-
-            {/* Card 2: Standard */}
-            <div className="bg-white border border-slate-100 rounded-3xl p-6 shadow-[0_10px_30px_rgba(0,0,0,0.02)] flex flex-col justify-between group hover:border-[#0A7075]/20 hover:shadow-xl transition-all duration-300">
-              <div className="space-y-6">
-                <div>
-                  <span className="text-[10px] font-black uppercase text-slate-400 tracking-wider">
-                    Value
-                  </span>
-                  <h3 className="text-lg font-black text-slate-900 mt-1">
-                    Standard Wellness
-                  </h3>
-                  <p className="text-2xl font-black text-[#0A7075] mt-2">
-                    NPR 5,000
-                  </p>
-                </div>
-
-                <div className="h-px bg-slate-100"></div>
-
-                <ul className="space-y-3">
-                  {[
-                    "All General Tests Included",
-                    "Lipid Profile",
-                    "Liver Function (LFT)",
-                    "Kidney Function (KFT)",
-                    "Thyroid (TSH)",
-                    "ECG Test panel",
-                    "Doctor Consultation",
-                  ].map((feat, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-start gap-2.5 text-label font-bold text-slate-600"
-                    >
-                      <Check className="h-3.5 w-3.5 text-teal-600 stroke-[3px] shrink-0 mt-0.5" />
-                      <span>{feat}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <Button
-                variant="outline"
-                className="w-full h-11 rounded-xl border-[#0A7075] text-[#0A7075] hover:bg-[#0A7075] hover:text-white font-extrabold text-xs mt-8 transition-colors"
-                asChild
-              >
-                <Link href="/appointment">Book Package</Link>
-              </Button>
-            </div>
-
-            {/* Card 3: MOST RECOMMENDED (Teal highlighted) */}
-            <div className="bg-[#0A7075] text-white rounded-3xl p-6 shadow-xl shadow-[#0A7075]/15 flex flex-col justify-between relative overflow-hidden ring-4 ring-[#0A7075]/10 transform lg:-translate-y-2">
-              <div className="absolute top-0 right-0 bg-secondary text-teal-300 text-[9px] font-black uppercase tracking-widest px-4 py-1.5 rounded-bl-2xl">
-                Most Recommended
-              </div>
-
-              <div className="space-y-6">
-                <div>
-                  <span className="text-[10px] font-black uppercase text-teal-200 tracking-wider">
-                    15+ Tests Included
-                  </span>
-                  <h3 className="text-lg font-black text-white mt-1">
-                    Comprehensive Checkup
-                  </h3>
-                  <p className="text-2xl font-black text-teal-300 mt-2">
-                    NPR 8,500
-                  </p>
-                </div>
-
-                <div className="h-px bg-white/10"></div>
-
-                <ul className="space-y-3">
-                  {[
-                    "All Standard Tests Included",
-                    "Chest X-Ray assessment",
-                    "Ultrasound Abdomen & Pelvis",
-                    "Vitamin D & B12 screening",
-                    "Comprehensive Eye Check",
-                    "Free Follow-up consultation",
-                  ].map((feat, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-start gap-2.5 text-label font-bold text-teal-100"
-                    >
-                      <Check className="h-3.5 w-3.5 text-teal-300 stroke-[3px] shrink-0 mt-0.5" />
-                      <span>{feat}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <Button
-                className="w-full h-11 rounded-xl bg-white hover:bg-slate-50 text-[#0A7075] font-extrabold text-xs mt-8 transition-colors border-none shadow-md"
-                asChild
-              >
-                <Link href="/appointment">Book Package</Link>
-              </Button>
-            </div>
-
-            {/* Card 4: Executive Corporate */}
-            <div className="bg-slate-900 text-white rounded-3xl p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)] flex flex-col justify-between hover:scale-[1.01] transition-all duration-300">
-              <div className="space-y-6">
-                <div>
-                  <span className="text-[10px] font-black uppercase text-slate-400 tracking-wider">
-                    For Enterprises
-                  </span>
-                  <h3 className="text-lg font-black text-white mt-1">
-                    Executive Corporate
-                  </h3>
-                  <p className="text-2xl font-black text-teal-400 mt-2">
-                    Custom Pricing
-                  </p>
-                </div>
-
-                <div className="h-px bg-white/10"></div>
-
-                <ul className="space-y-3">
-                  {[
-                    "Customized Corporate Test Panel",
-                    "Instant secure digital reports",
-                    "Flexible employee group scheduling",
-                    "Centralized HR Vitals Dashboard",
-                    "Priority panel processing",
-                    "Dedicated account manager",
-                  ].map((feat, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-start gap-2.5 text-label font-bold text-slate-300"
-                    >
-                      <Check className="h-3.5 w-3.5 text-teal-400 stroke-[3px] shrink-0 mt-0.5" />
-                      <span>{feat}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <Button
-                className="w-full h-11 rounded-xl bg-[#0A7075] hover:bg-primary-dark text-white font-extrabold text-xs mt-8 transition-colors border-none"
-                asChild
-              >
-                <Link href="/contact">Contact Us</Link>
-              </Button>
-            </div>
+            </div>   
           </div>
         </Container>
       </section>

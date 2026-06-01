@@ -57,7 +57,7 @@ export function PackagesPricing() {
             )}
             <div className="space-y-1 sm:space-y-2 mb-6 sm:mb-8">
               <h3 className="text-base sm:text-lg font-bold text-slate-800">{pkg.name}</h3>
-              <p className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">{pkg.price}</p>
+            
             </div>
 
             <div className="h-px bg-slate-100 w-full mb-6 sm:mb-8"></div>
