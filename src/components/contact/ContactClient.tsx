@@ -193,7 +193,7 @@ export default function ContactClient() {
                       </div>
                       <div>
                         <h4 className="font-bold text-secondary mb-1">Phone</h4>
-                        <p className="text-text-body">+977-01-XXXXXXX</p>
+                        <p className="text-text-body">+977-9860167326</p>
                       </div>
                     </div>
 
