@@ -14,9 +14,9 @@ export const navLinks = [
 export const clinicInfo = {
   name: "Kunta Devi Health Care & Diagnostic Center",
   address: "Ghattekulo, Kathmandu, Nepal",
-  phone: "01-4770912 / 4770913",
-  whatsapp: "+9779860167326",
-  email: "info@kuntadevihealthcare.com",
+  phone: "014770912",
+  whatsapp: "+9779851027120",
+  email: "kuntadevihc@gmail.com",
   hours: "Sunday - Friday: 7:00 AM - 7:00 PM",
   emergencyPhone: "+9779860167326",
   mapLink: "https://maps.google.com/?q=Kunta+Devi+Health+Care+%26+Diagnostic+Centre+Pvt.+Ltd.",

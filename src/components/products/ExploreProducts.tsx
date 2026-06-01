@@ -88,7 +88,7 @@ export function ExploreProducts({ searchQuery, activeCategory }: ExploreProducts
                   </div>
                   
                   <div className="pt-4 border-t border-slate-50 flex items-center justify-between gap-4 mt-auto">
-                     <p className="font-black text-slate-900 text-sm">NPR {product.price}</p>
+                   
                      <Button size="icon" className="h-8 w-8 rounded-lg bg-teal-600 hover:bg-teal-700 shadow-lg shadow-teal-900/10 transition-all">
                         <ShoppingCart className="h-4 w-4" />
                      </Button>

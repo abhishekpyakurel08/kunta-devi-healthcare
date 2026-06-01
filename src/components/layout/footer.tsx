@@ -100,11 +100,11 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-[#2A9D8F] shrink-0" />
-                <span>01-4412345</span>
+                <span>01-4770912</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-[#2A9D8F] shrink-0" />
-                <span className="break-all">info@kuntadevi.com</span>
+                <span className="break-all">kuntadevihc@gmail.com</span>
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="h-5 w-5 text-[#2A9D8F] shrink-0 mt-0.5" />

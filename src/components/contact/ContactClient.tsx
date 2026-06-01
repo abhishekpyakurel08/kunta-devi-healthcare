@@ -193,7 +193,7 @@ export default function ContactClient() {
                       </div>
                       <div>
                         <h4 className="font-bold text-secondary mb-1">Phone</h4>
-                        <p className="text-text-body">+977-9860167326</p>
+                        <p className="text-text-body">01-4770912</p>
                       </div>
                     </div>
 
@@ -203,7 +203,7 @@ export default function ContactClient() {
                       </div>
                       <div>
                         <h4 className="font-bold text-secondary mb-1">Email</h4>
-                        <p className="text-text-body">info@kuntadevi.com</p>
+                        <p className="text-text-body">kuntadevihc@gmail.com</p>
                       </div>
                     </div>
 

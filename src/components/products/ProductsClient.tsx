@@ -357,7 +357,7 @@ export default function ProductsClient() {
                 <div className="space-y-2">
                   <div className="flex justify-between items-start">
                     <h3 className="font-extrabold text-slate-900 text-base md:text-lg">Glucometer Starter Kit</h3>
-                    <p className="text-base font-black text-[#0A7075]">NPR 3,200</p>
+                   
                   </div>
                   <p className="text-xs text-slate-500 font-semibold leading-relaxed">
                     Complete blood precision monitoring kit with 25 test strips, lancets, and carrying case. Doctor approved for home use.
@@ -397,7 +397,7 @@ export default function ProductsClient() {
                 <div className="space-y-2">
                   <div className="flex justify-between items-start">
                     <h3 className="font-extrabold text-slate-900 text-base md:text-lg">Digital Blood Pressure Monitor</h3>
-                    <p className="text-base font-black text-[#0A7075]">NPR 4,500</p>
+                
                   </div>
                   <p className="text-xs text-slate-500 font-semibold leading-relaxed">
                     Clinically validated upper arm BP monitor with memory storage for 60 readings. Recommended for daily home monitoring.
@@ -437,7 +437,7 @@ export default function ProductsClient() {
                 <div className="space-y-2">
                   <div className="flex justify-between items-start">
                     <h3 className="font-extrabold text-slate-900 text-base md:text-lg">Nebulizer Machine</h3>
-                    <p className="text-base font-black text-[#0A7075]">NPR 5,500</p>
+                  
                   </div>
                   <p className="text-xs text-slate-500 font-semibold leading-relaxed">
                     Compact nebulizer for effective delivery of respiratory medication. Silent motor, lightweight, ideal for home use.
@@ -528,7 +528,7 @@ export default function ProductsClient() {
                   <div className="space-y-1">
                     <span className="text-[9px] font-black uppercase text-slate-400 tracking-wider">{prod.brand}</span>
                     <h4 className="font-extrabold text-slate-900 text-xs md:text-sm line-clamp-1 group-hover:text-[#0A7075] transition-colors">{prod.name}</h4>
-                    <p className="text-xs font-black text-[#0A7075]">{prod.price}</p>
+                  
                   </div>
                 </div>
 
