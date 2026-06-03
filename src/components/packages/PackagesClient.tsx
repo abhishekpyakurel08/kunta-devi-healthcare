@@ -153,6 +153,44 @@ export default function PackagesClient() {
     },
   ];
 
+  const reviews = [
+    {
+      id: 1,
+      rating: 5,
+      text: "Best health care & diagnostic center in the town",
+      name: "Anshu Kumari",
+      initials: "AK",
+    },
+    {
+      id: 2,
+      rating: 5,
+      text: "Very good service✨",
+      name: "Sandesh Jung Thapa",
+      initials: "SJT",
+    },
+    {
+      id: 3,
+      rating: 5,
+      text: "Best hostel in the town",
+      name: "Sushil Karn",
+      initials: "SK",
+    },
+    {
+      id: 4,
+      rating: 4,
+      text: "Good treatment of first add.",
+      name: "Sushant Sharma",
+      initials: "SS",
+    },
+    {
+      id: 5,
+      rating: 3,
+      text: "expenses",
+      name: "Biraj",
+      initials: "B",
+    },
+  ];
+
   const faqs = [
     {
       q: "Do I need fasting before checking up?",
@@ -362,7 +400,7 @@ export default function PackagesClient() {
               >
                 <Link href="/appointment">Book Package</Link>
               </Button>
-            </div>   
+            </div>
           </div>
         </Container>
       </section>
@@ -393,7 +431,10 @@ export default function PackagesClient() {
               </thead>
               <tbody className="text-xs font-bold text-slate-700 divide-y divide-slate-100">
                 {testFeatures.map((item, index) => (
-                  <tr key={index} className="hover:bg-slate-50 transition-colors">
+                  <tr
+                    key={index}
+                    className="hover:bg-slate-50 transition-colors"
+                  >
                     <td className="py-4 px-6 font-semibold">{item.test}</td>
                     <td className="py-4 px-6">{item.details}</td>
                   </tr>
@@ -635,38 +676,32 @@ export default function PackagesClient() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {[1, 2, 3].map((idx) => (
+          <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory items-stretch scrollbar-hide">
+            {reviews.map((r, idx) => (
               <Card
                 key={idx}
-                className="border border-slate-100 rounded-3xl p-6 shadow-[0_5px_25px_rgba(0,0,0,0.01)] hover:shadow-xl transition-all duration-300 bg-white flex flex-col justify-between"
+                className="min-w-[300px] w-[300px] shrink-0 border border-slate-100 rounded-3xl p-6 shadow-[0_5px_25px_rgba(0,0,0,0.01)] hover:shadow-xl transition-all duration-300 bg-white flex flex-col justify-between snap-start"
               >
                 <CardContent className="p-0 space-y-6">
                   <div className="flex gap-1">
-                    {[1, 2, 3, 4, 5].map((s) => (
+                    {Array.from({ length: r.rating }).map((_, i) => (
                       <Star
-                        key={s}
+                        key={i}
                         className="h-4.5 w-4.5 text-amber-400 fill-amber-400"
                       />
                     ))}
                   </div>
                   <p className="text-xs md:text-sm font-semibold text-slate-500 leading-relaxed italic">
-                    "I had my Full Body checkup completed at Kunta Devi. The
-                    entire process was exceptionally efficient, highly
-                    supportive, and my reports came within 3 hours. Will consult
-                    again!"
+                    {r.text}
                   </p>
                   <div className="flex items-center gap-3 pt-4 border-t border-slate-50">
                     <div className="h-10 w-10 bg-teal-50 text-[#0A7075] rounded-full flex items-center justify-center font-black text-sm">
-                      SK
+                      {r.initials}
                     </div>
                     <div>
                       <h4 className="font-extrabold text-slate-900 text-xs md:text-sm">
-                        Sunita Karki
+                        {r.name}
                       </h4>
-                      <p className="text-[10px] text-slate-400 font-semibold">
-                        Kathmandu, Nepal
-                      </p>
                     </div>
                   </div>
                 </CardContent>

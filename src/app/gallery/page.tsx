@@ -38,11 +38,11 @@ export default function GalleryPage() {
   ];
 
   const doctors = [
-    { name: "Dr. Sharma", role: "Cardiologist", image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d" },
-    { name: "Dr. Thapa", role: "Pediatrician", image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2" },
-    { name: "Dr. Rai", role: "Gynecologist", image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f" },
-    { name: "Dr. Gurung", role: "General Physician", image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d" },
-    { name: "Nurse Maya", role: "Senior Nurse", image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2" },
+    { name: "Dr. Shrestha", role: "Neurosurgeon", image: "/doctors/dr-rajendra-shrestha.jpg" },
+    { name: "Dr. Thapa", role: "General & Laparoscopic Surgeon", image: "/doctors/dr-ghanashyam-thapa.jpg" },
+    { name: "Dr. Koirala", role: "Internal Medicine", image: "/doctors/dr-parimal-koirala.jpg" },
+    { name: "Dr. Bastakoti", role: "Gynecologist", image: "/doctors/dr-rashmi-bastakoti.jpg" },
+    { name: "Dr. Uprety", role: "Senior Nurse", image: "/doctors/dr-ananta-bhakta-uprety.jpg" },
   ];
 
   const community = [
