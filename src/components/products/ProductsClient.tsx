@@ -125,28 +125,28 @@ export default function ProductsClient() {
 
   const specialistRecs = [
     {
-      drName: "Dr. Sita Sharma",
-      drTitle: "Consultant Cardiologist",
+      drName: "Dr. Bhishma Pokheral",
+      drTitle: "Pediatrician",
       prodName: "Digital BP Monitor Kit",
       rating: 4.8,
       text: "Daily tracking of blood pressure levels is crucial for heart patients. This digital BP kit offers clinically validated accuracy that helps us monitor parameters reliably at home.",
-      avatar: "https://images.unsplash.com/photo-1594824813573-246434de83fb?q=80&w=200"
+      avatar: "/doctors/dr-bhishma-pokheral.png"
     },
     {
-      drName: "Dr. Sita Sharma",
-      drTitle: "Endocrinology Specialist",
+      drName: "Dr. Niraj Shrestha",
+      drTitle: "Orthopedic Surgeon",
       prodName: "Glucometer Starter Kit",
       rating: 4.9,
       text: "I highly recommend the AccuCheck Glucometer starter kit for all patients checking blood sugar daily. Fast readings and minimum blood sample volume make it ideal.",
-      avatar: "https://images.unsplash.com/photo-1594824813573-246434de83fb?q=80&w=200"
+      avatar: "/doctors/dr-niraj-shrestha.png"
     },
     {
-      drName: "Dr. Sita Sharma",
-      drTitle: "Pediatrician Specialist",
+      drName: "Dr. Susan Bhattarai",
+      drTitle: "Pediatrician",
       prodName: "Compact Nebulizer Machine",
       rating: 4.7,
       text: "Silent motor nebulizers are excellent for small children with breathing difficulties. It delivers precise respiratory dosage gently and with zero machine noise at home.",
-      avatar: "https://images.unsplash.com/photo-1594824813573-246434de83fb?q=80&w=200"
+      avatar: "/doctors/dr-susan-bhattarai.jpg"
     }
   ];
 

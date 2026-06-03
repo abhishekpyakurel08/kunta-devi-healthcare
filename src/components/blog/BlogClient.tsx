@@ -54,7 +54,7 @@ export default function BlogClient() {
     {
       title: "Signs of High Blood Pressure You Should Never Ignore",
       excerpt: "Learn the warning signs of hypertension and when to seek medical attention for proper diagnosis and treatment.",
-      author: "Dr. Rahul Karki",
+      author: "Dr. Rajendra Shrestha",
       readTime: "5 min read",
       badge: "Trending",
       image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528"
@@ -62,7 +62,7 @@ export default function BlogClient() {
     {
       title: "When Should Children Get Vaccines?",
       excerpt: "Complete vaccination schedule for children in Nepal, including mandatory and recommended vaccines by age.",
-      author: "Dr. Anjali Rai",
+      author: "Dr. Ghanshyam Thapa",
       readTime: "7 min read",
       badge: "Featured",
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d"
@@ -70,7 +70,7 @@ export default function BlogClient() {
     {
       title: "How Often Should Adults Do Annual Health Checkup?",
       excerpt: "Guidelines for adult health screenings, recommended tests by age group, and preventive care importance.",
-      author: "Dr. Sita Sharma",
+      author: "Dr. Parimal Koirala",
       readTime: "6 min read",
       badge: "New",
       image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118"
@@ -78,7 +78,7 @@ export default function BlogClient() {
     {
       title: "Best Foods for Diabetic Patients",
       excerpt: "Nutrition guide for diabetes management, including foods to eat, avoid, and meal planning tips.",
-      author: "Dr. Samuel Shrestha",
+      author: "Dr. Rashmi Bastakoti",
       readTime: "8 min read",
       badge: "Popular",
       image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061"
@@ -86,7 +86,7 @@ export default function BlogClient() {
     {
       title: "When Should You Get an ECG? Key Warning Signs",
       excerpt: "Understanding when an ECG is necessary, warning signs of heart issues, and what to expect during the test.",
-      author: "Dr. Rahul Karki",
+      author: "Dr. Ananta Bhakta Uprety",
       readTime: "5 min read",
       badge: "Trending",
       image: "https://images.unsplash.com/photo-1551076805-e1869033e561"
@@ -94,7 +94,7 @@ export default function BlogClient() {
     {
       title: "Pregnancy Care in Nepal: What Every Mother Should Know",
       excerpt: "Comprehensive guide to prenatal care, hospital options, and essential health tips for expectant mothers.",
-      author: "Dr. Anjali Rai",
+      author: "Dr. Shailesh Kumar Upadhyaya",
       readTime: "10 min read",
       badge: "Featured",
       image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2"
@@ -103,22 +103,22 @@ export default function BlogClient() {
 
   const doctorInsights = [
     {
-      name: "Dr. Rahul Karki",
+      name: "Dr. Raje",
       specialty: "Cardiologist",
       quote: "Why annual health screening matters after 35: Early detection of cardiovascular issues can save lives. Don't wait for symptoms to appear.",
       avatar: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d"
     },
     {
-      name: "Dr. Anjali Rai",
+      name: "Dr. Sushan Bhattarai",
       specialty: "Lead Pediatrician",
       quote: "Consistency in vaccination schedules is crucial for protecting children from preventable diseases. Stick to the recommended timeline.",
-      avatar: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2"
+      avatar: "/doctors/dr-susan-bhattarai.jpg"
     },
     {
-      name: "Dr. Samuel Shrestha",
-      specialty: "Neurologist",
+      name: "Dr. Rajendra Shrestha",
+      specialty: "Neurosurgeon",
       quote: "Sleep hygiene is the foundation of cognitive longevity. Quality sleep affects memory, focus, and overall brain health.",
-      avatar: "https://images.unsplash.com/photo-1622253692010-333f2da6031d"
+      avatar: "/doctors/dr-rajendra-shrestha.jpg"
     },
   ];
 
